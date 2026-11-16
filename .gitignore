@@ -1,0 +1,5 @@
+# BCNB 값·원본 ID 대응표는 공개하지 않는다 (README §12)
+local/
+__pycache__/
+.pytest_cache/
+data/BCNB/

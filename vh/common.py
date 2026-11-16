@@ -1,0 +1,107 @@
+"""경로, 규칙 표 읽기, vp 번호로 정한 난수. mini·final 레포는 읽기만 한다."""
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+import random
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]            # virtual_hospital/
+PROJECT = ROOT.parent
+MINI = PROJECT / "team_project_mini"
+FINAL = PROJECT / "team_project_final"
+RULES = ROOT / "rules"
+OUT = ROOT / "out"
+LOCAL = ROOT / "local"
+REPORTS = ROOT / "reports"
+CREATED_AT = "2026-11-09T00:00:00+09:00"               # 같은 입력 → 같은 출력
+
+
+def mini_on_path() -> None:
+    """mini 코드를 불러 쓸 수 있게 한다 (고치지 않음). mini 패키지 이름이 src라 이 폴더는 vh를 쓴다."""
+    if str(MINI) not in sys.path:
+        sys.path.insert(0, str(MINI))
+
+
+def read_csv(path: Path) -> list[dict]:
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path: Path, rows: list[dict], cols: list[str] | None = None) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    cols = cols or (list(rows[0].keys()) if rows else [])
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+
+
+def rules() -> dict[str, dict]:
+    return {r["rule_id"]: r for r in read_csv(RULES / "rules.csv")}
+
+
+def thresholds() -> dict[str, str]:
+    return {r["항목"]: r["값"] for r in read_csv(RULES / "thresholds.csv")}
+
+
+def boundary(name: str) -> tuple[int, int]:
+    lo, hi = thresholds()[f"boundary.{name}"].split("-")
+    return int(lo), int(hi)
+
+
+def ref(ref_id: str, target: str) -> str:
+    for r in read_csv(RULES / "references.csv"):
+        if r["ref_id"] == ref_id and r["대상"] == target:
+            return r["값"]
+    raise KeyError(f"references.csv에 {ref_id} {target} 없음")
+
+
+def rng(key: str, rule_id: str) -> random.Random:
+    """vp 번호(또는 다른 열쇠)와 규칙 id로 정한 난수. 같은 열쇠 → 같은 값."""
+    seed = int(hashlib.sha256(f"{key}|{rule_id}".encode()).hexdigest()[:16], 16)
+    return random.Random(seed)
+
+
+@dataclass
+class Rec:
+    """fields.csv 한 행 = patient_state 칸 하나."""
+    field: str
+    status: str                       # present / not_done / not_recorded
+    value: object = None
+    origin: str = "real"              # real / derived / synthetic
+    basis: str = ""                   # ①~⑤ (합성·계산일 때)
+    rule_id: str = ""
+    source_column: str = ""
+    observed_date: str | None = None
+    specimen: str | None = None
+    note: str = ""
+
+    def row(self, vp_id: str) -> dict:
+        return {"vp_id": vp_id, "field": self.field, "status": self.status,
+                "value": json.dumps(self.value, ensure_ascii=False) if self.status == "present" else "",
+                "origin": self.origin, "basis": self.basis, "rule_id": self.rule_id,
+                "source_column": self.source_column, "observed_date": self.observed_date or "",
+                "specimen": self.specimen or "", "note": self.note}
+
+
+@dataclass
+class Patient:
+    vp_id: str
+    source_id: str                    # 원본 ID (local/source_map.csv에만 쓴다)
+    branch: str
+    split: str
+    dx_date: str
+    index_day: int
+    side: str
+    recs: dict[str, Rec] = field(default_factory=dict)
+    truth: dict[str, object] = field(default_factory=dict)
+    slides: list[dict] = field(default_factory=list)
+    cdna: dict[tuple[str, str], str] = field(default_factory=dict)   # (유전자, 단백 변화) → c. 표기 (M-03)
+    problems: list[str] = field(default_factory=list)              # 차트로 쓸 수 없는 실제 값 (넘길 목록)
+
+    def add(self, rec: Rec) -> None:
+        self.recs[rec.field] = rec
