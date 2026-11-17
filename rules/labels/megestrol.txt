@@ -1,0 +1,6 @@
+title: MEGESTROL ACETATE TABLET [REMEDYREPACK INC.]
+setid: 7d74ac91-5fe3-4e21-81f2-e484e2a18548
+published: Sep 21, 2026
+url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7d74ac91-5fe3-4e21-81f2-e484e2a18548
+
+INDICATIONS AND USAGE Megestrol acetate tablets are indicated for the palliative treatment of advanced carcinoma of the breast or endometrium (ie, recurrent, inoperable, or metastatic disease). It should not be used in lieu of currently accepted procedures such as surgery, radiation, or chemotherapy.

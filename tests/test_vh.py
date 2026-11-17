@@ -92,3 +92,18 @@ def test_image_tables_follow_spec():
                 continue
             with open(base / f"{table}.csv", encoding="utf-8-sig") as fh:
                 assert fh.readline().strip().split(",") == cols, (base, table)
+
+
+def test_drug_setting_quotes_are_in_saved_labels():
+    """약 사용 분기점 표: FDA 라벨 근거 문장은 저장한 라벨 원문에 글자 그대로 있어야 한다 (지어낸 근거 막기).
+    ESMO 근거 행은 청크 번호가 있어야 하고, ESMO가 아닌 행은 'ESMO 기준 아님'이 표시돼야 한다."""
+    import re
+    for r in read_csv(ROOT / "rules" / "drug_setting.csv"):
+        if r["근거"] == "ESMO":
+            assert r["ESMO 청크 (조기)"] or r["ESMO 청크 (전이성)"], r["generic_name"]
+            continue
+        assert r["ESMO 기준 아님"] == "예", r["generic_name"]
+        if r["근거 문장"]:
+            m = re.search(r"rules/labels/(\S+\.txt)", r["외부 근거"])
+            text = (ROOT / "rules" / "labels" / m.group(1)).read_text(encoding="utf-8")
+            assert r["근거 문장"] in text, r["generic_name"]

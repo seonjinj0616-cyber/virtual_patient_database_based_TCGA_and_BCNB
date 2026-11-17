@@ -1,0 +1,6 @@
+title: MITOMYCIN INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [MEITHEAL PHARMACEUTICALS INC.]
+setid: 9dd0e3f2-0938-4c57-8d09-040b5405b44f
+published: Nov 02, 2026
+url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9dd0e3f2-0938-4c57-8d09-040b5405b44f
+
+INDICATIONS AND USAGE Mitomycin for Injection is not recommended as single-agent, primary therapy. It has been shown to be useful in the therapy of disseminated adenocarcinoma of the stomach or pancreas in proven combinations with other approved chemotherapeutic agents and as palliative treatment when other modalities have failed. Mitomycin for Injection is not recommended to replace appropriate surgery and/or radiotherapy.

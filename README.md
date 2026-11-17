@@ -335,6 +335,8 @@ chart.txt · expected/patient_state.json · slides.csv
 
 ### 7.5 실제 기록이 L1을 어길 때
 
+> **2026-11-17 바뀜:** 아래 "전이성에서 주로 쓰는 약" 목록은 근거 없이 고른 것이었다. 약의 사용 분기점은 이제 `rules/drug_setting.csv`(M-04: ESMO 청크, ESMO에 없으면 FDA 라벨 원문, "ESMO 기준 아님" 표시)로 정하고, TCGA 투약 기록은 처방된 그대로 쓴다. 재발 갈래는 실제 재발 기록이 있는 환자만 대상이므로 아래 21명 제외 규칙은 쓰지 않는다. L1 허가 조건 표(`drug_label.csv`)는 만들지 않는다.
+
 TCGA 실제 투약 기록에서 전이성에서 주로 쓰는 약(gemcitabine, fulvestrant, bevacizumab, vinorelbine, lapatinib 등)이 **재발 기록 없이** 나온 환자가 21명이다 (27건, 2026-11-09 확인). 재발 기록이 빠졌거나 당시 임상시험에서 보조요법으로 쓴 경우로 보이며, 데이터로는 가릴 수 없다.
 
 - 이 환자들은 **TCGA ①로만** 쓴다. 판정 기준일 뒤의 투약은 미래 값이라 차트에 들어가지 않는다.

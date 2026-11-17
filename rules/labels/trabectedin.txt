@@ -1,0 +1,6 @@
+title: EVDI (TRABECTEDIN) INJECTION, SOLUTION, CONCENTRATE [APOTEX CORP.]
+setid: c1d50f5c-4202-27f3-4798-a9708114ddea
+published: Jul 03, 2026
+url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c1d50f5c-4202-27f3-4798-a9708114ddea
+
+1 INDICATIONS AND USAGE EVDI is indicated for the treatment of adult patients with unresectable or metastatic liposarcoma or leiomyosarcoma who received a prior anthracycline-containing regimen [see Clinical Studies (14)]. EVDI is an alkylating drug indicated for the treatment of adult patients with unresectable or metastatic liposarcoma or leiomyosarcoma who received a prior anthracycline-containing regimen (1)
