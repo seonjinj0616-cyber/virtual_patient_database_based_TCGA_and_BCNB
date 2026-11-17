@@ -1,6 +1,0 @@
-title: AXYCIS (CISPLATIN) INJECTION, SOLUTION [AVYXA PHARMA, LLC]
-setid: 93edf309-993c-48ec-be90-27d89c86b62b
-published: Nov 03, 2026
-url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=93edf309-993c-48ec-be90-27d89c86b62b
-
-1 INDICATIONS AND USAGE AXYCIS is a platinum-based drug indicated for the treatment of: Advanced testicular cancer (1.1) Advanced ovarian cancer (1.2) Advanced bladder cancer (1.3) 1.1 Advanced Testicular Cancer AXYCIS is indicated for the treatment of advanced testicular cancer. 1.2 Advanced Ovarian Cancer AXYCIS is indicated for the treatment of advanced ovarian cancer. 1.3 Advanced Bladder Cancer AXYCIS is indicated for the treatment of advanced bladder cancer.

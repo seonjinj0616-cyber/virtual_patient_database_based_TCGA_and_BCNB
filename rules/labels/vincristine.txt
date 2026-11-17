@@ -1,6 +1,0 @@
-title: VINCRISTINE SULFATE INJECTION, SOLUTION [HOSPIRA, INC.]
-setid: b22e4c8e-dbe1-4d4b-a026-e1812974071c
-published: Feb 19, 2026
-url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b22e4c8e-dbe1-4d4b-a026-e1812974071c
-
-INDICATIONS AND USAGE Vincristine Sulfate Injection is indicated in acute leukemia. Vincristine Sulfate Injection has also been shown to be useful in combination with other oncolytic agents in Hodgkin's disease, non–Hodgkin's malignant lymphomas, rhabdomyosarcoma, neuroblastoma, and Wilms' tumor.

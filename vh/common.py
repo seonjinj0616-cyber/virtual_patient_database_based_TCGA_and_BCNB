@@ -102,6 +102,7 @@ class Patient:
     slides: list[dict] = field(default_factory=list)
     cdna: dict[tuple[str, str], str] = field(default_factory=dict)   # (유전자, 단백 변화) → c. 표기 (M-03)
     problems: list[str] = field(default_factory=list)              # 차트로 쓸 수 없는 실제 값 (넘길 목록)
+    treatments: list[dict] = field(default_factory=list)           # 재발 갈래: 판정 기준일까지의 실제 투약 (중단 사유 포함)
 
     def add(self, rec: Rec) -> None:
         self.recs[rec.field] = rec

@@ -22,6 +22,45 @@ OPERATION = "유방 절제술 + 액와 림프절 수술"
 SIDE_EN = {"좌측": "Lt.", "우측": "Rt."}
 
 
+SITE_KO = {"bone": "골", "liver": "간", "lung": "폐", "brain": "뇌", "skin": "피부", "distant_ln": "원격 림프절"}
+SETTING_KO = {"neoadjuvant": "선행", "adjuvant": "보조", "palliative": "고식"}             # VC SETTING_KO
+STOP_KO = {"progression": "진행", "completed": "완료", "planned_switch": "계획된 변경"}     # field_vocab stop_reason
+
+
+def medication(c, age: int, rows: list[dict]) -> None:
+    """투약 기록 표 (VC meds() 형식). 한 줄 = 요법 하나: 약   시작   종료   주기   반응   중단 사유."""
+    D = c.on
+    d = c.doc("medication", None)
+    d.t("[투약 기록]\n").ident(age, full=False)
+    d.t("구분    요법                                              시작         종료         주기       반응   중단 사유\n")
+    for r in rows:
+        cyc = r.get("cycles")
+        cyc_txt = "-" if not cyc else (f"weekly #{cyc['value']}" if cyc.get("interval_days") == 7 else
+                                       f"q{cyc['interval_days'] // 7}w #{cyc['value']}" if cyc.get("interval_days") in (14, 21, 28)
+                                       else f"#{cyc['value']}")
+        end = "현재 투약 중" if r.get("ongoing") else kdate(D(r["end_day"])) if r.get("end_day") is not None else "-"
+        doses = r.get("doses") or {}             # R-07: 실제 안트라사이클린 1회 용량 (mini가 이 줄에서 누적량 계산)
+        names = [f"{g} {doses[g]['value']:g}{doses[g]['unit']}" if g in doses else g for g in r["drugs"]]
+        text = (f"{' + '.join(names)}   {kdate(D(r['start_day']))}   {end}   {cyc_txt}   "
+                f"{r.get('best_response') or '-'}   {STOP_KO.get(r.get('stop_reason'), '-')}")
+        kw = dict(drugs=r["drugs"], setting=r["setting"], start=D(r["start_day"]),
+                  end=D(r["end_day"]) if r.get("end_day") is not None and not r.get("ongoing") else None,
+                  cycles=cyc, stop_reason=r.get("stop_reason"), best_response=r.get("best_response"),
+                  progression=D(r["progression_day"]) if r.get("progression_day") is not None else None,
+                  anthra=[{"drug": g, "dose_per_admin": v, "cycles": cyc,
+                           "total_dose": cyc and {"value": _num(v["value"] * cyc["value"]), "unit": v["unit"]}}
+                          for g, v in doses.items()])
+        if r.get("ongoing"):
+            kw["ongoing"] = True
+        d.t(f"{_get(SETTING_KO, r['setting'], '투약 구분')}    ").row(text, **kw).t("\n")
+
+
+def _num(x: float):
+    """mini pipeline._num와 같은 수 표기 (정수면 int)."""
+    x = float(str(x))
+    return int(x) if x.is_integer() else x
+
+
 class RenderError(ValueError):
     """표기 목록에 없는 값 (G2 실패로 기록한다)."""
 
@@ -86,14 +125,15 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     """(chart.txt, 정답 patient_state, mini check() 오류)."""
     R = p.recs
     age = R["patient.age"].value
-    c = Chart(p.vp_id, p.dx_date, DAY_INDEX, created_at=CREATED_AT)
+    recur = p.branch == "TCGA_recur"
+    c = Chart(p.vp_id, p.dx_date, p.index_day if recur else DAY_INDEX, created_at=CREATED_AT)
     D = c.on
 
-    # R-01 경과기록 (VC-0118 형식)
+    # R-01 경과기록 (VC-0118 형식, 재발 갈래는 VC-0103 형식)
     d = c.doc("progress_note", c.index_date)
     d.t(f"<외래 경과기록>   {kdate(c.index_date)}   종양내과\n").ident(age)
     d.t("병원: 가상대학교병원 종양내과   담당의: 이가상\n\n")
-    d.t("S) 수술 후 외래, 회복 양호.\n   폐경: ")
+    d.t("S) 재발 확인 후 외래.\n   폐경: " if recur else "S) 수술 후 외래, 회복 양호.\n   폐경: ")
     meno = R["patient.menopausal_status"].value
     d.put(_get(MENO, meno, "폐경"), F("patient.menopausal_status", meno)).t("\n")
     ecog = R["patient.ecog"].value
@@ -101,13 +141,26 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     d.t(f"A) {SIDE_EN[p.side]} breast cancer, ")
     d.put(f"{kdate(D(0))} core bx로 진단", F("diagnosis.diagnosis_date", D(0), raw=kdate(D(0))))
     d.t(f", {kdate(D(DAY_SURGERY))} 수술\n   ")
-    d.put("재발 소견 없음", F("recurrence.status", "none")).t("\n")
+    if recur:                                      # R-05: VC distant() 형식 '2023.4.4 폐·골 전이'
+        mday, sites = R["recurrence.metastasis_day"].value, R["recurrence.metastatic_sites"].value
+        words = "·".join(_get(SITE_KO, s, "전이 부위") for s in sites) + " 전이"
+        d.put(f"{kdate(D(mday))} {words}", F("recurrence.recurrence_date", D(mday), raw=kdate(D(mday))),
+              F("recurrence.metastasis_day", mday), F("recurrence.recurrence_day", R["recurrence.recurrence_day"].value),
+              F("recurrence.status", "distant", within=words), F("recurrence.metastatic_sites", sites, within=words))
+        d.t("\n")
+        ends = [t for t in p.treatments if t.get("adjuvant_endocrine") and t.get("end_day") is not None and not t.get("ongoing")]
+        if ends:                                   # R-06: mini는 투약 표의 보조 내분비 종료일을 이 칸에 넣는다
+            t = max(ends, key=lambda t: t["end_day"])
+            d.t(f"   보조 {' + '.join(t['drugs'])} ").put(f"{kdate(D(t['end_day']))} 종료", F(
+                "recurrence.adjuvant_endocrine_end_date", D(t["end_day"]), raw=kdate(D(t["end_day"])))).t("\n")
+    else:
+        d.put("재발 소견 없음", F("recurrence.status", "none")).t("\n")
     nd_genes = [g for g in GENES if R[f"molecular.mutations.{g}"].status == "not_done"]
     if nd_genes:                                   # N-04: 실제 미시행은 "시행하지 않음"으로 쓴다 (report_templates §1.5)
         d.t("   ").put(f"{', '.join(nd_genes)} 유전자 검사: 시행하지 않음",
                        *(F(f"molecular.mutations.{g}", status="not_done", raw="시행하지 않음") for g in nd_genes))
         d.t("\n")
-    d.t("\nP) 보조 전신 요법 결정\n")
+    d.t("\nP) 전이성 1차 치료 결정\n" if recur else "\nP) 보조 전신 요법 결정\n")
 
     # R-02 수술 병리 (surgery_path 형식)
     obs = D(DAY_SURGERY)
@@ -172,6 +225,9 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
                                    for gname in nd))
         d.t(f"\n\n* 분석 유전자: {', '.join(GENES)}\n")
         d.genomic_report("primary", D(DAY_NGS))
+
+    if p.treatments:                               # R-06 투약 기록 (VC meds() 형식)
+        medication(c, age, p.treatments)
 
     text, ps = c.build()
     return text, ps, check(text, ps)

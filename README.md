@@ -4,16 +4,16 @@
 
 작성: 2026-11-09 (A) · 최종 갱신: 2026-11-16 · 상태: **실험** (팀 적용은 정하지 않았다)
 
-## 지금 상태 (2026-11-16)
+## 지금 상태 (2026-11-17)
 
-| | TCGA (수술 후 갈래) | BCNB (수술 전 갈래) |
-|---|---|---|
-| 가상환자 | **707명** | **971명** |
-| 차트 | 외래 경과기록 + 수술 병리 + 분자병리 | 초진 기록 + 중심 생검 병리 + 유방 초음파 |
-| 이 저장소에 | `out/tcga/` (차트·정답·CSV) | **없음** (BCNB 약관, `local/`에만) |
+| | TCGA ① (수술 후 갈래) | TCGA ② (재발 갈래) | BCNB (수술 전 갈래) |
+|---|---|---|---|
+| 가상환자 | **707명** | **7명** (원격 재발 14명 중) | **971명** |
+| 차트 | 외래 경과기록 + 수술 병리 + 분자병리 | ① + 재발 외래 경과기록 + **투약 기록** (실제 투약, 중단 사유) | 초진 기록 + 중심 생검 병리 + 유방 초음파 |
+| 이 저장소에 | `out/tcga/` (차트·정답·CSV) | `out/tcga_recur/` | **없음** (BCNB 약관, `local/`에만) |
 
 - 검증 V1~V4·V6과 관문 G1~G7(mini 입력 모듈 재현 포함) 통과, 테스트 9개 통과
-- 순서대로 정리한 진행 기록: [notes/progress_2026-11-16.md](notes/progress_2026-11-16.md) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria_2026-11-12.md](notes/synthetic_criteria_2026-11-12.md)
+- 순서대로 정리한 진행 기록: [notes/progress_2026-11-17.md](notes/progress_2026-11-17.md) (앞: [11-16](notes/progress_2026-11-16.md)) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria_2026-11-12.md](notes/synthetic_criteria_2026-11-12.md)
 
 ## 폴더
 
@@ -22,6 +22,7 @@
 | `rules/` | 규칙 표 (`rules.csv`), 문헌 값과 출처 (`references.csv`), 기준값, 표기, 이미지·모듈 결과 표 정의 |
 | `vh/` | 생성·관문·검증 코드 |
 | `tests/` | 규칙 표 ↔ 코드, 저장본 = 다시 만든 것, mini check, 표 정의 |
+| `out/tcga_recur/` | TCGA ② 재발 갈래: 위와 같은 구성 + `treatments.csv`(요법 줄마다 중단 사유와 근거, mini가 계산한 차수) |
 | `out/tcga/` | TCGA 가상환자: `patients.csv`, `fields.csv`(칸마다 실제·계산·합성 출처), `truth.csv`(차트에 없는 정답), `charts/<번호>/chart.txt`·`expected/`, `images/` |
 | `reports/` | 생성 보고, 뺀 환자와 이유, 관문 결과, mini 점검 |
 | `notes/` | 진행 기록, 기준 문서, 제안 글, 점검 기록 |
@@ -34,6 +35,7 @@
 ```bash
 python -m vh.fetch_hgvsc   # 변이 c. 표기 받기 (GDC, Genome Nexus)
 python -m vh.build         # TCGA 갈래 → out/tcga/, reports/
+python -m vh.tcga_recur    # TCGA 재발 갈래 → out/tcga_recur/, reports/tcga_recur*
 python -m vh.bcnb          # BCNB 갈래 → local/bcnb/ (git 제외)
 python -m pytest tests
 ```
@@ -233,7 +235,7 @@ chart.txt · expected/patient_state.json · slides.csv
 | **TCGA ②** | 재발 외래일 (실제 재발 기록 환자만) | ① + 보조 투약(실제) + 재발 | 재발 뒤 생존 | → 전이성 1차 |
 
 - 날짜: TCGA는 진단일 기준 일수, BCNB는 날짜 없음. 가짜 기준일을 정하고 일수를 더한다 (`D-`).
-- TCGA ②는 적다 (GDC 재발 파일에서 날짜가 있는 환자 59명 중 테스트 분할). 전이성 분기 시험은 mini 가상 차트가 계속 맡는다.
+- TCGA ②는 적다 (2026-11-17: ① 707명 중 원격 재발 14명 → 관문 통과 7명, 뺀 이유 `reports/tcga_recur_excluded.csv`). 판정 기준일 = 실제 전이일 + 14일 (D-R1), 그 뒤 투약은 `truth.csv`의 `later_treatments`. 전이성 분기 시험은 mini 가상 차트가 계속 맡는다.
 
 ---
 
@@ -335,7 +337,7 @@ chart.txt · expected/patient_state.json · slides.csv
 
 ### 7.5 실제 기록이 L1을 어길 때
 
-> **2026-11-17 바뀜:** 아래 "전이성에서 주로 쓰는 약" 목록은 근거 없이 고른 것이었다. 약의 사용 분기점은 이제 `rules/drug_setting.csv`(M-04: ESMO 청크, ESMO에 없으면 FDA 라벨 원문, "ESMO 기준 아님" 표시)로 정하고, TCGA 투약 기록은 처방된 그대로 쓴다. 재발 갈래는 실제 재발 기록이 있는 환자만 대상이므로 아래 21명 제외 규칙은 쓰지 않는다. L1 허가 조건 표(`drug_label.csv`)는 만들지 않는다.
+> **2026-11-17 바뀜:** 아래 "전이성에서 주로 쓰는 약" 목록은 근거 없이 고른 것이라 철회한다. 재발 갈래는 실제 재발 기록이 있는 환자만 대상이므로 아래 21명 제외 규칙은 쓰지 않는다. TCGA 투약 기록은 처방된 그대로 쓰고, 차수 계산에 필요한 약 계열은 mini `drug_classes.csv`를 쓴다. L1 허가 조건 표는 만들지 않는다.
 
 TCGA 실제 투약 기록에서 전이성에서 주로 쓰는 약(gemcitabine, fulvestrant, bevacizumab, vinorelbine, lapatinib 등)이 **재발 기록 없이** 나온 환자가 21명이다 (27건, 2026-11-09 확인). 재발 기록이 빠졌거나 당시 임상시험에서 보조요법으로 쓴 경우로 보이며, 데이터로는 가릴 수 없다.
 
@@ -575,7 +577,7 @@ virtual_hospital/
 | 4 | 끝 (문헌 값은 후보) | Y-01~05, N-01~05. V3 최대 차이 0.5~2.1%p (기준 5%p), V4 통과 (합성 Ki-67 높음 비율 PAM50 LumA 0.25 < LumB 0.80). `references.csv` 값은 검색으로 찾은 후보이고 원문 확인 전 |
 | 5 | 끝 | chart.txt 132건 + 정답 `patient_state`·`biomarker_record`. G1~G7 모두 통과 (G7에 mini 입력 모듈 재현 검사 포함) |
 | 6 | 끝 (2026-11-10) | BCNB 1,058명 → 관문 통과 **971명**. 뺀 87명: 모듈 3 정제 11 (S-B1), 조직형 Other type 76 (S-B2). V1·V2·V3(초음파 cN 민감도 0.65 / 특이도 0.85)·V6 통과. 산출물은 모두 `local/bcnb/`, 보고 `local/reports/bcnb_preop.md`. 자료 점검: `notes/bcnb_check_2026-11-10.md`. 실행: `python -m vh.bcnb` |
-| 7 | **미룸** | 세트 132명 중 실제 원격 재발은 3명뿐이다 (mini 크롭본 전체 838명 중 15명). L1 약 허가 표를 먼저 만들어야 하는데 들인 품에 비해 사례가 적다 |
+| 7 | 끝 (2026-11-17) | TCGA ② 재발 갈래 **7명** (원격 재발 14명 중). 목적: `[투약 기록]`을 실제 투약 그대로 써서 mini `lines.annotate`가 차수를 계산하게 함. 중단 사유는 실제 값으로만 (D-R2: PD·재발 직전까지 투약 → 진행, 보조 내분비 ≥1,640일 → 완료, AC 뒤 35일 안 탁산 → 계획된 변경, 그 밖 비움), 병용 약은 한 줄로 (D-R4). 뺀 7명: 전이 부위 'other' 4, 안트라사이클린 1회 용량 없음 2 (mini가 schema 위반을 냄), 투약 중 PD 1. L1 허가 표는 만들지 않음 (§7.5). G1~G7 통과. 국소 재발 10명은 다루지 않음 |
 | 8 | 일부 | TCGA 슬라이드 등록 (`out/tcga/images/slides.csv` 공개용, `local/slide_map.csv` 원본 대응) + V6 통과. 원본 svs가 로컬에 없어 mpp는 비어 있음. BCNB 주석은 6단계와 같이 멈춤 |
 | 9 | 틀만 (2026-11-16) | 모듈 결과를 받을 표·폴더 틀을 만듦 (`rules/image_tables.csv`). 등록·히트맵 코드는 모듈 결과가 나오면. 결과 형식 제안: `notes/module_result_format_proposal_2026-11-09.md` |
 

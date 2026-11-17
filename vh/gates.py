@@ -99,11 +99,15 @@ def g4(p: Patient, ps: dict) -> list[tuple[str, str]]:
         "locally_advanced" if group.startswith("III") else None
     if want and extent != want:
         out.append((f"병기군 {group}와 병기 범주 {extent}", "real"))
-    if ps["fields"].get("treatment_history"):
+    if p.branch == "TCGA_postop" and ps["fields"].get("treatment_history"):
         out.append(("판정 기준일 뒤 투약이 차트에 있음", "derived"))
     if p.branch == "TCGA_postop" and get(ps, "recurrence.status").get("value") != "none":
         out.append(("수술 직후 차트에 재발이 있음", "derived"))
-    days = [d["doc_date"] for d in ps["documents"]]
+    if p.branch == "TCGA_recur":
+        late = [t for t in ps["fields"].get("treatment_history") or [] if (t.get("start_day") or 0) > ps["index_day"]]
+        if late:
+            out.append((f"판정 기준일 뒤 시작한 투약 {len(late)}줄이 차트에 있음", "derived"))
+    days = [d["doc_date"] for d in ps["documents"] if d["doc_type"] != "medication"]   # 투약 기록은 날짜 없음 (VC 형식)
     if any(x is None for x in days) or days[0] != max(days):
         out.append(("문서 날짜 순서 (경과기록이 가장 늦어야 함)", "derived"))
     return out

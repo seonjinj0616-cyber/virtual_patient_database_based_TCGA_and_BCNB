@@ -1,0 +1,85 @@
+vp_id,항목,값
+VH-T0107,subtype_rule,HER2+
+VH-T0107,pam50,BRCA_LumA
+VH-T0107,recurrence_status,distant
+VH-T0107,metastasis_dx_days,291
+VH-T0107,drug_timeline,anastrozole [Hormone Therapy] d44~d296 | paclitaxel [Chemotherapy] d311~d486
+VH-T0107,os_months,23.80247888
+VH-T0107,os_status,0:LIVING
+VH-T0107,pfs_months,9.567018444
+VH-T0107,pfs_status,1:PROGRESSION
+VH-T0107,dfs_months,9.567018444
+VH-T0107,dfs_status,1:Recurred/Progressed
+VH-T0107,later_treatments,paclitaxel d311
+VH-T0203,subtype_rule,HR+/HER2-
+VH-T0203,pam50,BRCA_LumB
+VH-T0203,recurrence_status,distant
+VH-T0203,metastasis_dx_days,1922
+VH-T0203,drug_timeline,letrozole [Hormone Therapy] d1918~d2331 | exemestane [Hormone Therapy] d2332~d2422 | capecitabine [Chemotherapy] d2422~d2839 | bevacizumab [Other Targeted Therapy] d2451~d2822 | fulvestrant [Hormone Therapy] d2853~d2881
+VH-T0203,os_months,95.70306079
+VH-T0203,os_status,1:DECEASED
+VH-T0203,pfs_months,63.18834862
+VH-T0203,pfs_status,1:PROGRESSION
+VH-T0203,dfs_months,
+VH-T0203,dfs_status,
+VH-T0203,later_treatments,exemestane d2332 | capecitabine d2422 | bevacizumab d2451 | fulvestrant d2853
+VH-T0213,subtype_rule,HR+/HER2-
+VH-T0213,pam50,BRCA_LumA
+VH-T0213,recurrence_status,distant
+VH-T0213,metastasis_dx_days,1066
+VH-T0213,drug_timeline,cyclophosphamide [Chemotherapy] d85~d128 | doxorubicin [Chemotherapy] d85~d128 | paclitaxel [Chemotherapy] d141~d141 | docetaxel [Chemotherapy] d161~d204 | anastrozole [Hormone Therapy] d239~d1023 | zoledronic acid [Bone-modifying Agent] d1072~? | exemestane [Hormone Therapy] d1072~d1207 | tamoxifen [Hormone Therapy] d1207~?
+VH-T0213,os_months,53.02955584
+VH-T0213,os_status,0:LIVING
+VH-T0213,pfs_months,35.04619128
+VH-T0213,pfs_status,1:PROGRESSION
+VH-T0213,dfs_months,35.04619128
+VH-T0213,dfs_status,1:Recurred/Progressed
+VH-T0213,later_treatments,tamoxifen d1207
+VH-T0214,subtype_rule,HR+/HER2-
+VH-T0214,pam50,BRCA_LumA
+VH-T0214,recurrence_status,distant
+VH-T0214,metastasis_dx_days,143
+VH-T0214,drug_timeline,leuprolide [Hormone Therapy] d166~? | zoledronic acid [Bone-modifying Agent] d166~? | tamoxifen [Hormone Therapy] d166~d242 | paclitaxel [Chemotherapy] d292~?
+VH-T0214,os_months,21.53401059
+VH-T0214,os_status,0:LIVING
+VH-T0214,pfs_months,4.701318342
+VH-T0214,pfs_status,1:PROGRESSION
+VH-T0214,dfs_months,4.701318342
+VH-T0214,dfs_status,1:Recurred/Progressed
+VH-T0214,later_treatments,leuprolide+zoledronic acid d166 | tamoxifen d166 | paclitaxel d292
+VH-T0514,subtype_rule,HR+/HER2-
+VH-T0514,pam50,BRCA_LumA
+VH-T0514,recurrence_status,distant
+VH-T0514,metastasis_dx_days,188
+VH-T0514,drug_timeline,anastrozole [Hormone Therapy] d110~d188 | carboplatin [Chemotherapy] d196~d266 | paclitaxel [Chemotherapy] d196~d266
+VH-T0514,os_months,18.5093862
+VH-T0514,os_status,1:DECEASED
+VH-T0514,pfs_months,6.180754184
+VH-T0514,pfs_status,1:PROGRESSION
+VH-T0514,dfs_months,6.180754184
+VH-T0514,dfs_status,1:Recurred/Progressed
+VH-T0514,later_treatments,
+VH-T0546,subtype_rule,HR+/HER2-
+VH-T0546,pam50,BRCA_LumA
+VH-T0546,recurrence_status,distant
+VH-T0546,metastasis_dx_days,1810
+VH-T0546,drug_timeline,doxorubicin [Chemotherapy] d62~d104 | cyclophosphamide [Chemotherapy] d62~d104 | paclitaxel [Chemotherapy] d118~d171 | anastrozole [Hormone Therapy] d252~d437 | tamoxifen [Hormone Therapy] d500~? | letrozole [Hormone Therapy] d1844~d1928 (Clinical Progressive Disease) | fulvestrant [Hormone Therapy] d1928~d2187 (Clinical Progressive Disease) | exemestane [Hormone Therapy] d2187~? | everolimus [Other Targeted Therapy] d2187~?
+VH-T0546,os_months,77.65394352
+VH-T0546,os_status,0:LIVING
+VH-T0546,pfs_months,59.50619719
+VH-T0546,pfs_status,1:PROGRESSION
+VH-T0546,dfs_months,59.50619719
+VH-T0546,dfs_status,1:Recurred/Progressed
+VH-T0546,later_treatments,letrozole d1844 | fulvestrant d1928 | exemestane+everolimus d2187
+VH-T0561,subtype_rule,HER2+
+VH-T0561,pam50,
+VH-T0561,recurrence_status,distant
+VH-T0561,metastasis_dx_days,361
+VH-T0561,drug_timeline,trastuzumab [HER2-targeted Therapy] d54~d54 | docetaxel [Chemotherapy] d54~d54 | cyclophosphamide [Chemotherapy] d54~d54 | gemcitabine [Chemotherapy] d468~d530
+VH-T0561,os_months,28.89831344
+VH-T0561,os_status,1:DECEASED
+VH-T0561,pfs_months,11.86836309
+VH-T0561,pfs_status,1:PROGRESSION
+VH-T0561,dfs_months,11.86836309
+VH-T0561,dfs_status,1:Recurred/Progressed
+VH-T0561,later_treatments,gemcitabine d468
