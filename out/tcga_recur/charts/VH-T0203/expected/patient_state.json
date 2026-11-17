@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0203",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 1936,
+  "index_day": 2422,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2028-10-26"
+      "doc_date": "2030-02-24"
     },
     {
       "doc_id": "D2",
@@ -34,8 +34,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2023.7.9 core bx로 진단",
-          "char_start": 199,
-          "char_end": 219
+          "char_start": 201,
+          "char_end": 221
         }
       },
       "histology": {
@@ -45,8 +45,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "침윤성 유관암 (invasive ductal carcinoma, NST)",
-          "char_start": 383,
-          "char_end": 423
+          "char_start": 414,
+          "char_end": 454
         }
       },
       "grade": {
@@ -56,8 +56,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "II (Nottingham grade 2)",
-          "char_start": 435,
-          "char_end": 458
+          "char_start": 466,
+          "char_end": 489
         }
       }
     },
@@ -78,8 +78,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 6th)",
-          "char_start": 489,
-          "char_end": 520
+          "char_start": 520,
+          "char_end": 551
         }
       },
       "group": {
@@ -89,8 +89,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 500,
-          "char_end": 509
+          "char_start": 531,
+          "char_end": 540
         }
       },
       "positive_ln_count": {
@@ -103,8 +103,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 26개",
-          "char_start": 466,
-          "char_end": 480
+          "char_start": 497,
+          "char_end": 511
         }
       },
       "disease_extent": {
@@ -114,8 +114,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 500,
-          "char_end": 509
+          "char_start": 531,
+          "char_end": 540
         }
       },
       "metastatic_sites": {
@@ -125,8 +125,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1 M0",
-          "char_start": 489,
-          "char_end": 498
+          "char_start": 520,
+          "char_end": 529
         }
       },
       "operable": {
@@ -136,8 +136,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "우측 유방 절제술 + 액와 림프절 수술",
-          "char_start": 350,
-          "char_end": 371
+          "char_start": 381,
+          "char_end": 402
         }
       }
     },
@@ -158,8 +158,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 양성 (Allred 6, 5+1)",
-          "char_start": 531,
-          "char_end": 552
+          "char_start": 562,
+          "char_end": 583
         }
       },
       "pr_percent": {
@@ -178,8 +178,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 양성 (Allred 6, 4+2)",
-          "char_start": 555,
-          "char_end": 576
+          "char_start": 586,
+          "char_end": 607
         }
       },
       "her2_ihc": {
@@ -193,8 +193,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 0",
-          "char_start": 579,
-          "char_end": 592
+          "char_start": 610,
+          "char_end": 623
         }
       },
       "her2_ish": {
@@ -203,8 +203,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 ISH: 시행하지 않음",
-          "char_start": 595,
-          "char_end": 612
+          "char_start": 626,
+          "char_end": 643
         }
       },
       "pdl1": {
@@ -223,8 +223,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 615,
-          "char_end": 624
+          "char_start": 646,
+          "char_end": 655
         }
       }
     },
@@ -236,8 +236,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/54",
-          "char_start": 310,
-          "char_end": 314
+          "char_start": 341,
+          "char_end": 345
         }
       },
       "age": {
@@ -247,8 +247,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/54",
-          "char_start": 310,
-          "char_end": 314
+          "char_start": 341,
+          "char_end": 345
         }
       },
       "menopausal_status": {
@@ -258,8 +258,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 158,
-          "char_end": 162
+          "char_start": 160,
+          "char_end": 164
         }
       },
       "menopausal_basis": {
@@ -269,12 +269,12 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2028-10-26",
+        "observed_date": "2030-02-24",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
-          "char_start": 166,
-          "char_end": 175
+          "char_start": 168,
+          "char_end": 177
         }
       }
     },
@@ -285,23 +285,46 @@
         ],
         "setting": "adjuvant",
         "start_date": "2028-10-08",
-        "end_date": null,
+        "end_date": "2029-11-25",
         "start_day": 1918,
-        "end_day": null,
-        "duration_days": null,
-        "ongoing": true,
+        "end_day": 2331,
+        "duration_days": 413,
+        "cycles": null,
+        "progression_day": 1922,
+        "stop_reason": "progression",
+        "best_response": null,
+        "source": {
+          "doc_id": "D4",
+          "quote": "letrozole   2028.10.8   2029.11.25   -   -   진행",
+          "char_start": 1108,
+          "char_end": 1155
+        },
+        "line": null,
+        "endocrine_line": null,
+        "chemo_line": null
+      },
+      {
+        "drugs": [
+          "exemestane"
+        ],
+        "setting": "palliative",
+        "start_date": "2029-11-26",
+        "end_date": "2030-02-24",
+        "start_day": 2332,
+        "end_day": 2422,
+        "duration_days": 90,
         "cycles": null,
         "progression_day": null,
         "stop_reason": null,
         "best_response": null,
         "source": {
           "doc_id": "D4",
-          "quote": "letrozole   2028.10.8   현재 투약 중   -   -   -",
-          "char_start": 1077,
-          "char_end": 1120
+          "quote": "exemestane   2029.11.26   2030.2.24   -   -   -",
+          "char_start": 1162,
+          "char_end": 1209
         },
-        "line": null,
-        "endocrine_line": null,
+        "line": 1,
+        "endocrine_line": 1,
         "chemo_line": null
       }
     ],
@@ -325,12 +348,20 @@
         "source": {
           "doc_id": "D1",
           "quote": "2028.10.12 간 전이",
-          "char_start": 237,
-          "char_end": 252
+          "char_start": 239,
+          "char_end": 254
         }
       },
       "adjuvant_endocrine_end_date": {
-        "status": "not_recorded"
+        "status": "present",
+        "value": "2029-11-25",
+        "raw": "2029.11.25",
+        "source": {
+          "doc_id": "D1",
+          "quote": "2029.11.25 종료",
+          "char_start": 271,
+          "char_end": 284
+        }
       },
       "status": {
         "status": "present",
@@ -339,8 +370,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 248,
-          "char_end": 252
+          "char_start": 250,
+          "char_end": 254
         }
       },
       "metastatic_sites": {
@@ -352,8 +383,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 248,
-          "char_end": 252
+          "char_start": 250,
+          "char_end": 254
         }
       },
       "metastasis_day": {
@@ -363,8 +394,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2028.10.12 간 전이",
-          "char_start": 237,
-          "char_end": 252
+          "char_start": 239,
+          "char_end": 254
         }
       },
       "recurrence_day": {
@@ -374,8 +405,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2028.10.12 간 전이",
-          "char_start": 237,
-          "char_end": 252
+          "char_start": 239,
+          "char_end": 254
         }
       },
       "surgery": {
@@ -395,8 +426,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "PIK3CA": {
@@ -407,8 +438,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "AKT1": {
@@ -419,8 +450,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "PTEN": {
@@ -431,8 +462,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "BRCA1": {
@@ -443,8 +474,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "BRCA2": {
@@ -455,8 +486,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         },
         "PALB2": {
@@ -467,8 +498,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 829,
-            "char_end": 874
+            "char_start": 860,
+            "char_end": 905
           }
         }
       }
@@ -495,11 +526,11 @@
         "rule_id": "DEEM-SG-1Y",
         "category": "chemo",
         "status": "met",
-        "basis": "선행·보조요법 letrozole 투여 중 전이 (투약 중 표시) (기준 365일 이내)",
+        "basis": "선행·보조요법 letrozole 투여 중 전이 (종료 409일 전) (기준 365일 이내)",
         "regimen_refs": [
           0
         ],
-        "gap_days": 0,
+        "gap_days": -409,
         "notice_page": "63"
       },
       {
@@ -515,21 +546,21 @@
         "rule_id": "DEEM-ENDO-ADJ-1Y",
         "category": "endocrine",
         "status": "met",
-        "basis": "보조 내분비요법 letrozole 투여 중 전이 (투약 중 표시) (기준 365일 이내)",
+        "basis": "보조 내분비요법 letrozole 투여 중 전이 (종료 409일 전) (기준 365일 이내)",
         "regimen_refs": [
           0
         ],
-        "gap_days": 0,
+        "gap_days": -409,
         "notice_page": "57"
       }
     ],
     "at_index": {
-      "age": 59,
+      "age": 60,
       "recent_therapy_28d": {
         "status": "yes",
-        "basis": "letrozole 기준일에 투여 중 (투약 중 표시)",
+        "basis": "exemestane 기준일 0일 전 종료",
         "regimen_refs": [
-          0
+          1
         ],
         "gap_days": 0
       }

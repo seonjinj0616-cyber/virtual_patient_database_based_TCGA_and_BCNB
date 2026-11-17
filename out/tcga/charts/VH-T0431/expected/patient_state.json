@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0431",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 49,
+  "index_day": 31,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2023-04-17"
+      "doc_date": "2023-03-30"
     },
     {
       "doc_id": "D2",
@@ -17,7 +17,7 @@
     {
       "doc_id": "D3",
       "doc_type": "molecular",
-      "doc_date": "2023-04-09"
+      "doc_date": "2023-03-30"
     }
   ],
   "fields": {
@@ -264,7 +264,7 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2023-04-17",
+        "observed_date": "2023-03-30",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
@@ -330,8 +330,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "PIK3CA": {
@@ -342,8 +342,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "AKT1": {
@@ -354,8 +354,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "PTEN": {
@@ -366,8 +366,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "BRCA1": {
@@ -378,8 +378,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "BRCA2": {
@@ -390,8 +390,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         },
         "PALB2": {
@@ -402,8 +402,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 809,
-            "char_end": 854
+            "char_start": 810,
+            "char_end": 855
           }
         }
       }
@@ -411,9 +411,9 @@
     "genomic_reports": [
       {
         "doc_id": "D3",
-        "report_date": "2023-04-09",
+        "report_date": "2023-03-30",
         "specimen": "primary",
-        "raw_text": "[분자병리 검사 결과]\n환자명: 김가상   등록번호: 00000431   F/59\n검사기관: 가상유전체검사센터   보고일: 2023.4.9\n검체: 원발 종양 조직 (수술 검체)\n검사법: 전장 엑솜 염기서열 분석\n\n검출된 변이 (Clinically significant variants)\n  없음\n\n검출되지 않음 (Not detected)\n  ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2\n\n* 분석 유전자: ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2"
+        "raw_text": "[분자병리 검사 결과]\n환자명: 김가상   등록번호: 00000431   F/59\n검사기관: 가상유전체검사센터   보고일: 2023.3.30\n검체: 원발 종양 조직 (수술 검체)\n검사법: 전장 엑솜 염기서열 분석\n\n검출된 변이 (Clinically significant variants)\n  없음\n\n검출되지 않음 (Not detected)\n  ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2\n\n* 분석 유전자: ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2"
       }
     ],
     "deemed_lines": [

@@ -1,7 +1,10 @@
-"""TCGA ② 재발 갈래: 실제 원격 재발이 있는 환자를 재발 외래 시점 차트로 만든다 (투약 기록 포함).
+"""TCGA ② 재발 갈래: 실제 원격 재발이 있는 환자를 고식 차수를 정하는 외래 시점 차트로 만든다 (투약 기록 포함).
 
 - 진단 시 값(병리·수용체·변이·합성 칸)은 TCGA ① 생성(tcga.build_all)을 그대로 쓴다
-- 판정 기준일 = 원격 전이일 + 14일 (D-R1). 그날까지 시작한 실제 투약만 차트에 쓰고, 뒤의 투약은 정답 표로
+- 장면 (D-R1): mini가 실제 전체 투약으로 센 고식 2차가 있으면 2차 결정, 없으면 1차 결정.
+  판정 기준일 = 그 차수 약의 실제 시작일. 그 전에 시작한 투약만 차트에 쓰고, 그날부터의 투약은
+  truth.csv의 실제 처방 기록(참고용, 정답 아님)으로
+- 기준일에 아직 투약 중인 줄은 "현재 투약 중"으로 쓰고 반응은 쓰지 않는다 (반응 판정이 기준일 뒤일 수 있음)
 - 투약은 처방된 그대로 (mini 변환기의 treatment_history: 약, 구분, 시작·종료일, 주기, 반응)
 - 중단 사유는 실제 값으로만 정한다 (D-R2). 근거가 없으면 비운다 → 차수는 mini lines.annotate가 계산
 
@@ -18,9 +21,8 @@ from vh import gates, render
 from vh.common import MINI, OUT, REPORTS, Rec, read_csv, write_csv
 from vh.tcga import build_all, entry
 
-INDEX_AFTER_METASTASIS = 14                    # D-R1: 재발 외래 = 원격 전이일 + 14일 (VC-0103 간격과 비슷)
 ADJ_ENDOCRINE_DONE = 1640                      # D-R2: 보조 내분비를 약 4.5년(1,640일) 이상 쓰면 완료
-SWITCH_GAP = 35                                # D-R2: 보조 항암 끝나고 35일 안에 다른 보조 항암 시작 → 계획된 변경
+SWITCH_GAP = 28                                # D-R2: AC 끝나고 28일 안에 탁산 → 계획된 변경 (mini rules.py 차수 규칙 5와 같음)
 RECUR_GAP = 31                                 # D-R2: 전이일 31일 전 이후에 끝났거나 계속 중이면 재발로 중단 (진행)
 STANDARD_INTERVALS = (7, 14, 21, 28)           # 차트 주기 표기 (weekly·q2w·q3w·q4w)
 OUT_DIR = OUT / "tcga_recur"
@@ -76,7 +78,7 @@ def treatments(ps: dict, index_day: int, mday: int, cls: dict) -> tuple[list[dic
         if t.get("start_day") is None:
             problems.append(f"투약 시작일 없음: {'+'.join(t['drugs'])}")
             continue
-        if t["start_day"] > index_day:
+        if t["start_day"] >= index_day:
             later.append(t)
             continue
         cyc = t.get("cycles")
@@ -97,9 +99,7 @@ def treatments(ps: dict, index_day: int, mday: int, cls: dict) -> tuple[list[dic
             doses[g] = a[0]["dose_per_admin"]
         reason, why = stop_reason(i, items, mday, cls)
         ongoing = t.get("end_day") is not None and t["end_day"] > index_day
-        resp = t.get("best_response") if t.get("best_response") in ("CR", "PR", "SD", "PD") else None
-        if ongoing and resp == "PD":
-            problems.append(f"{'+'.join(t['drugs'])}: 투약 중인데 실제 반응 PD — mini가 반응 칸 PD를 중단 사유 '진행'으로 읽음")
+        resp = t.get("best_response") if t.get("best_response") in ("CR", "PR", "SD", "PD") and not ongoing else None
         shown.append({"drugs": t["drugs"], "setting": t["setting"], "start_day": t["start_day"],
                       "end_day": None if ongoing else t.get("end_day"), "ongoing": ongoing, "cycles": cyc,
                       "best_response": resp, "stop_reason": None if ongoing else reason, "doses": doses,
@@ -136,7 +136,13 @@ def main() -> int:
         if problems:
             dropped.append({"vp_id": p.vp_id, "reason": "; ".join(problems)})
             continue
-        p.branch, p.index_day = "TCGA_recur", mday + INDEX_AFTER_METASTASIS
+        lines = [t for t in ps0["fields"]["treatment_history"] if t.get("line") and t.get("start_day") is not None]
+        k = 2 if any(t["line"] == 2 for t in lines) else 1 if lines else None
+        if k is None:
+            dropped.append({"vp_id": p.vp_id, "reason": "D-R1 고식 투약 기록 없음: 결정 장면을 만들 수 없음"})
+            continue
+        p.branch, p.scene_line = "TCGA_recur", k
+        p.index_day = min(t["start_day"] for t in lines if t["line"] == k)
         p.recs.pop("recurrence.status", None)
         p.add(Rec("recurrence.status", "present", "distant", "real", rule_id="M-01", source_column="recurrence_status"))
         p.add(Rec("recurrence.metastatic_sites", "present", sites, "real", rule_id="M-01", source_column="nte_sites"))
@@ -159,6 +165,10 @@ def main() -> int:
             dropped.append({"vp_id": p.vp_id, "reason": f"G2 표기 없음: {ex}"})
             continue
         res = gates.run(p, ps, errs, env, text)
+        seen = [t.get("line") for t in ps["fields"]["treatment_history"] if t.get("line")]
+        if (max(seen) if seen else 0) + 1 != k:                       # 차트만 읽은 mini 차수 + 1 = 장면 차수
+            res["failed"] = res["failed"] + ["D-R1"]
+            res["D-R1"] = [f"차트로 센 마지막 고식 차수 {max(seen) if seen else 0} + 1 != 장면 {k}차"]
         if res["failed"]:
             dropped.append({"vp_id": p.vp_id, "reason": "; ".join(f"{k}: {res[k][0]}" for k in res["failed"])})
             continue
@@ -176,11 +186,14 @@ def main() -> int:
                            "start_day": t["start_day"], "end_day": t["end_day"], "stop_reason": t["stop_reason"] or "",
                            "stop_basis": t["stop_basis"], "best_response": t["best_response"] or "",
                            "line (mini 계산)": g.get("line"), "rule_id": "M-01, D-R2"})
-        p.truth["later_treatments"] = " | ".join(f"{'+'.join(t['drugs'])} d{t['start_day']}" for t in later)
+        p.truth["scene_line"] = k
+        p.truth["actual_prescriptions_from_index_reference"] = " | ".join(
+            f"{'+'.join(t['drugs'])} d{t['start_day']}" + (f" (mini {t['line']}차)" if t.get("line") else "") for t in later)
         kept.append((p, ps))
 
     write_csv(OUT_DIR / "patients.csv", [{"vp_id": p.vp_id, "branch": p.branch, "dx_date": p.dx_date,
-                                          "index_day": p.index_day, "metastasis_day": p.recs["recurrence.metastasis_day"].value,
+                                          "index_day": p.index_day, "scene_line": p.scene_line,
+                                          "metastasis_day": p.recs["recurrence.metastasis_day"].value,
                                           "sex": "F", "age": p.recs["patient.age"].value} for p, _ in kept])
     write_csv(OUT_DIR / "fields.csv", [r.row(p.vp_id) for p, _ in kept for r in p.recs.values()])
     write_csv(OUT_DIR / "treatments.csv", rows_t)
@@ -188,7 +201,8 @@ def main() -> int:
                                       for p, _ in kept for k, v in p.truth.items()])
     write_csv(REPORTS / "tcga_recur_excluded.csv", dropped, ["vp_id", "reason"])
     lines = collections.Counter((ps["fields"].get("at_index") or {}).get("line") for _, ps in kept)
-    summary = {"세트": len(kept), "뺀 환자": len(dropped), "요법 줄": len(rows_t),
+    summary = {"세트": len(kept), "장면": dict(collections.Counter(f"고식 {p.scene_line}차 결정" for p, _ in kept)),
+               "뺀 환자": len(dropped), "요법 줄": len(rows_t),
                "중단 사유": dict(collections.Counter(r["stop_reason"] or "(비움)" for r in rows_t)),
                "중단 사유 근거": dict(collections.Counter(r["stop_basis"].split(" (")[0].split(" ")[0] for r in rows_t)),
                "뺀 이유": dict(collections.Counter(r["reason"].split(":")[0][:20] for r in dropped))}

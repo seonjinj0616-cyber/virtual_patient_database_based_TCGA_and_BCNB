@@ -6,7 +6,7 @@ surgery_path·ngs), field_vocab.csv의 expression, mini TCGA 차트(data/tcga_br
 from __future__ import annotations
 
 from vh.common import CREATED_AT, Patient, mini_on_path
-from vh.tcga import DAY_INDEX, DAY_NGS, DAY_PATH, DAY_SURGERY, GENES
+from vh.tcga import DAY_NGS, DAY_PATH, DAY_SURGERY, GENES
 
 mini_on_path()
 from src.input.script.virtual.virtual_chart import Chart, F, check, kdate  # noqa: E402
@@ -126,14 +126,18 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     R = p.recs
     age = R["patient.age"].value
     recur = p.branch == "TCGA_recur"
-    c = Chart(p.vp_id, p.dx_date, p.index_day if recur else DAY_INDEX, created_at=CREATED_AT)
+    c = Chart(p.vp_id, p.dx_date, p.index_day, created_at=CREATED_AT)
+    ngs = min(DAY_NGS, p.index_day) if p.branch == "TCGA_postop" else DAY_NGS   # D-10: 분자병리 보고는 외래일보다 늦지 않게
     D = c.on
 
     # R-01 경과기록 (VC-0118 형식, 재발 갈래는 VC-0103 형식)
     d = c.doc("progress_note", c.index_date)
     d.t(f"<외래 경과기록>   {kdate(c.index_date)}   종양내과\n").ident(age)
     d.t("병원: 가상대학교병원 종양내과   담당의: 이가상\n\n")
-    d.t("S) 재발 확인 후 외래.\n   폐경: " if recur else "S) 수술 후 외래, 회복 양호.\n   폐경: ")
+    if recur:                                      # R-05: 장면 차수 (D-R1)
+        d.t("S) 재발 확인 후 외래.\n   폐경: " if p.scene_line == 1 else f"S) 고식 {p.scene_line - 1}차 치료 후 외래.\n   폐경: ")
+    else:
+        d.t("S) 수술 후 외래, 회복 양호.\n   폐경: ")
     meno = R["patient.menopausal_status"].value
     d.put(_get(MENO, meno, "폐경"), F("patient.menopausal_status", meno)).t("\n")
     ecog = R["patient.ecog"].value
@@ -160,7 +164,7 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
         d.t("   ").put(f"{', '.join(nd_genes)} 유전자 검사: 시행하지 않음",
                        *(F(f"molecular.mutations.{g}", status="not_done", raw="시행하지 않음") for g in nd_genes))
         d.t("\n")
-    d.t("\nP) 전이성 1차 치료 결정\n" if recur else "\nP) 보조 전신 요법 결정\n")
+    d.t(f"\nP) 고식 {p.scene_line}차 치료 결정\n" if recur else "\nP) 보조 전신 요법 결정\n")
 
     # R-02 수술 병리 (surgery_path 형식)
     obs = D(DAY_SURGERY)
@@ -202,9 +206,9 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     # R-03 분자병리 (ngs 형식, 원발 조직 엑솜)
     genes = {gname: R[f"molecular.mutations.{gname}"] for gname in GENES}
     if any(r.status == "present" for r in genes.values()):
-        d = c.doc("molecular", D(DAY_NGS))
+        d = c.doc("molecular", D(ngs))
         d.t("[분자병리 검사 결과]\n").ident(age, full=False)
-        d.t(f"검사기관: 가상유전체검사센터   보고일: {kdate(D(DAY_NGS))}\n검체: 원발 종양 조직 (수술 검체)\n")
+        d.t(f"검사기관: 가상유전체검사센터   보고일: {kdate(D(ngs))}\n검체: 원발 종양 조직 (수술 검체)\n")
         d.t("검사법: 전장 엑솜 염기서열 분석\n\n검출된 변이 (Clinically significant variants)\n")
         found = [gname for gname, r in genes.items() if r.status == "present" and r.value["result"] == "detected"]
         for gname in found:
@@ -224,7 +228,7 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
             d.put(", ".join(nd), *(F(f"molecular.mutations.{gname}", result="not_detected", specimen="primary")
                                    for gname in nd))
         d.t(f"\n\n* 분석 유전자: {', '.join(GENES)}\n")
-        d.genomic_report("primary", D(DAY_NGS))
+        d.genomic_report("primary", D(ngs))
 
     if p.treatments:                               # R-06 투약 기록 (VC meds() 형식)
         medication(c, age, p.treatments)

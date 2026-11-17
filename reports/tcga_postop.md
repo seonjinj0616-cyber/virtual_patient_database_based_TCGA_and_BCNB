@@ -1,39 +1,40 @@
 # TCGA ① (수술 후) 가상환자 세트 — 생성 보고
 
-mini 커밋: `7a1f731` · 실행: `python -m vh.build`
+mini 커밋: `bb45a21` · 실행: `python -m vh.build`
 
 ## 인원
 
 | 항목 | 수 |
 |---|---|
-| 세트 (관문 통과) | 707 |
+| 세트 (관문 통과) | 671 |
 | 뺀 환자: S-02 | 8 |
 | 뺀 환자: S-03 | 9 |
 | 뺀 환자: S-04 | 80 |
 | 뺀 환자: S-07 | 25 |
 | 뺀 환자: S-08 | 7 |
 | 뺀 환자: S-09 | 2 |
+| 뺀 환자: S-10 | 36 |
 | 넘길 목록 (실제 값 원인) | 0 |
 
-아형 (규칙 판정): HR+/HER2- 469, HER2+ 126, TNBC 112
+아형 (규칙 판정): HR+/HER2- 445, HER2+ 116, TNBC 110
 
 ## 칸 출처 (present 칸 수)
 
 | origin | 규칙 | 칸 수 |
 |---|---|---|
-| derived | D-01 | 707 |
-| derived | D-03 | 707 |
-| derived | D-05 | 975 |
-| derived | D-06 | 97 |
-| derived | D-08 | 286 |
-| real | D-09 | 137 |
-| real | M-01 | 11396 |
-| synthetic | Y-01 | 707 |
+| derived | D-01 | 671 |
+| derived | D-03 | 671 |
+| derived | D-05 | 939 |
+| derived | D-06 | 96 |
+| derived | D-08 | 280 |
+| real | D-09 | 124 |
+| real | M-01 | 10813 |
+| synthetic | Y-01 | 671 |
 | synthetic | Y-02 | 44 |
-| synthetic | Y-04 | 707 |
-| synthetic | Y-05 | 707 |
-| synthetic | Y-06 | 991 |
-| synthetic | Y-07 | 298 |
+| synthetic | Y-04 | 671 |
+| synthetic | Y-05 | 671 |
+| synthetic | Y-06 | 938 |
+| synthetic | Y-07 | 268 |
 
 ## 검증
 
@@ -42,13 +43,13 @@ mini 커밋: `7a1f731` · 실행: `python -m vh.build`
 ```
 {
  "checks": {
-  "나이": 707,
-  "ER 판정": 707,
-  "PR 판정": 707,
-  "pT": 707,
-  "pM": 476,
-  "병기군": 707,
-  "HER2 IHC 점수": 438
+  "나이": 671,
+  "ER 판정": 671,
+  "PR 판정": 671,
+  "pT": 671,
+  "pM": 443,
+  "병기군": 671,
+  "HER2 IHC 점수": 420
  },
  "mismatch": []
 }
@@ -58,7 +59,7 @@ mini 커밋: `7a1f731` · 실행: `python -m vh.build`
 
 ```
 {
- "n": 707,
+ "n": 671,
  "mismatch": []
 }
 ```
@@ -93,17 +94,17 @@ mini 커밋: `7a1f731` · 실행: `python -m vh.build`
 ```
 {
  "Ki-67 높음 비율 (PAM50별)": {
-  "BRCA_Her2": 0.8,
-  "BRCA_LumA": 0.27,
+  "BRCA_Her2": 0.79,
+  "BRCA_LumA": 0.28,
   "BRCA_Normal": 0.32,
-  "BRCA_LumB": 0.71,
-  "BRCA_Basal": 0.75,
+  "BRCA_LumB": 0.7,
+  "BRCA_Basal": 0.76,
   "?": 0.36
  },
  "grade 3 비율 (아형별)": {
   "HER2+": 0.56,
-  "HR+/HER2-": 0.21,
-  "TNBC": 0.71
+  "HR+/HER2-": 0.22,
+  "TNBC": 0.7
  },
  "기대": "LumA < LumB, HR+/HER2- < TNBC"
 }
@@ -113,7 +114,7 @@ mini 커밋: `7a1f731` · 실행: `python -m vh.build`
 
 ```
 {
- "n": 761,
+ "n": 720,
  "mismatch": []
 }
 ```

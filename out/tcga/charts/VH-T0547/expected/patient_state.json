@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0547",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 49,
+  "index_day": 41,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2022-03-23"
+      "doc_date": "2022-03-15"
     },
     {
       "doc_id": "D2",
@@ -264,7 +264,7 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2022-03-23",
+        "observed_date": "2022-03-15",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",

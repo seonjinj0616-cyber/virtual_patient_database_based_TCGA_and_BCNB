@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0687",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 49,
+  "index_day": 43,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2023-01-13"
+      "doc_date": "2023-01-07"
     },
     {
       "doc_id": "D2",
@@ -29,8 +29,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2022.11.25 core bx로 진단",
-          "char_start": 202,
-          "char_end": 224
+          "char_start": 201,
+          "char_end": 223
         }
       },
       "histology": {
@@ -40,8 +40,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "침윤성 유관암 (invasive ductal carcinoma, NST)",
-          "char_start": 384,
-          "char_end": 424
+          "char_start": 383,
+          "char_end": 423
         }
       },
       "grade": {
@@ -51,8 +51,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "III (Nottingham grade 3)",
-          "char_start": 436,
-          "char_end": 460
+          "char_start": 435,
+          "char_end": 459
         }
       }
     },
@@ -73,8 +73,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N1mi M0, stage IIA (AJCC 6th)",
-          "char_start": 491,
-          "char_end": 525
+          "char_start": 490,
+          "char_end": 524
         }
       },
       "group": {
@@ -84,8 +84,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 505,
-          "char_end": 514
+          "char_start": 504,
+          "char_end": 513
         }
       },
       "positive_ln_count": {
@@ -98,8 +98,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 13개",
-          "char_start": 468,
-          "char_end": 482
+          "char_start": 467,
+          "char_end": 481
         }
       },
       "disease_extent": {
@@ -109,8 +109,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 505,
-          "char_end": 514
+          "char_start": 504,
+          "char_end": 513
         }
       },
       "metastatic_sites": {
@@ -120,8 +120,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N1mi M0",
-          "char_start": 491,
-          "char_end": 503
+          "char_start": 490,
+          "char_end": 502
         }
       },
       "operable": {
@@ -131,8 +131,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "좌측 유방 절제술 + 액와 림프절 수술",
-          "char_start": 351,
-          "char_end": 372
+          "char_start": 350,
+          "char_end": 371
         }
       }
     },
@@ -153,8 +153,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 음성 (Allred 0, 0+0)",
-          "char_start": 536,
-          "char_end": 557
+          "char_start": 535,
+          "char_end": 556
         }
       },
       "pr_percent": {
@@ -173,8 +173,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 음성 (Allred 0, 0+0)",
-          "char_start": 560,
-          "char_end": 581
+          "char_start": 559,
+          "char_end": 580
         }
       },
       "her2_ihc": {
@@ -183,8 +183,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 IHC: 시행하지 않음",
-          "char_start": 584,
-          "char_end": 601
+          "char_start": 583,
+          "char_end": 600
         }
       },
       "her2_ish": {
@@ -199,8 +199,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 604,
-          "char_end": 628
+          "char_start": 603,
+          "char_end": 627
         }
       },
       "pdl1": {
@@ -219,8 +219,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 631,
-          "char_end": 640
+          "char_start": 630,
+          "char_end": 639
         }
       }
     },
@@ -232,8 +232,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/36",
-          "char_start": 308,
-          "char_end": 312
+          "char_start": 307,
+          "char_end": 311
         }
       },
       "age": {
@@ -243,8 +243,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/36",
-          "char_start": 308,
-          "char_end": 312
+          "char_start": 307,
+          "char_end": 311
         }
       },
       "menopausal_status": {
@@ -254,8 +254,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 전",
-          "char_start": 161,
-          "char_end": 165
+          "char_start": 160,
+          "char_end": 164
         }
       },
       "menopausal_basis": {
@@ -265,12 +265,12 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2023-01-13",
+        "observed_date": "2023-01-07",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
-          "char_start": 169,
-          "char_end": 178
+          "char_start": 168,
+          "char_end": 177
         }
       }
     },
@@ -301,8 +301,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "재발 소견 없음",
-          "char_start": 243,
-          "char_end": 251
+          "char_start": 242,
+          "char_end": 250
         }
       },
       "metastatic_sites": {
@@ -331,8 +331,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "PIK3CA": {
@@ -343,8 +343,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "AKT1": {
@@ -355,8 +355,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "PTEN": {
@@ -367,8 +367,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "BRCA1": {
@@ -379,8 +379,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "BRCA2": {
@@ -391,8 +391,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         },
         "PALB2": {
@@ -403,8 +403,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 844,
-            "char_end": 889
+            "char_start": 843,
+            "char_end": 888
           }
         }
       }

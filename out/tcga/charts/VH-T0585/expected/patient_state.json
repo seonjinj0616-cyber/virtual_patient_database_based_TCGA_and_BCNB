@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0585",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 49,
+  "index_day": 33,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2024-10-21"
+      "doc_date": "2024-10-05"
     },
     {
       "doc_id": "D2",
@@ -17,7 +17,7 @@
     {
       "doc_id": "D3",
       "doc_type": "molecular",
-      "doc_date": "2024-10-13"
+      "doc_date": "2024-10-05"
     }
   ],
   "fields": {
@@ -29,8 +29,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.9.2 core bx로 진단",
-          "char_start": 203,
-          "char_end": 223
+          "char_start": 202,
+          "char_end": 222
         }
       },
       "histology": {
@@ -40,8 +40,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "침윤성 유관암 (invasive ductal carcinoma, NST)",
-          "char_start": 380,
-          "char_end": 420
+          "char_start": 379,
+          "char_end": 419
         }
       },
       "grade": {
@@ -51,8 +51,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "I (Nottingham grade 1)",
-          "char_start": 432,
-          "char_end": 454
+          "char_start": 431,
+          "char_end": 453
         }
       }
     },
@@ -73,8 +73,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 7th)",
-          "char_start": 484,
-          "char_end": 515
+          "char_start": 483,
+          "char_end": 514
         }
       },
       "group": {
@@ -84,8 +84,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 495,
-          "char_end": 504
+          "char_start": 494,
+          "char_end": 503
         }
       },
       "positive_ln_count": {
@@ -98,8 +98,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 3개 / 검사 5개",
-          "char_start": 462,
-          "char_end": 475
+          "char_start": 461,
+          "char_end": 474
         }
       },
       "disease_extent": {
@@ -109,8 +109,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 495,
-          "char_end": 504
+          "char_start": 494,
+          "char_end": 503
         }
       },
       "metastatic_sites": {
@@ -120,8 +120,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1 M0",
-          "char_start": 484,
-          "char_end": 493
+          "char_start": 483,
+          "char_end": 492
         }
       },
       "operable": {
@@ -131,8 +131,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "우측 유방 절제술 + 액와 림프절 수술",
-          "char_start": 347,
-          "char_end": 368
+          "char_start": 346,
+          "char_end": 367
         }
       }
     },
@@ -153,8 +153,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 526,
-          "char_end": 548
+          "char_start": 525,
+          "char_end": 547
         }
       },
       "pr_percent": {
@@ -173,8 +173,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 8, 5+3)",
-          "char_start": 551,
-          "char_end": 573
+          "char_start": 550,
+          "char_end": 572
         }
       },
       "her2_ihc": {
@@ -188,8 +188,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 2+",
-          "char_start": 576,
-          "char_end": 590
+          "char_start": 575,
+          "char_end": 589
         }
       },
       "her2_ish": {
@@ -204,8 +204,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 593,
-          "char_end": 617
+          "char_start": 592,
+          "char_end": 616
         }
       },
       "pdl1": {
@@ -224,8 +224,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 620,
-          "char_end": 629
+          "char_start": 619,
+          "char_end": 628
         }
       }
     },
@@ -237,8 +237,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/71",
-          "char_start": 306,
-          "char_end": 310
+          "char_start": 305,
+          "char_end": 309
         }
       },
       "age": {
@@ -248,8 +248,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/71",
-          "char_start": 306,
-          "char_end": 310
+          "char_start": 305,
+          "char_end": 309
         }
       },
       "menopausal_status": {
@@ -259,8 +259,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 162,
-          "char_end": 166
+          "char_start": 161,
+          "char_end": 165
         }
       },
       "menopausal_basis": {
@@ -270,12 +270,12 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2024-10-21",
+        "observed_date": "2024-10-05",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
-          "char_start": 170,
-          "char_end": 179
+          "char_start": 169,
+          "char_end": 178
         }
       }
     },
@@ -306,8 +306,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "재발 소견 없음",
-          "char_start": 241,
-          "char_end": 249
+          "char_start": 240,
+          "char_end": 248
         }
       },
       "metastatic_sites": {
@@ -336,8 +336,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         },
         "PIK3CA": {
@@ -355,8 +355,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PIK3CA   c.3140A>G (p.H1047R)   VAF 60.2%",
-            "char_start": 806,
-            "char_end": 847
+            "char_start": 804,
+            "char_end": 845
           }
         },
         "AKT1": {
@@ -367,8 +367,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         },
         "PTEN": {
@@ -379,8 +379,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         },
         "BRCA1": {
@@ -391,8 +391,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         },
         "BRCA2": {
@@ -403,8 +403,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         },
         "PALB2": {
@@ -415,8 +415,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 874,
-            "char_end": 911
+            "char_start": 872,
+            "char_end": 909
           }
         }
       }
@@ -424,9 +424,9 @@
     "genomic_reports": [
       {
         "doc_id": "D3",
-        "report_date": "2024-10-13",
+        "report_date": "2024-10-05",
         "specimen": "primary",
-        "raw_text": "[분자병리 검사 결과]\n환자명: 김가상   등록번호: 00000585   F/71\n검사기관: 가상유전체검사센터   보고일: 2024.10.13\n검체: 원발 종양 조직 (수술 검체)\n검사법: 전장 엑솜 염기서열 분석\n\n검출된 변이 (Clinically significant variants)\n  PIK3CA   c.3140A>G (p.H1047R)   VAF 60.2%\n\n검출되지 않음 (Not detected)\n  ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2\n\n* 분석 유전자: ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2"
+        "raw_text": "[분자병리 검사 결과]\n환자명: 김가상   등록번호: 00000585   F/71\n검사기관: 가상유전체검사센터   보고일: 2024.10.5\n검체: 원발 종양 조직 (수술 검체)\n검사법: 전장 엑솜 염기서열 분석\n\n검출된 변이 (Clinically significant variants)\n  PIK3CA   c.3140A>G (p.H1047R)   VAF 60.2%\n\n검출되지 않음 (Not detected)\n  ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2\n\n* 분석 유전자: ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2"
       }
     ],
     "deemed_lines": [

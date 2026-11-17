@@ -78,6 +78,18 @@ def her2_conflict(row: pd.Series) -> str:
     return ""
 
 
+def first_drug_day(ps: dict) -> int | None:
+    """실제 첫 투약 시작일 (시작일 있는 투약만)."""
+    days = [t["start_day"] for t in ps["fields"].get("treatment_history") or [] if t.get("start_day") is not None]
+    return min(days) if days else None
+
+
+def postop_index(ps: dict) -> int:
+    """D-10: TCGA ① 판정 기준일 = 실제 첫 보조 투약일과 49일 중 빠른 날 (그날 시작한 약부터는 차트에 없음)."""
+    first = first_drug_day(ps)
+    return DAY_INDEX if first is None else min(DAY_INDEX, first)
+
+
 def select(df: pd.DataFrame, pss: dict[str, dict]) -> tuple[list[str], list[dict], dict[str, str]]:
     """S-02 ~ S-08. 남는 환자 ID와 뺀 환자·이유. 분할(학습·시험)은 나누지 않는다 (2026-11-10 사용자 결정)."""
     slides = dx_slides()
@@ -98,6 +110,8 @@ def select(df: pd.DataFrame, pss: dict[str, dict]) -> tuple[list[str], list[dict
             reason = "S-07 HER2 원자료 모순: " + her2_conflict(rows.loc[pid])
         elif rows.loc[pid, "gdc_ajcc_nodes_pathologic_pn"] == "NX" or rows.loc[pid, "gdc_ajcc_tumor_pathologic_pt"] == "TX":
             reason = "S-08 pN 또는 pT가 X (평가 안 됨)"
+        elif (first := first_drug_day(ps)) is not None and first < DAY_PATH:
+            reason = f"S-10 첫 투약({first}일)이 가짜 병리 보고일({DAY_PATH}일) 전: 수술 후 보조요법 결정 장면을 실제 순서로 못 만듦"
         else:
             need = ["patient.gender", "patient.age", "stage.group"]
             miss = [p for p in need if entry(ps, p).get("status") != "present"]
@@ -492,7 +506,7 @@ def load_hgvsc() -> dict:
 def build(vp: str, pid: str, row: pd.Series, ps: dict, ctx: Context, slides: list[dict], hgvsc: dict) -> Patient:
     dxd = dx_date(vp)
     on = lambda d: (dt.date.fromisoformat(dxd) + dt.timedelta(days=d)).isoformat()   # noqa: E731
-    p = Patient(vp, pid, "TCGA_postop", "", dxd, DAY_INDEX,
+    p = Patient(vp, pid, "TCGA_postop", "", dxd, postop_index(ps),
                 side=rng(vp, "D-04").choice(["좌측", "우측"]), slides=slides)
     for path in REAL_FIELDS:
         e = entry(ps, path)
@@ -532,14 +546,14 @@ def build(vp: str, pid: str, row: pd.Series, ps: dict, ctx: Context, slides: lis
               observed_date=on(DAY_SURGERY), specimen="primary"))
     p.add(Rec("diagnosis.grade", "present", synth_grade(vp, sub, k), "synthetic", "④", "Y-05"))
     p.add(Rec("patient.ecog", "present", synth_ecog(vp, age), "synthetic", "④", "Y-01",
-              observed_date=on(DAY_INDEX)))
+              observed_date=on(p.index_day)))
 
     # M-02: 수술 뒤 값은 정답 표로
     def val(c):
         v = row.get(c)
         return None if pd.isna(v) else v
     p.truth = {"subtype_rule": sub, "pam50": val("cbio_SUBTYPE"), "recurrence_status": val("recurrence_status"),
-               "metastasis_dx_days": val("metastasis_dx_days"), "drug_timeline": val("drug_timeline"),
+               "metastasis_dx_days": val("metastasis_dx_days"), "actual_prescriptions_reference": val("drug_timeline"),
                "os_months": val("cbio_OS_MONTHS"), "os_status": val("cbio_OS_STATUS"),
                "pfs_months": val("cbio_PFS_MONTHS"), "pfs_status": val("cbio_PFS_STATUS"),
                "dfs_months": val("cbio_DFS_MONTHS"), "dfs_status": val("cbio_DFS_STATUS")}
@@ -551,8 +565,9 @@ def build_all() -> tuple[list[Patient], list[dict], dict[str, dict], pd.DataFram
     keep, dropped = select(df, pss)
     ctx, slides, hgvsc = Context(pss), dx_slides(), load_hgvsc()
     rows = df.set_index("patient_id")
-    pts = [build(f"VH-T{i + 1:04d}", pid, rows.loc[pid], pss[pid], ctx, slides[pid], hgvsc)
-           for i, pid in enumerate(keep)]
+    s10 = {d["source_id"] for d in dropped if d["rule"] == "S-10"}
+    ids = {pid: f"VH-T{i + 1:04d}" for i, pid in enumerate(sorted(set(keep) | s10))}   # S-10으로 뺀 환자도 번호 자리 유지
+    pts = [build(ids[pid], pid, rows.loc[pid], pss[pid], ctx, slides[pid], hgvsc) for pid in keep]
     return pts, dropped, pss, df
 
 

@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 from vh.common import FINAL, Patient, thresholds
-from vh.tcga import DAY_INDEX, Context, entry, synth_meno, synth_range
+from vh.tcga import DAY_INDEX, DAY_PATH, Context, entry, synth_meno, synth_range
 
 STAGE = {"Stage I": "I", "Stage IA": "IA", "Stage IB": "IB", "Stage II": "II", "Stage IIA": "IIA",
          "Stage IIB": "IIB", "Stage III": "III", "Stage IIIA": "IIIA", "Stage IIIB": "IIIB", "Stage IIIC": "IIIC"}
@@ -62,7 +62,7 @@ def v2(pts: list[Patient], df: pd.DataFrame) -> dict:
         dxd = dt.date.fromisoformat(p.recs["diagnosis.diagnosis_date"].value)
         if not dt.date(2022, 1, 3) <= dxd <= dt.date(2024, 12, 30):
             bad.append((p.vp_id, "진단일 범위"))
-        if p.index_day != DAY_INDEX:
+        if not DAY_PATH <= p.index_day <= DAY_INDEX:                     # D-10
             bad.append((p.vp_id, "판정 기준일"))
         g = p.recs["stage.group"].value
         want = "locally_advanced" if g.startswith("III") else "early"

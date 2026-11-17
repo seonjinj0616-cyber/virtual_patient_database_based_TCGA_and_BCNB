@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0107",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 305,
+  "index_day": 311,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2024-11-09"
+      "doc_date": "2024-11-15"
     },
     {
       "doc_id": "D2",
@@ -34,8 +34,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.1.9 core bx로 진단",
-          "char_start": 198,
-          "char_end": 218
+          "char_start": 199,
+          "char_end": 219
         }
       },
       "histology": {
@@ -264,8 +264,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 157,
-          "char_end": 161
+          "char_start": 158,
+          "char_end": 162
         }
       },
       "menopausal_basis": {
@@ -275,12 +275,12 @@
         "status": "present",
         "value": 1,
         "raw": "ECOG PS 1",
-        "observed_date": "2024-11-09",
+        "observed_date": "2024-11-15",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 1",
-          "char_start": 165,
-          "char_end": 174
+          "char_start": 166,
+          "char_end": 175
         }
       }
     },
@@ -330,8 +330,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.10.26 간 전이",
-          "char_start": 236,
-          "char_end": 251
+          "char_start": 237,
+          "char_end": 252
         }
       },
       "adjuvant_endocrine_end_date": {
@@ -341,8 +341,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.10.31 종료",
-          "char_start": 270,
-          "char_end": 283
+          "char_start": 271,
+          "char_end": 284
         }
       },
       "status": {
@@ -352,8 +352,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 247,
-          "char_end": 251
+          "char_start": 248,
+          "char_end": 252
         }
       },
       "metastatic_sites": {
@@ -365,8 +365,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 247,
-          "char_end": 251
+          "char_start": 248,
+          "char_end": 252
         }
       },
       "metastasis_day": {
@@ -376,8 +376,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.10.26 간 전이",
-          "char_start": 236,
-          "char_end": 251
+          "char_start": 237,
+          "char_end": 252
         }
       },
       "recurrence_day": {
@@ -387,8 +387,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.10.26 간 전이",
-          "char_start": 236,
-          "char_end": 251
+          "char_start": 237,
+          "char_end": 252
         }
       },
       "surgery": {
@@ -554,11 +554,11 @@
       "age": 72,
       "recent_therapy_28d": {
         "status": "yes",
-        "basis": "anastrozole 기준일 9일 전 종료",
+        "basis": "anastrozole 기준일 15일 전 종료",
         "regimen_refs": [
           0
         ],
-        "gap_days": 9
+        "gap_days": 15
       }
     }
   },

@@ -1,8 +1,5 @@
 vp_id,reason
-VH-T0043,zoledronic acid: 투약 중인데 실제 반응 PD — mini가 반응 칸 PD를 중단 사유 '진행'으로 읽음; fulvestrant: 투약 중인데 실제 반응 PD — mini가 반응 칸 PD를 중단 사유 '진행'으로 읽음
 VH-T0083,"전이 부위를 차트로 쓸 수 없음: ['lung', 'other: Mediastinal and Supraclavicular Lymph Nodes', 'brain']"
 VH-T0102,"전이 부위를 차트로 쓸 수 없음: ['lung', 'bone', 'liver', 'brain', 'other: Skin Nodules']"
 VH-T0516,"전이 부위를 차트로 쓸 수 없음: ['other: Breast', 'bone', 'liver']"
-VH-T0578,doxorubicin 1회 용량 없음 또는 여러 줄: mini가 용량 없는 안트라사이클린 줄을 schema 위반으로 냄
-VH-T0583,doxorubicin 1회 용량 없음 또는 여러 줄: mini가 용량 없는 안트라사이클린 줄을 schema 위반으로 냄
 VH-T0637,"전이 부위를 차트로 쓸 수 없음: ['bone', 'liver', 'other: Intrathoracic Lymph Node', 'brain']"
