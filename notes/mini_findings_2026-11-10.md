@@ -23,13 +23,6 @@ C 지침 검색, B `recommend()`(LLM), D 급여 판정은 Qdrant·LLM이 필요�
 | C1 | `stage.t` 확정 칸 형식에 옛 AJCC 판의 세부 범주(`T3a`, `T2a`·`T2b` 등)가 없어 "확정 칸 형식에 없음"으로 빈칸이 된다 | TCGA 2건이 필수 칸 `stage.t` 빈칸 |
 | C2 | `operable`(수술 가능 여부)이 차트에 없으면 "확인 권장"으로 남는다 | BCNB 수술 전 차트 971건 전부, TCGA 23건. **2026-11-11 처리:** BCNB 환자는 모두 실제로 수술을 받았으므로(`Surgical` 열) 초진 기록에 "수술 가능 (operable)"을 쓴다 (D-B6) → BCNB 확인 권장 0건. TCGA 23건은 수술 기록 자체가 없어 그대로 |
 
-## 2-1. 입력 모듈 투약 기록 읽기 (2026-11-17, TCGA ② 재발 갈래에서 찾음)
-
-| 번호 | 관찰 | 영향 |
-|---|---|---|
-| H7 | 투약 기록 줄에 안트라사이클린이 있는데 1회 용량이 적혀 있지 않으면 `anthracycline_drug_dose.drugs[].dose_per_admin`이 `null`이 되어 schema 검사에서 issue가 난다 (schema는 `{value, unit}` 또는 `"No value"`). `pipeline._anthracycline` | 실제 차트에 용량 없이 "AC #4"만 적힌 경우. 이 폴더에서는 해당 2명을 뺐다 (S-R1) |
-| H8 | 반응 칸의 `PD`를 중단 사유 `progression`으로 읽는다 (`_stop_reason`이 날짜 뒤 글 전체를 본다). 투약 중(종료일이 없음)인데 반응이 PD인 줄도 progression이 된다 | 차수 계산이 바뀔 수 있다. 이 폴더에서는 해당 1명을 뺐다 (S-R1) |
-
 ## 3. 바이오마커 (B) — 결과로 본 것 (문제인지 확인 필요)
 
 | 번호 | 관찰 | 질문 |
