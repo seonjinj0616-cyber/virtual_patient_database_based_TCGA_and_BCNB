@@ -14,7 +14,7 @@
 
 - 검증 V1~V4·V6과 관문 G1~G7(mini 입력 모듈 재현 포함) 통과, 테스트 9개 통과
 - 확정 상태(confirmed_state) 초안: 모든 차트에 `expected/confirmed_state.json` (TCGA ① 671, ② 9, BCNB 971). mini 가상 차트 정답과 같은 방법 (정답 patient_state + biomarker_record → `build_draft` 기본값 확정), 처방 모듈 뒷단(지침 검색·추천·급여)의 입력
-- 순서대로 정리한 진행 기록: [notes/progress_2026-11-17.md](notes/progress_2026-11-17.md) (앞: [11-16](notes/progress_2026-11-16.md)) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria_2026-11-12.md](notes/synthetic_criteria_2026-11-12.md)
+- 순서대로 정리한 진행 기록: [notes/progress.md](notes/progress.md) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria_2026-11-12.md](notes/synthetic_criteria_2026-11-12.md)
 
 ## 폴더
 
@@ -601,7 +601,7 @@ python -m vh.build           # out/tcga/, reports/, local/
 python -m pytest tests
 ```
 
-결과 요약: `reports/tcga_postop.md`. 뺀 환자와 이유: `reports/excluded.csv`. 실제 값 때문에 못 쓴 환자 (mini에 넘길 후보): `reports/handoff_candidates.csv`. 진행 기록과 넘길 내용: `notes/progress_2026-11-09.md`.
+결과 요약: `reports/tcga_postop.md`. 뺀 환자와 이유: `reports/excluded.csv`. 실제 값 때문에 못 쓴 환자 (mini에 넘길 후보): `reports/handoff_candidates.csv`. 진행 기록: `notes/progress.md`.
 
 ---
 
