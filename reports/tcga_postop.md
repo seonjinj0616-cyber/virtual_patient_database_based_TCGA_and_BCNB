@@ -1,6 +1,6 @@
 # TCGA ① (수술 후) 가상환자 세트 — 생성 보고
 
-mini 커밋: `bb45a21` · 실행: `python -m vh.build`
+mini 커밋: `e7465bf` · 실행: `python -m vh.build`
 
 ## 인원
 
@@ -24,11 +24,14 @@ mini 커밋: `bb45a21` · 실행: `python -m vh.build`
 |---|---|---|
 | derived | D-01 | 671 |
 | derived | D-03 | 671 |
-| derived | D-05 | 939 |
+| derived | D-05 | 925 |
 | derived | D-06 | 96 |
+| derived | D-06, D-05 | 13 |
+| derived | D-06, D-11, D-05 | 1 |
 | derived | D-08 | 280 |
+| derived | D-11 | 1 |
 | real | D-09 | 124 |
-| real | M-01 | 10813 |
+| real | M-01 | 10812 |
 | synthetic | Y-01 | 671 |
 | synthetic | Y-02 | 44 |
 | synthetic | Y-04 | 671 |
@@ -47,7 +50,7 @@ mini 커밋: `bb45a21` · 실행: `python -m vh.build`
   "ER 판정": 671,
   "PR 판정": 671,
   "pT": 671,
-  "pM": 443,
+  "pM": 442,
   "병기군": 671,
   "HER2 IHC 점수": 420
  },

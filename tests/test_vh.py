@@ -28,7 +28,8 @@ def test_bcnb_outputs_stay_local():
 
 def test_rule_ids_in_output_are_in_table():
     table = rules()
-    used = {r["rule_id"] for r in read_csv(OUT / "tcga" / "fields.csv") if r["rule_id"]}
+    used = {x for r in read_csv(OUT / "tcga" / "fields.csv") if r["rule_id"]
+            for x in r["rule_id"].split(", ")}                     # 여러 규칙을 거친 칸은 "D-06, D-05"처럼 적는다
     assert used - set(table) == set()
 
 

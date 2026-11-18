@@ -4189,7 +4189,7 @@ VH-T0166,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0166,patient.age,present,54,real,,M-01,mini convert,,,
 VH-T0166,patient.menopausal_status,present,"""perimenopausal""",real,,M-01,mini convert,,,
 VH-T0166,diagnosis.histology,present,"""ILC""",real,,M-01,mini convert,,,
-VH-T0166,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2023-04-16,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0166,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2023-04-16,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0166,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0166,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 5}",real,,M-01,mini convert,,,
 VH-T0166,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -4397,7 +4397,7 @@ VH-T0174,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0174,patient.age,present,74,real,,M-01,mini convert,,,
 VH-T0174,patient.menopausal_status,present,"""postmenopausal""",synthetic,②,Y-02,,,,원래 not_recorded:None
 VH-T0174,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0174,stage.ptnm,present,"{""t"": ""T3"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2022-09-04,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0174,stage.ptnm,present,"{""t"": ""T3"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2022-09-04,,"원래 MX, 병기군 IIB → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0174,stage.group,present,"""IIB""",real,,M-01,mini convert,,,
 VH-T0174,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 2}",real,,M-01,mini convert,,,
 VH-T0174,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -4449,7 +4449,7 @@ VH-T0176,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0176,patient.age,present,73,real,,M-01,mini convert,,,
 VH-T0176,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0176,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0176,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2023-12-03,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0176,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2023-12-03,,"원래 MX, 병기군 IIA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0176,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0176,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 2}",real,,M-01,mini convert,,,
 VH-T0176,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -4501,7 +4501,7 @@ VH-T0178,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0178,patient.age,present,72,real,,M-01,mini convert,,,
 VH-T0178,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0178,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0178,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2022-10-22,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0178,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2022-10-22,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0178,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0178,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 6}",real,,M-01,mini convert,,,
 VH-T0178,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -4527,7 +4527,7 @@ VH-T0179,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0179,patient.age,present,75,real,,M-01,mini convert,,,
 VH-T0179,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0179,diagnosis.histology,present,"""mucinous""",real,,M-01,mini convert,,,
-VH-T0179,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2024-12-30,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0179,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2024-12-30,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0179,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0179,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 2}",real,,M-01,mini convert,,,
 VH-T0179,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -6165,7 +6165,7 @@ VH-T0242,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0242,patient.age,present,48,real,,M-01,mini convert,,,
 VH-T0242,patient.menopausal_status,present,"""perimenopausal""",real,,M-01,mini convert,,,
 VH-T0242,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0242,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""5th""}",derived,①,D-05,,2023-12-13,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0242,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""5th""}",derived,①,"D-06, D-05",,2023-12-13,,"원래 MX, 병기군 IIA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0242,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0242,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 2}",real,,M-01,mini convert,,,
 VH-T0242,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -9987,7 +9987,7 @@ VH-T0395,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0395,patient.age,present,50,real,,M-01,mini convert,,,
 VH-T0395,patient.menopausal_status,present,"""premenopausal""",synthetic,②,Y-02,,,,원래 not_recorded:None
 VH-T0395,diagnosis.histology,present,"""ILC""",real,,M-01,mini convert,,,
-VH-T0395,stage.ptnm,present,"{""t"": ""T3a"", ""n"": ""N3"", ""m"": ""M0"", ""edition"": ""7th""}",real,,M-01,mini convert,2024-09-05,,
+VH-T0395,stage.ptnm,present,"{""t"": ""T3"", ""n"": ""N3"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-11,,2024-09-05,,"원래 T3a (유방암 병기에 없는 하위 글자), 병기군 IIIC"
 VH-T0395,stage.group,present,"""IIIC""",real,,M-01,mini convert,,,
 VH-T0395,stage.positive_ln_count,present,"{""positive"": 14, ""examined"": 14}",real,,M-01,mini convert,,,
 VH-T0395,stage.disease_extent,present,"""locally_advanced""",real,,M-01,mini convert,,,
@@ -15109,7 +15109,7 @@ VH-T0619,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0619,patient.age,present,66,real,,M-01,mini convert,,,
 VH-T0619,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0619,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0619,stage.ptnm,present,"{""t"": ""T3"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2024-04-03,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0619,stage.ptnm,present,"{""t"": ""T3"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2024-04-03,,"원래 MX, 병기군 IIB → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0619,stage.group,present,"""IIB""",real,,M-01,mini convert,,,
 VH-T0619,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 2}",real,,M-01,mini convert,,,
 VH-T0619,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -16175,7 +16175,7 @@ VH-T0661,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0661,patient.age,present,61,real,,M-01,mini convert,,,
 VH-T0661,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0661,diagnosis.histology,present,"""ILC""",real,,M-01,mini convert,,,
-VH-T0661,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2024-01-07,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0661,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2024-01-07,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0661,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0661,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 4}",real,,M-01,mini convert,,,
 VH-T0661,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -16227,7 +16227,7 @@ VH-T0663,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0663,patient.age,present,56,real,,M-01,mini convert,,,
 VH-T0663,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0663,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0663,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2022-08-12,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0663,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2022-08-12,,"원래 MX, 병기군 IIA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0663,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0663,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 4}",real,,M-01,mini convert,,,
 VH-T0663,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -16383,7 +16383,7 @@ VH-T0669,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0669,patient.age,present,50,real,,M-01,mini convert,,,
 VH-T0669,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0669,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0669,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2023-04-21,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0669,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2023-04-21,,"원래 MX, 병기군 IIA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0669,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0669,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 1}",real,,M-01,mini convert,,,
 VH-T0669,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -16409,7 +16409,7 @@ VH-T0670,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0670,patient.age,present,61,real,,M-01,mini convert,,,
 VH-T0670,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0670,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0670,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2022-12-01,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0670,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2022-12-01,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0670,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0670,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 1}",real,,M-01,mini convert,,,
 VH-T0670,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -16487,7 +16487,7 @@ VH-T0673,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0673,patient.age,present,61,real,,M-01,mini convert,,,
 VH-T0673,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0673,diagnosis.histology,present,"""IDC""",real,,M-01,mini convert,,,
-VH-T0673,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2023-09-03,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0673,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2023-09-03,,"원래 MX, 병기군 IIA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0673,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0673,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 3}",real,,M-01,mini convert,,,
 VH-T0673,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -17293,7 +17293,7 @@ VH-T0704,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0704,patient.age,present,66,real,,M-01,mini convert,,,
 VH-T0704,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0704,diagnosis.histology,present,"""ILC""",real,,M-01,mini convert,,,
-VH-T0704,stage.ptnm,present,"{""t"": ""T2a"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2022-05-31,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0704,stage.ptnm,present,"{""t"": ""T2"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-11, D-05",,2022-05-31,,"원래 MX, 병기군 IIA → M0; 원래 T2a (유방암 병기에 없는 하위 글자), 병기군 IIA; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0704,stage.group,present,"""IIA""",real,,M-01,mini convert,,,
 VH-T0704,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 1}",real,,M-01,mini convert,,,
 VH-T0704,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,
@@ -17319,7 +17319,7 @@ VH-T0705,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0705,patient.age,present,77,real,,M-01,mini convert,,,
 VH-T0705,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
 VH-T0705,diagnosis.histology,present,"""ILC""",real,,M-01,mini convert,,,
-VH-T0705,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,D-05,,2023-06-16,,원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)
+VH-T0705,stage.ptnm,present,"{""t"": ""T1c"", ""n"": ""N0"", ""m"": ""M0"", ""edition"": ""7th""}",derived,①,"D-06, D-05",,2023-06-16,,"원래 MX, 병기군 IA → M0; 원래 N0(i-) M0 (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"
 VH-T0705,stage.group,present,"""IA""",real,,M-01,mini convert,,,
 VH-T0705,stage.positive_ln_count,present,"{""positive"": 0, ""examined"": 4}",real,,M-01,mini convert,,,
 VH-T0705,stage.disease_extent,present,"""early""",real,,M-01,mini convert,,,

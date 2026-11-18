@@ -8,7 +8,7 @@ O) ECOG PS 0
 
 A) Lt. breast cancer, 2024.5.10 core bx로 진단, 2024.5.31 수술
    2029.4.24 간 전이
-   보조 anastrozole 2025.7.21 종료
+   보조 tamoxifen 2029.4.24 종료
 
 P) 고식 2차 치료 결정
 
@@ -55,5 +55,5 @@ P) 고식 2차 치료 결정
 보조    doxorubicin 64.1mg/m2 + cyclophosphamide   2024.7.11   2024.8.22   q2w #4   -   계획된 변경
 보조    paclitaxel   2024.9.5   2024.10.28   #4   -   -
 보조    anastrozole   2025.1.17   2025.7.21   -   -   -
-보조    tamoxifen   2025.9.22   -   -   -   -
+보조    tamoxifen   2025.9.22   2029.4.24   -   -   진행
 고식    letrozole   2029.5.28   2029.8.20   -   PD   진행

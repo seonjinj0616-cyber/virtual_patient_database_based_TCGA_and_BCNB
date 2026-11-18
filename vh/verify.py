@@ -4,6 +4,7 @@ from __future__ import annotations
 import collections
 import datetime as dt
 import random
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -40,7 +41,7 @@ def v1(pts: list[Patient], df: pd.DataFrame) -> dict:
             cmp("HER2 IHC 점수", R["receptors.her2_ihc"].value["score"], want, p.vp_id)
         t = R["stage.ptnm"].value
         x = lambda v: "not_assessed" if v in ("TX", "NX", "MX") else v      # noqa: E731 — mini 정규값 (X → not_assessed)
-        cmp("pT", t["t"], x(r["gdc_ajcc_tumor_pathologic_pt"]), p.vp_id)
+        cmp("pT", t["t"], re.sub(r"^(T[23])[a-d]$", r"\1", x(r["gdc_ajcc_tumor_pathologic_pt"])), p.vp_id)   # D-11
         if R["stage.ptnm"].origin == "real":                                 # D-05로 바꾼 값은 V2가 본다
             cmp("pM", t["m"], x(r["gdc_ajcc_metastasis_pathologic_pm"]), p.vp_id)
         if r["gdc_ajcc_pathologic_tumor_stage"] in STAGE:

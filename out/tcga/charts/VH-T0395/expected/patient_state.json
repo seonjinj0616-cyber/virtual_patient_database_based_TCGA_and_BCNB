@@ -58,18 +58,18 @@
       "ptnm": {
         "status": "present",
         "value": {
-          "t": "T3a",
+          "t": "T3",
           "n": "N3",
           "m": "M0",
           "edition": "7th"
         },
-        "raw": "pT3a N3 M0, stage IIIC (AJCC 7th)",
+        "raw": "pT3 N3 M0, stage IIIC (AJCC 7th)",
         "observed_date": "2024-09-05",
         "source": {
           "doc_id": "D2",
-          "quote": "pT3a N3 M0, stage IIIC (AJCC 7th)",
+          "quote": "pT3 N3 M0, stage IIIC (AJCC 7th)",
           "char_start": 540,
-          "char_end": 573
+          "char_end": 572
         }
       },
       "group": {
@@ -79,8 +79,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 552,
-          "char_end": 562
+          "char_start": 551,
+          "char_end": 561
         }
       },
       "positive_ln_count": {
@@ -104,19 +104,19 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 552,
-          "char_end": 562
+          "char_start": 551,
+          "char_end": 561
         }
       },
       "metastatic_sites": {
         "status": "present",
         "value": "[Not Applicable]",
-        "raw": "pT3a N3 M0",
+        "raw": "pT3 N3 M0",
         "source": {
           "doc_id": "D2",
-          "quote": "pT3a N3 M0",
+          "quote": "pT3 N3 M0",
           "char_start": 540,
-          "char_end": 550
+          "char_end": 549
         }
       },
       "operable": {
@@ -148,8 +148,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 584,
-          "char_end": 606
+          "char_start": 583,
+          "char_end": 605
         }
       },
       "pr_percent": {
@@ -168,8 +168,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 8, 5+3)",
-          "char_start": 609,
-          "char_end": 631
+          "char_start": 608,
+          "char_end": 630
         }
       },
       "her2_ihc": {
@@ -183,8 +183,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 634,
-          "char_end": 648
+          "char_start": 633,
+          "char_end": 647
         }
       },
       "her2_ish": {
@@ -193,8 +193,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 ISH: 시행하지 않음",
-          "char_start": 651,
-          "char_end": 668
+          "char_start": 650,
+          "char_end": 667
         }
       },
       "pdl1": {
@@ -213,8 +213,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 671,
-          "char_end": 680
+          "char_start": 670,
+          "char_end": 679
         }
       }
     },

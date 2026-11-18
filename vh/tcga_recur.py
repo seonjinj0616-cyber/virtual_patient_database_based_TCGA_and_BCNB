@@ -22,6 +22,7 @@ from vh.common import MINI, OUT, REPORTS, Rec, read_csv, write_csv
 from vh.tcga import build_all, entry
 
 ADJ_ENDOCRINE_DONE = 1640                      # D-R2: 보조 내분비를 약 4.5년(1,640일) 이상 쓰면 완료
+ADJ_ENDOCRINE_FULL = 1825                      # D-R5: 보조 내분비 5년
 SWITCH_GAP = 28                                # D-R2: AC 끝나고 28일 안에 탁산 → 계획된 변경 (mini rules.py 차수 규칙 5와 같음)
 RECUR_GAP = 31                                 # D-R2: 전이일 31일 전 이후에 끝났거나 계속 중이면 재발로 중단 (진행)
 STANDARD_INTERVALS = (7, 14, 21, 28)           # 차트 주기 표기 (weekly·q2w·q3w·q4w)
@@ -59,7 +60,8 @@ def stop_reason(i: int, items: list[dict], mday: int, cls: dict) -> tuple[str | 
     if t["setting"] != "palliative" and s is not None and s < mday and e is not None and e >= mday - RECUR_GAP:
         return "progression", (f"전이 {mday - e}일 전까지 투약 (재발로 중단)" if e < mday
                                else f"전이 {e - mday}일 뒤까지 투약 (재발로 중단)")
-    if t["setting"] == "adjuvant" and kinds == {"Hormone Therapy"} and s is not None and e is not None             and e - s >= ADJ_ENDOCRINE_DONE:
+    if t["setting"] == "adjuvant" and kinds == {"Hormone Therapy"} and s is not None and e is not None \
+            and e - s >= ADJ_ENDOCRINE_DONE:
         return "completed", f"보조 내분비 {e - s}일 복용"
     if t["setting"] in ("adjuvant", "neoadjuvant") and "anthracycline" in sub(t) and e is not None:
         nxt = [u for u in items[i + 1:] if u["setting"] == t["setting"] and u.get("start_day") is not None
@@ -72,6 +74,13 @@ def stop_reason(i: int, items: list[dict], mday: int, cls: dict) -> tuple[str | 
 def treatments(ps: dict, index_day: int, mday: int, cls: dict) -> tuple[list[dict], list[dict], list[str]]:
     """(차트에 쓸 요법, 정답 표로 가는 뒤 요법, 문제)."""
     items = merge(ps["fields"].get("treatment_history") or [])
+    for t in items:
+        # D-R5: 종료일 없는 보조 내분비약은 끊었다는 기록이 없으므로 계속 투약으로 본다. 시작부터 전이까지 5년(1,825일)
+        # 미만이면 전이일까지 투약 (내분비 중 전이, 2026-11-18 사용자 결정). 5년 이상이면 정하지 않는다
+        if t["setting"] == "adjuvant" and t.get("end_day") is None and t.get("start_day") is not None \
+                and {cls.get(d, ("", ""))[0] for d in t["drugs"]} == {"Hormone Therapy"} \
+                and 0 <= mday - t["start_day"] < ADJ_ENDOCRINE_FULL:
+            t["end_day"], t["end_basis"] = mday, f"종료일 없음 → 전이일까지 계속 투약으로 봄 ({mday - t['start_day']}일 < 5년)"
     anthra = ps["fields"]["anthracycline_drug_dose"]["drugs"]
     shown, later, problems = [], [], []
     for i, t in enumerate(items):
@@ -108,7 +117,8 @@ def treatments(ps: dict, index_day: int, mday: int, cls: dict) -> tuple[list[dic
                       mday if t["start_day"] <= mday <= (t.get("end_day") if t.get("end_day") is not None else mday) else t.get("end_day"),
                       "adjuvant_endocrine": t["setting"] == "adjuvant"
                       and any(cls.get(g, ("", ""))[0] == "Hormone Therapy" for g in t["drugs"]),
-                      "stop_basis": "판정 기준일에 투약 중" if ongoing else why})
+                      "stop_basis": "판정 기준일에 투약 중" if ongoing else
+                      why + (f"; D-R5 {t['end_basis']}" if t.get("end_basis") else "")})
     return shown, later, problems
 
 

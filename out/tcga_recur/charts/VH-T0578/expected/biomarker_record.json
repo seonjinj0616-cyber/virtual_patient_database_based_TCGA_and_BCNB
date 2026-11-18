@@ -79,9 +79,9 @@
     },
     {
       "marker": "ESR1",
-      "status": "negative",
-      "reason": "ESR1 변이 없음",
-      "rule_id": "BM2-ESR1-NOTDETECTED",
+      "status": "retest_needed",
+      "reason": "원발 조직 결과(negative)이고 이후 내분비요법 진행이 있어 재검 필요 (cfDNA·재생검) / 원래 판정: ESR1 변이 없음",
+      "rule_id": "BM2-ESR1-RETEST",
       "evidence": {
         "specimen": "primary"
       },

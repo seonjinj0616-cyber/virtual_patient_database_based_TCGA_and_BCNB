@@ -214,7 +214,7 @@ VH-T0546,recurrence.metastatic_sites,present,"[""liver""]",real,,M-01,nte_sites,
 VH-T0546,recurrence.metastasis_day,present,1810,real,,M-01,metastasis_dx_days,,,
 VH-T0546,recurrence.recurrence_day,present,1810,real,,M-01,metastasis_dx_days,,,
 VH-T0546,recurrence.recurrence_date,present,"""2029-04-24""",derived,①,D-01,,,,가짜 진단일 + 실제 전이 일수
-VH-T0546,recurrence.adjuvant_endocrine_end_date,present,"""2025-07-21""",derived,①,D-R2,drug_end_days,,,보조 내분비 투약 줄의 실제 종료일
+VH-T0546,recurrence.adjuvant_endocrine_end_date,present,"""2029-04-24""",derived,①,D-R2,drug_end_days,,,보조 내분비 투약 줄의 실제 종료일
 VH-T0561,patient.gender,present,"""FEMALE""",real,,M-01,mini convert,,,
 VH-T0561,patient.age,present,71,real,,M-01,mini convert,,,
 VH-T0561,patient.menopausal_status,present,"""postmenopausal""",real,,M-01,mini convert,,,
@@ -275,3 +275,4 @@ VH-T0578,recurrence.metastatic_sites,present,"[""bone"", ""liver""]",real,,M-01,
 VH-T0578,recurrence.metastasis_day,present,443,real,,M-01,metastasis_dx_days,,,
 VH-T0578,recurrence.recurrence_day,present,443,real,,M-01,metastasis_dx_days,,,
 VH-T0578,recurrence.recurrence_date,present,"""2025-04-13""",derived,①,D-01,,,,가짜 진단일 + 실제 전이 일수
+VH-T0578,recurrence.adjuvant_endocrine_end_date,present,"""2025-04-13""",derived,①,D-R2,drug_end_days,,,보조 내분비 투약 줄의 실제 종료일

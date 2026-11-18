@@ -448,6 +448,18 @@ def chart_path(p: Patient, ps: dict, hgvsc: dict, ctx: "Context") -> None:
         t = {**t, "m": "M0"}
         p.add(Rec("stage.ptnm", "present", t, "derived", "①", "D-06", observed_date=R["stage.ptnm"].observed_date,
                   note=f"원래 MX, 병기군 {R['stage.group'].value} → M0"))
+    bad_t = re.fullmatch(r"T([23])[a-d]", t["t"])
+    if bad_t:
+        # D-11: 유방암 AJCC 7판 T2·T3에는 하위 글자가 없다 (T2a·T3a는 다른 암 표기). TCGA에 종양 크기 칸이 없어 숫자만 쓴다.
+        # N0이면 병기군으로 확인할 수 있다 (T2N0 = IIA, T3N0 = IIB). 맞지 않으면 원자료 모순
+        want = {"2": "IIA", "3": "IIB"}[bad_t.group(1)] if t["n"].startswith("N0") else None
+        if want and R["stage.group"].value != want:
+            p.problems.append(f"원자료 모순: pT {t['t']} N0인데 병기군 {R['stage.group'].value}")
+        t = {**t, "t": f"T{bad_t.group(1)}"}
+        prev = R["stage.ptnm"]
+        p.add(Rec("stage.ptnm", "present", t, "derived", "①", ", ".join(x for x in (prev.rule_id if prev.origin == "derived" else "", "D-11") if x),
+                  observed_date=prev.observed_date, note="; ".join(x for x in (prev.note if prev.origin == "derived" else "",
+                  f"원래 {bad_t.group(0)} (유방암 병기에 없는 하위 글자), 병기군 {R['stage.group'].value}") if x)))
     if "not_assessed" in (t["t"], t["n"], t["m"]):
         p.problems.append("pTNM에 X(not_assessed): mini 입력 모듈은 TX·NX·MX를 not_assessed로 바꾸지 않음")
     else:
@@ -455,8 +467,10 @@ def chart_path(p: Patient, ps: dict, hgvsc: dict, ctx: "Context") -> None:
         m = re.search(r"M([01])", t["m"])
         new = {**t, "n": f"N{n.group(1)}" if n else t["n"], "m": f"M{m.group(1)}" if m else t["m"]}
         if new != t:
-            p.add(Rec("stage.ptnm", "present", new, "derived", "①", "D-05", observed_date=R["stage.ptnm"].observed_date,
-                      note=f"원래 {t['n']} {t['m']} (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)"))
+            prev = R["stage.ptnm"]
+            p.add(Rec("stage.ptnm", "present", new, "derived", "①", ", ".join(x for x in (prev.rule_id if prev.origin == "derived" else "", "D-05") if x),
+                      observed_date=prev.observed_date, note="; ".join(x for x in (prev.note if prev.origin == "derived" else "",
+                      f"원래 {t['n']} {t['m']} (mini 입력 모듈은 (i-)·(i+) 꼬리표를 뗀다)") if x)))
         if new["m"] == "M0" and R["stage.metastatic_sites"].value != "[Not Applicable]":
             p.add(Rec("stage.metastatic_sites", "present", "[Not Applicable]", "derived", "①", "D-05",
                       note=f"원래 {R['stage.metastatic_sites'].value} (M0이면 해당 없음)"))
