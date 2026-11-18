@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N0 M0, stage IA",
-          "char_start": 481,
-          "char_end": 501
+          "char_start": 517,
+          "char_end": 537
         }
       ]
     },
@@ -63,8 +63,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N0 M0, stage IA",
-          "char_start": 481,
-          "char_end": 501
+          "char_start": 517,
+          "char_end": 537
         }
       ]
     },
@@ -88,8 +88,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N0 M0, stage IA",
-          "char_start": 481,
-          "char_end": 501
+          "char_start": 517,
+          "char_end": 537
         }
       ]
     },
@@ -103,8 +103,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 1개",
-          "char_start": 459,
-          "char_end": 472
+          "char_start": 495,
+          "char_end": 508
         }
       ]
     },
@@ -118,8 +118,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IA",
-          "char_start": 493,
-          "char_end": 501
+          "char_start": 529,
+          "char_end": 537
         }
       ]
     },
@@ -132,9 +132,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 1,
+      "system": 3,
       "system_source": "patient_state",
-      "confirmed": 1,
+      "confirmed": 3,
       "status": "confirmed"
     },
     "recurrence_day": {

@@ -3,12 +3,13 @@ from __future__ import annotations
 
 import collections
 import datetime as dt
+import functools
 import re
 from pathlib import Path
 
 import pandas as pd
 
-from vh.common import FINAL, ROOT, Patient, Rec, boundary, mini_on_path, read_csv, ref, rng, thresholds
+from vh.common import FINAL, LOCAL, ROOT, Patient, Rec, boundary, mini_on_path, read_csv, ref, rng, thresholds
 
 GENES = ["ESR1", "PIK3CA", "AKT1", "PTEN", "BRCA1", "BRCA2", "PALB2"]
 # M-01: 판정 기준일(수술 직후)까지 차트에 보이는 실제 칸
@@ -418,11 +419,31 @@ def synth_ki67(vp: str, pid: str, sub: str, ctx: Context) -> tuple[int, str]:
 
 
 def synth_grade(vp: str, sub: str, ki67: int) -> int:
-    """Y-05. 아형별 grade 비율 (references R-02, SEER 2010). 2026-11-12부터 Ki-67 높음 여부로 나누지 않는다:
-    확인한 출처(SEER 표)가 아형별로만 나와 있다. ki67 인자는 호출 모양을 바꾸지 않으려고 남긴다."""
+    """Y-05 (M-05 판독 점수가 없는 환자만). 아형별 grade 비율 (references R-02, 한국 KBCR). Ki-67 높음 여부로 나누지 않는다:
+    출처 표가 아형별로만 나와 있다. ki67 인자는 호출 모양을 바꾸지 않으려고 남긴다."""
     p = [float(x) for x in ref("R-02", sub).split("/")]
     x = rng(vp, "Y-05").random()
     return 1 if x < p[0] else 2 if x < p[0] + p[1] else 3
+
+
+NOTTINGHAM = LOCAL / "thennavan2021" / "mmc3.xlsx"     # CC BY-NC-ND 4.0: 원본은 local/에만 (git 제외)
+NOTTINGHAM_COLS = ("Epithelial tubule formation", "Nuclear pleomorphism", "Mitosis")
+
+
+@functools.cache
+def nottingham() -> dict[str, tuple[int, int, int]]:
+    """M-05: TCGA 환자 ID → (관 형성, 핵 다형성, 유사분열) 점수 1~3. 세 점수가 다 있는 환자만. 파일이 없으면 빈 표 (전부 Y-05)."""
+    if not NOTTINGHAM.exists():
+        print(f"경고: {NOTTINGHAM} 없음 → grade는 모두 합성 (Y-05)")
+        return {}
+    df = pd.read_excel(NOTTINGHAM)
+    df.columns = [str(c).strip() for c in df.columns]
+    out = {}
+    for _, r in df.iterrows():
+        s = [re.match(r"\(score = ([123])\)", str(r[c]).strip()) for c in NOTTINGHAM_COLS]
+        if all(s):
+            out[str(r["Sample CLID"]).strip()] = tuple(int(m.group(1)) for m in s)
+    return out
 
 
 def dx_date(vp: str) -> str:
@@ -558,7 +579,17 @@ def build(vp: str, pid: str, row: pd.Series, ps: dict, ctx: Context, slides: lis
     k, basis = synth_ki67(vp, pid, sub, ctx)
     p.add(Rec("proliferation.ki67_percent", "present", {"percent": k}, "synthetic", basis, "Y-04",
               observed_date=on(DAY_SURGERY), specimen="primary"))
-    p.add(Rec("diagnosis.grade", "present", synth_grade(vp, sub, k), "synthetic", "④", "Y-05"))
+    scores = nottingham().get(pid)
+    if scores:
+        # M-05: 병리 전문의 판독 (Heng 2017 채점표, Thennavan 2021 Data S2)의 세 점수 합으로 Nottingham 등급
+        total = sum(scores)
+        p.grade_scores = scores
+        p.add(Rec("diagnosis.grade", "present", 1 if total <= 5 else 2 if total <= 7 else 3, "real", rule_id="M-05",
+                  source_column="Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",
+                  note=f"관 형성 {scores[0]} + 핵 다형성 {scores[1]} + 유사분열 {scores[2]} = {total}"))
+    else:
+        p.add(Rec("diagnosis.grade", "present", synth_grade(vp, sub, k), "synthetic", "④", "Y-05",
+                  note="Thennavan 2021 판독 점수 없음"))
     p.add(Rec("patient.ecog", "present", synth_ecog(vp, age), "synthetic", "④", "Y-01",
               observed_date=on(p.index_day)))
 

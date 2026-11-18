@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N1a M0, stage IIA (AJCC 6th)",
-          "char_start": 528,
-          "char_end": 561
+          "char_start": 561,
+          "char_end": 594
         }
       ]
     },
@@ -82,8 +82,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N1a M0, stage IIA (AJCC 6th)",
-          "char_start": 528,
-          "char_end": 561
+          "char_start": 561,
+          "char_end": 594
         }
       ]
     },
@@ -107,8 +107,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1c N1a M0, stage IIA (AJCC 6th)",
-          "char_start": 528,
-          "char_end": 561
+          "char_start": 561,
+          "char_end": 594
         }
       ]
     },
@@ -122,8 +122,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 2개 / 검사 2개",
-          "char_start": 506,
-          "char_end": 519
+          "char_start": 539,
+          "char_end": 552
         }
       ]
     },
@@ -137,8 +137,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 541,
-          "char_end": 550
+          "char_start": 574,
+          "char_end": 583
         }
       ]
     },
@@ -151,9 +151,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 2,
+      "system": 1,
       "system_source": "patient_state",
-      "confirmed": 2,
+      "confirmed": 1,
       "status": "confirmed"
     },
     "high_risk_early": {
@@ -168,7 +168,7 @@
         "esmo": "no"
       },
       "status": "confirmed",
-      "note": "림프절 2개, T1c, 2등급, Ki-67 10%"
+      "note": "림프절 2개, T1c, 1등급, Ki-67 10%"
     },
     "recurrence_day": {
       "scope": "current",

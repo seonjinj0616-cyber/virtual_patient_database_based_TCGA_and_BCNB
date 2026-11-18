@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1 N0 M0, stage I (AJCC 5th)",
-          "char_start": 453,
-          "char_end": 482
+          "char_start": 487,
+          "char_end": 516
         }
       ]
     },
@@ -81,8 +81,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1 N0 M0, stage I (AJCC 5th)",
-          "char_start": 453,
-          "char_end": 482
+          "char_start": 487,
+          "char_end": 516
         }
       ]
     },
@@ -106,8 +106,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1 N0 M0, stage I (AJCC 5th)",
-          "char_start": 453,
-          "char_end": 482
+          "char_start": 487,
+          "char_end": 516
         }
       ]
     },
@@ -128,8 +128,8 @@
         {
           "doc_id": "D2",
           "quote": "stage I",
-          "char_start": 464,
-          "char_end": 471
+          "char_start": 498,
+          "char_end": 505
         }
       ]
     },

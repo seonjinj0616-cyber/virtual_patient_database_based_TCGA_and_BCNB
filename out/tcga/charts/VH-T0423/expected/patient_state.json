@@ -73,8 +73,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 6th)",
-          "char_start": 463,
-          "char_end": 494
+          "char_start": 497,
+          "char_end": 528
         }
       },
       "group": {
@@ -84,8 +84,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 474,
-          "char_end": 483
+          "char_start": 508,
+          "char_end": 517
         }
       },
       "positive_ln_count": {
@@ -98,8 +98,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 474,
-          "char_end": 483
+          "char_start": 508,
+          "char_end": 517
         }
       },
       "metastatic_sites": {
@@ -109,8 +109,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0",
-          "char_start": 463,
-          "char_end": 472
+          "char_start": 497,
+          "char_end": 506
         }
       },
       "operable": {
@@ -142,8 +142,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 음성 (Allred 0, 0+0)",
-          "char_start": 505,
-          "char_end": 526
+          "char_start": 539,
+          "char_end": 560
         }
       },
       "pr_percent": {
@@ -162,8 +162,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 음성 (Allred 0, 0+0)",
-          "char_start": 529,
-          "char_end": 550
+          "char_start": 563,
+          "char_end": 584
         }
       },
       "her2_ihc": {
@@ -177,8 +177,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 553,
-          "char_end": 567
+          "char_start": 587,
+          "char_end": 601
         }
       },
       "her2_ish": {
@@ -187,8 +187,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 ISH: 시행하지 않음",
-          "char_start": 570,
-          "char_end": 587
+          "char_start": 604,
+          "char_end": 621
         }
       },
       "pdl1": {
@@ -207,8 +207,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 40%",
-          "char_start": 590,
-          "char_end": 600
+          "char_start": 624,
+          "char_end": 634
         }
       }
     },
@@ -319,8 +319,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, BRCA1, BRCA2",
-            "char_start": 881,
-            "char_end": 913
+            "char_start": 915,
+            "char_end": 947
           }
         },
         "PIK3CA": {
@@ -331,8 +331,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, BRCA1, BRCA2",
-            "char_start": 881,
-            "char_end": 913
+            "char_start": 915,
+            "char_end": 947
           }
         },
         "AKT1": {
@@ -343,8 +343,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, BRCA1, BRCA2",
-            "char_start": 881,
-            "char_end": 913
+            "char_start": 915,
+            "char_end": 947
           }
         },
         "PTEN": {
@@ -362,8 +362,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PTEN   c.860C>G (p.S287*)   VAF 61.2%",
-            "char_start": 776,
-            "char_end": 813
+            "char_start": 810,
+            "char_end": 847
           }
         },
         "BRCA1": {
@@ -374,8 +374,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, BRCA1, BRCA2",
-            "char_start": 881,
-            "char_end": 913
+            "char_start": 915,
+            "char_end": 947
           }
         },
         "BRCA2": {
@@ -386,8 +386,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, BRCA1, BRCA2",
-            "char_start": 881,
-            "char_end": 913
+            "char_start": 915,
+            "char_end": 947
           }
         },
         "PALB2": {
@@ -405,8 +405,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PALB2   c.700G>A (p.D234N)   VAF 12.2%",
-            "char_start": 816,
-            "char_end": 854
+            "char_start": 850,
+            "char_end": 888
           }
         }
       }

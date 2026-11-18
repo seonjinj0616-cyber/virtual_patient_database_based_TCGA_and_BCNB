@@ -51,13 +51,13 @@
       },
       "grade": {
         "status": "present",
-        "value": 1,
-        "raw": "I (Nottingham grade 1)",
+        "value": 3,
+        "raw": "III (Nottingham grade 3)",
         "source": {
           "doc_id": "D2",
-          "quote": "I (Nottingham grade 1)",
+          "quote": "III (Nottingham grade 3)",
           "char_start": 459,
-          "char_end": 481
+          "char_end": 483
         }
       }
     },
@@ -78,8 +78,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 513,
-          "char_end": 534
+          "char_start": 549,
+          "char_end": 570
         }
       },
       "group": {
@@ -89,8 +89,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 524,
-          "char_end": 534
+          "char_start": 560,
+          "char_end": 570
         }
       },
       "positive_ln_count": {
@@ -103,8 +103,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 15개 / 검사 32개",
-          "char_start": 489,
-          "char_end": 504
+          "char_start": 525,
+          "char_end": 540
         }
       },
       "disease_extent": {
@@ -114,8 +114,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 524,
-          "char_end": 534
+          "char_start": 560,
+          "char_end": 570
         }
       },
       "metastatic_sites": {
@@ -125,8 +125,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N3 M0",
-          "char_start": 513,
-          "char_end": 522
+          "char_start": 549,
+          "char_end": 558
         }
       },
       "operable": {
@@ -158,8 +158,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 545,
-          "char_end": 567
+          "char_start": 581,
+          "char_end": 603
         }
       },
       "pr_percent": {
@@ -178,8 +178,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 7, 4+3)",
-          "char_start": 570,
-          "char_end": 592
+          "char_start": 606,
+          "char_end": 628
         }
       },
       "her2_ihc": {
@@ -188,8 +188,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 IHC: 시행하지 않음",
-          "char_start": 595,
-          "char_end": 612
+          "char_start": 631,
+          "char_end": 648
         }
       },
       "her2_ish": {
@@ -204,8 +204,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 615,
-          "char_end": 639
+          "char_start": 651,
+          "char_end": 675
         }
       },
       "pdl1": {
@@ -224,8 +224,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 642,
-          "char_end": 651
+          "char_start": 678,
+          "char_end": 687
         }
       }
     },
@@ -303,8 +303,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "cyclophosphamide + doxorubicin 60mg/m2   2025.3.1   2025.4.13   q2w #4   -   계획된 변경",
-          "char_start": 1104,
-          "char_end": 1187
+          "char_start": 1140,
+          "char_end": 1223
         },
         "doses": [
           {
@@ -346,8 +346,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "paclitaxel   2025.4.26   2025.4.26   #1   -   -",
-          "char_start": 1194,
-          "char_end": 1241
+          "char_start": 1230,
+          "char_end": 1277
         },
         "line": null,
         "endocrine_line": null,
@@ -375,8 +375,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "docetaxel   2025.5.16   2025.6.28   #3   -   -",
-          "char_start": 1248,
-          "char_end": 1294
+          "char_start": 1284,
+          "char_end": 1330
         },
         "line": null,
         "endocrine_line": null,
@@ -399,8 +399,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "anastrozole   2025.8.2   2027.9.25   -   -   -",
-          "char_start": 1301,
-          "char_end": 1347
+          "char_start": 1337,
+          "char_end": 1383
         },
         "line": null,
         "endocrine_line": null,
@@ -428,8 +428,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "zoledronic acid   2027.11.13   -   #4   -   -",
-          "char_start": 1354,
-          "char_end": 1399
+          "char_start": 1390,
+          "char_end": 1435
         },
         "line": null,
         "endocrine_line": null,
@@ -452,8 +452,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "exemestane   2027.11.13   2028.3.27   -   -   -",
-          "char_start": 1406,
-          "char_end": 1453
+          "char_start": 1442,
+          "char_end": 1489
         },
         "line": 1,
         "endocrine_line": 1,
@@ -487,8 +487,8 @@
           "source": {
             "doc_id": "D4",
             "quote": "cyclophosphamide + doxorubicin 60mg/m2   2025.3.1   2025.4.13   q2w #4   -   계획된 변경",
-            "char_start": 1104,
-            "char_end": 1187
+            "char_start": 1140,
+            "char_end": 1223
           }
         }
       ]
@@ -587,8 +587,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "PIK3CA": {
@@ -599,8 +599,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "AKT1": {
@@ -611,8 +611,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "PTEN": {
@@ -623,8 +623,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "BRCA1": {
@@ -635,8 +635,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "BRCA2": {
@@ -647,8 +647,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         },
         "PALB2": {
@@ -659,8 +659,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, PIK3CA, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 856,
-            "char_end": 901
+            "char_start": 892,
+            "char_end": 937
           }
         }
       }

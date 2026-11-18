@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 513,
-          "char_end": 534
+          "char_start": 549,
+          "char_end": 570
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 513,
-          "char_end": 534
+          "char_start": 549,
+          "char_end": 570
         }
       ]
     },
@@ -119,8 +119,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 15개 / 검사 32개",
-          "char_start": 489,
-          "char_end": 504
+          "char_start": 525,
+          "char_end": 540
         }
       ]
     },
@@ -134,8 +134,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 524,
-          "char_end": 534
+          "char_start": 560,
+          "char_end": 570
         }
       ]
     },
@@ -148,9 +148,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 1,
+      "system": 3,
       "system_source": "patient_state",
-      "confirmed": 1,
+      "confirmed": 3,
       "status": "confirmed"
     },
     "deemed_lines": {

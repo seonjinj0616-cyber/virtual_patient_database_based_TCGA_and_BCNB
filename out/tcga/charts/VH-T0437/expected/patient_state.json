@@ -46,13 +46,13 @@
       },
       "grade": {
         "status": "present",
-        "value": 2,
-        "raw": "II (Nottingham grade 2)",
+        "value": 3,
+        "raw": "III (Nottingham grade 3)",
         "source": {
           "doc_id": "D2",
-          "quote": "II (Nottingham grade 2)",
+          "quote": "III (Nottingham grade 3)",
           "char_start": 429,
-          "char_end": 452
+          "char_end": 453
         }
       }
     },
@@ -73,8 +73,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1a M0, stage IIB (AJCC 7th)",
-          "char_start": 483,
-          "char_end": 515
+          "char_start": 518,
+          "char_end": 550
         }
       },
       "group": {
@@ -84,8 +84,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 495,
-          "char_end": 504
+          "char_start": 530,
+          "char_end": 539
         }
       },
       "positive_ln_count": {
@@ -98,8 +98,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 3개 / 검사 16개",
-          "char_start": 460,
-          "char_end": 474
+          "char_start": 495,
+          "char_end": 509
         }
       },
       "disease_extent": {
@@ -109,8 +109,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 495,
-          "char_end": 504
+          "char_start": 530,
+          "char_end": 539
         }
       },
       "metastatic_sites": {
@@ -120,8 +120,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1a M0",
-          "char_start": 483,
-          "char_end": 493
+          "char_start": 518,
+          "char_end": 528
         }
       },
       "operable": {
@@ -153,8 +153,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 양성 (Allred 7, 5+2)",
-          "char_start": 526,
-          "char_end": 547
+          "char_start": 561,
+          "char_end": 582
         }
       },
       "pr_percent": {
@@ -173,8 +173,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 양성 (Allred 6, 5+1)",
-          "char_start": 550,
-          "char_end": 571
+          "char_start": 585,
+          "char_end": 606
         }
       },
       "her2_ihc": {
@@ -188,8 +188,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 574,
-          "char_end": 588
+          "char_start": 609,
+          "char_end": 623
         }
       },
       "her2_ish": {
@@ -204,8 +204,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 591,
-          "char_end": 615
+          "char_start": 626,
+          "char_end": 650
         }
       },
       "pdl1": {
@@ -224,8 +224,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 50%",
-          "char_start": 618,
-          "char_end": 628
+          "char_start": 653,
+          "char_end": 663
         }
       }
     },
@@ -336,8 +336,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 910,
-            "char_end": 941
+            "char_start": 945,
+            "char_end": 976
           }
         },
         "PIK3CA": {
@@ -355,8 +355,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PIK3CA   c.1633G>A (p.E545K)   VAF 57.8%",
-            "char_start": 803,
-            "char_end": 843
+            "char_start": 838,
+            "char_end": 878
           }
         },
         "AKT1": {
@@ -367,8 +367,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 910,
-            "char_end": 941
+            "char_start": 945,
+            "char_end": 976
           }
         },
         "PTEN": {
@@ -386,8 +386,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PTEN   c.370T>G (p.C124G)   VAF 53.5%",
-            "char_start": 846,
-            "char_end": 883
+            "char_start": 881,
+            "char_end": 918
           }
         },
         "BRCA1": {
@@ -398,8 +398,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 910,
-            "char_end": 941
+            "char_start": 945,
+            "char_end": 976
           }
         },
         "BRCA2": {
@@ -410,8 +410,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 910,
-            "char_end": 941
+            "char_start": 945,
+            "char_end": 976
           }
         },
         "PALB2": {
@@ -422,8 +422,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 910,
-            "char_end": 941
+            "char_start": 945,
+            "char_end": 976
           }
         }
       }

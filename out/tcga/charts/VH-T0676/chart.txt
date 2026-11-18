@@ -20,6 +20,7 @@ P) 보조 전신 요법 결정
 진단
   조직형: Infiltrating Lobular Carcinoma
   조직학적 등급: II (Nottingham grade 2)
+    관 형성 3, 핵 다형성 2, 유사분열 1 (합 6)
   림프절: 전이 2개 / 검사 13개
   pTNM: pT2 N1a M0, stage II (AJCC 7th)
 

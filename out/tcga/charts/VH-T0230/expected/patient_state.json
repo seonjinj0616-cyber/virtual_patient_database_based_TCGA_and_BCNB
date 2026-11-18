@@ -41,13 +41,13 @@
       },
       "grade": {
         "status": "present",
-        "value": 3,
-        "raw": "III (Nottingham grade 3)",
+        "value": 1,
+        "raw": "I (Nottingham grade 1)",
         "source": {
           "doc_id": "D2",
-          "quote": "III (Nottingham grade 3)",
+          "quote": "I (Nottingham grade 1)",
           "char_start": 500,
-          "char_end": 524
+          "char_end": 522
         }
       }
     },
@@ -68,8 +68,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1a M0, stage IIB (AJCC 6th)",
-          "char_start": 555,
-          "char_end": 587
+          "char_start": 587,
+          "char_end": 619
         }
       },
       "group": {
@@ -79,8 +79,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 567,
-          "char_end": 576
+          "char_start": 599,
+          "char_end": 608
         }
       },
       "positive_ln_count": {
@@ -93,8 +93,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 2개 / 검사 31개",
-          "char_start": 532,
-          "char_end": 546
+          "char_start": 564,
+          "char_end": 578
         }
       },
       "disease_extent": {
@@ -104,8 +104,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 567,
-          "char_end": 576
+          "char_start": 599,
+          "char_end": 608
         }
       },
       "metastatic_sites": {
@@ -115,8 +115,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N1a M0",
-          "char_start": 555,
-          "char_end": 565
+          "char_start": 587,
+          "char_end": 597
         }
       },
       "operable": {
@@ -148,8 +148,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 양성 (Allred 7, 5+2)",
-          "char_start": 598,
-          "char_end": 619
+          "char_start": 630,
+          "char_end": 651
         }
       },
       "pr_percent": {
@@ -168,8 +168,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 양성 (Allred 6, 4+2)",
-          "char_start": 622,
-          "char_end": 643
+          "char_start": 654,
+          "char_end": 675
         }
       },
       "her2_ihc": {
@@ -183,8 +183,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 3+",
-          "char_start": 646,
-          "char_end": 660
+          "char_start": 678,
+          "char_end": 692
         }
       },
       "her2_ish": {
@@ -199,8 +199,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 663,
-          "char_end": 687
+          "char_start": 695,
+          "char_end": 719
         }
       },
       "pdl1": {
@@ -219,8 +219,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 50%",
-          "char_start": 690,
-          "char_end": 700
+          "char_start": 722,
+          "char_end": 732
         }
       }
     },

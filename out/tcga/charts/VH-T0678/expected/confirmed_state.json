@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 6th)",
-          "char_start": 461,
-          "char_end": 492
+          "char_start": 497,
+          "char_end": 528
         }
       ]
     },
@@ -63,8 +63,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 6th)",
-          "char_start": 461,
-          "char_end": 492
+          "char_start": 497,
+          "char_end": 528
         }
       ]
     },
@@ -88,8 +88,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 6th)",
-          "char_start": 461,
-          "char_end": 492
+          "char_start": 497,
+          "char_end": 528
         }
       ]
     },
@@ -110,8 +110,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 472,
-          "char_end": 481
+          "char_start": 508,
+          "char_end": 517
         }
       ]
     },
@@ -124,9 +124,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 1,
+      "system": 3,
       "system_source": "patient_state",
-      "confirmed": 1,
+      "confirmed": 3,
       "status": "confirmed"
     },
     "recurrence_day": {

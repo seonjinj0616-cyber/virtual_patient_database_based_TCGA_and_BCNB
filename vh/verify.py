@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
 
 from vh.common import FINAL, Patient, thresholds
-from vh.tcga import DAY_INDEX, DAY_PATH, Context, entry, synth_meno, synth_range
+from vh.tcga import DAY_INDEX, DAY_PATH, Context, entry, nottingham, synth_meno, synth_range
 
 STAGE = {"Stage I": "I", "Stage IA": "IA", "Stage IB": "IB", "Stage II": "II", "Stage IIA": "IIA",
          "Stage IIB": "IIB", "Stage III": "III", "Stage IIIA": "IIIA", "Stage IIIB": "IIIB", "Stage IIIC": "IIIC"}
@@ -42,6 +42,9 @@ def v1(pts: list[Patient], df: pd.DataFrame) -> dict:
         t = R["stage.ptnm"].value
         x = lambda v: "not_assessed" if v in ("TX", "NX", "MX") else v      # noqa: E731 — mini 정규값 (X → not_assessed)
         cmp("pT", t["t"], re.sub(r"^(T[23])[a-d]$", r"\1", x(r["gdc_ajcc_tumor_pathologic_pt"])), p.vp_id)   # D-11
+        sc = nottingham().get(p.source_id)                                  # M-05: 판독 세 점수 합 → 등급
+        if sc:
+            cmp("grade (Nottingham)", R["diagnosis.grade"].value, {3: 1, 4: 1, 5: 1, 6: 2, 7: 2}.get(sum(sc), 3), p.vp_id)
         if R["stage.ptnm"].origin == "real":                                 # D-05로 바꾼 값은 V2가 본다
             cmp("pM", t["m"], x(r["gdc_ajcc_metastasis_pathologic_pm"]), p.vp_id)
         if r["gdc_ajcc_pathologic_tumor_stage"] in STAGE:

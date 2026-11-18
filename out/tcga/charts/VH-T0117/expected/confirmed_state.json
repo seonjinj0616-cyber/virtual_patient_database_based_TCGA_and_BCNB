@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N1mi M0, stage IIIA (AJCC 7th)",
-          "char_start": 473,
-          "char_end": 507
+          "char_start": 507,
+          "char_end": 541
         }
       ]
     },
@@ -81,8 +81,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N1mi M0, stage IIIA (AJCC 7th)",
-          "char_start": 473,
-          "char_end": 507
+          "char_start": 507,
+          "char_end": 541
         }
       ]
     },
@@ -106,8 +106,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N1mi M0, stage IIIA (AJCC 7th)",
-          "char_start": 473,
-          "char_end": 507
+          "char_start": 507,
+          "char_end": 541
         }
       ]
     },
@@ -121,8 +121,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 2개",
-          "char_start": 451,
-          "char_end": 464
+          "char_start": 485,
+          "char_end": 498
         }
       ]
     },
@@ -136,8 +136,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIA",
-          "char_start": 486,
-          "char_end": 496
+          "char_start": 520,
+          "char_end": 530
         }
       ]
     },

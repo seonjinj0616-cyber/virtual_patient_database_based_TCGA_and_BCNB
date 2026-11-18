@@ -180,6 +180,9 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     d.t("\n\n진단\n  조직형: ").put(_get(HISTOLOGY, hist, "조직형"), F("diagnosis.histology", hist))
     g = R["diagnosis.grade"].value
     d.t("\n  조직학적 등급: ").put(f"{'I' * g} (Nottingham grade {g})", F("diagnosis.grade", g))
+    if p.grade_scores:                             # M-05: 실제 판독 세 점수 (mini에는 칸이 없어 글로만)
+        a, b, m = p.grade_scores
+        d.t(f"\n    관 형성 {a}, 핵 다형성 {b}, 유사분열 {m} (합 {a + b + m})")
     ln = R["stage.positive_ln_count"]
     if ln.status == "present":
         v = ln.value

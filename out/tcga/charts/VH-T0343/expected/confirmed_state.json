@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB",
-          "char_start": 525,
-          "char_end": 545
+          "char_start": 558,
+          "char_end": 578
         }
       ]
     },
@@ -82,8 +82,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB",
-          "char_start": 525,
-          "char_end": 545
+          "char_start": 558,
+          "char_end": 578
         }
       ]
     },
@@ -107,8 +107,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB",
-          "char_start": 525,
-          "char_end": 545
+          "char_start": 558,
+          "char_end": 578
         }
       ]
     },
@@ -122,8 +122,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 2개 / 검사 17개",
-          "char_start": 502,
-          "char_end": 516
+          "char_start": 535,
+          "char_end": 549
         }
       ]
     },
@@ -137,8 +137,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 536,
-          "char_end": 545
+          "char_start": 569,
+          "char_end": 578
         }
       ]
     },
@@ -151,9 +151,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 2,
+      "system": 1,
       "system_source": "patient_state",
-      "confirmed": 2,
+      "confirmed": 1,
       "status": "confirmed"
     },
     "high_risk_early": {
@@ -168,7 +168,7 @@
         "esmo": "yes"
       },
       "status": "confirmed",
-      "note": "림프절 2개, T2, 2등급, Ki-67 60%"
+      "note": "림프절 2개, T2, 1등급, Ki-67 60%"
     },
     "recurrence_day": {
       "scope": "current",

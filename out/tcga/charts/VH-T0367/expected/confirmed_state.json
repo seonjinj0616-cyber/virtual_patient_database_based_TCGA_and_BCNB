@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N2a M0, stage IIIA",
-          "char_start": 480,
-          "char_end": 502
+          "char_start": 513,
+          "char_end": 535
         }
       ]
     },
@@ -81,8 +81,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N2a M0, stage IIIA",
-          "char_start": 480,
-          "char_end": 502
+          "char_start": 513,
+          "char_end": 535
         }
       ]
     },
@@ -106,8 +106,8 @@
         {
           "doc_id": "D2",
           "quote": "pT3 N2a M0, stage IIIA",
-          "char_start": 480,
-          "char_end": 502
+          "char_start": 513,
+          "char_end": 535
         }
       ]
     },
@@ -121,8 +121,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 8개 / 검사 17개",
-          "char_start": 457,
-          "char_end": 471
+          "char_start": 490,
+          "char_end": 504
         }
       ]
     },
@@ -136,8 +136,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIA",
-          "char_start": 492,
-          "char_end": 502
+          "char_start": 525,
+          "char_end": 535
         }
       ]
     },
@@ -150,9 +150,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 2,
+      "system": 1,
       "system_source": "patient_state",
-      "confirmed": 2,
+      "confirmed": 1,
       "status": "confirmed"
     },
     "high_risk_early": {
@@ -167,7 +167,7 @@
         "esmo": "yes"
       },
       "status": "confirmed",
-      "note": "림프절 8개, T3, 2등급, Ki-67 10%"
+      "note": "림프절 8개, T3, 1등급, Ki-67 10%"
     },
     "recurrence_day": {
       "scope": "current",

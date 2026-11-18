@@ -73,8 +73,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 6th)",
-          "char_start": 485,
-          "char_end": 516
+          "char_start": 519,
+          "char_end": 550
         }
       },
       "group": {
@@ -84,8 +84,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 496,
-          "char_end": 505
+          "char_start": 530,
+          "char_end": 539
         }
       },
       "positive_ln_count": {
@@ -98,8 +98,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 4개",
-          "char_start": 463,
-          "char_end": 476
+          "char_start": 497,
+          "char_end": 510
         }
       },
       "disease_extent": {
@@ -109,8 +109,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 496,
-          "char_end": 505
+          "char_start": 530,
+          "char_end": 539
         }
       },
       "metastatic_sites": {
@@ -120,8 +120,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0",
-          "char_start": 485,
-          "char_end": 494
+          "char_start": 519,
+          "char_end": 528
         }
       },
       "operable": {
@@ -153,8 +153,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 음성 (Allred 0, 0+0)",
-          "char_start": 527,
-          "char_end": 548
+          "char_start": 561,
+          "char_end": 582
         }
       },
       "pr_percent": {
@@ -173,8 +173,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 음성 (Allred 0, 0+0)",
-          "char_start": 551,
-          "char_end": 572
+          "char_start": 585,
+          "char_end": 606
         }
       },
       "her2_ihc": {
@@ -188,8 +188,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 575,
-          "char_end": 589
+          "char_start": 609,
+          "char_end": 623
         }
       },
       "her2_ish": {
@@ -204,8 +204,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 592,
-          "char_end": 616
+          "char_start": 626,
+          "char_end": 650
         }
       },
       "pdl1": {
@@ -224,8 +224,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 50%",
-          "char_start": 619,
-          "char_end": 629
+          "char_start": 653,
+          "char_end": 663
         }
       }
     },
@@ -336,8 +336,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA2, PALB2",
-            "char_start": 965,
-            "char_end": 995
+            "char_start": 999,
+            "char_end": 1029
           }
         },
         "PIK3CA": {
@@ -361,8 +361,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PIK3CA   c.3012G>A (p.M1004I)   VAF 42.4%; PIK3CA   c.3140A>G (p.H1047R)   VAF 43.9%",
-            "char_start": 805,
-            "char_end": 889
+            "char_start": 839,
+            "char_end": 923
           }
         },
         "AKT1": {
@@ -373,8 +373,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA2, PALB2",
-            "char_start": 965,
-            "char_end": 995
+            "char_start": 999,
+            "char_end": 1029
           }
         },
         "PTEN": {
@@ -385,8 +385,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA2, PALB2",
-            "char_start": 965,
-            "char_end": 995
+            "char_start": 999,
+            "char_end": 1029
           }
         },
         "BRCA1": {
@@ -404,8 +404,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "BRCA1   c.1931_1933del (p.C644del)   VAF 33.3%",
-            "char_start": 892,
-            "char_end": 938
+            "char_start": 926,
+            "char_end": 972
           }
         },
         "BRCA2": {
@@ -416,8 +416,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA2, PALB2",
-            "char_start": 965,
-            "char_end": 995
+            "char_start": 999,
+            "char_end": 1029
           }
         },
         "PALB2": {
@@ -428,8 +428,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA2, PALB2",
-            "char_start": 965,
-            "char_end": 995
+            "char_start": 999,
+            "char_end": 1029
           }
         }
       }

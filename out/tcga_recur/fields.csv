@@ -22,7 +22,7 @@ VH-T0043,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0043,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0043,diagnosis.diagnosis_date,present,"""2024-03-24""",derived,⑤,D-01,,,,
 VH-T0043,proliferation.ki67_percent,present,"{""percent"": 5}",synthetic,③,Y-04,,2024-04-14,primary,
-VH-T0043,diagnosis.grade,present,1,synthetic,④,Y-05,,,,
+VH-T0043,diagnosis.grade,present,1,synthetic,④,Y-05,,,,Thennavan 2021 판독 점수 없음
 VH-T0043,patient.ecog,present,0,synthetic,④,Y-01,,2024-05-12,,
 VH-T0043,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0043,recurrence.metastatic_sites,present,"[""bone""]",real,,M-01,nte_sites,,,
@@ -53,7 +53,7 @@ VH-T0107,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0107,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0107,diagnosis.diagnosis_date,present,"""2024-01-09""",derived,⑤,D-01,,,,
 VH-T0107,proliferation.ki67_percent,present,"{""percent"": 50}",synthetic,④,Y-04,,2024-01-30,primary,
-VH-T0107,diagnosis.grade,present,2,synthetic,④,Y-05,,,,
+VH-T0107,diagnosis.grade,present,2,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 2 + 유사분열 2 = 7
 VH-T0107,patient.ecog,present,1,synthetic,④,Y-01,,2024-02-22,,
 VH-T0107,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0107,recurrence.metastatic_sites,present,"[""liver""]",real,,M-01,nte_sites,,,
@@ -84,7 +84,7 @@ VH-T0203,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0203,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0203,diagnosis.diagnosis_date,present,"""2023-07-09""",derived,⑤,D-01,,,,
 VH-T0203,proliferation.ki67_percent,present,"{""percent"": 5}",synthetic,③,Y-04,,2023-07-30,primary,
-VH-T0203,diagnosis.grade,present,2,synthetic,④,Y-05,,,,
+VH-T0203,diagnosis.grade,present,2,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 2 + 유사분열 2 = 7
 VH-T0203,patient.ecog,present,0,synthetic,④,Y-01,,2023-08-27,,
 VH-T0203,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0203,recurrence.metastatic_sites,present,"[""liver""]",real,,M-01,nte_sites,,,
@@ -115,7 +115,7 @@ VH-T0213,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0213,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0213,diagnosis.diagnosis_date,present,"""2024-12-06""",derived,⑤,D-01,,,,
 VH-T0213,proliferation.ki67_percent,present,"{""percent"": 5}",synthetic,④,Y-04,,2024-12-27,primary,
-VH-T0213,diagnosis.grade,present,1,synthetic,④,Y-05,,,,
+VH-T0213,diagnosis.grade,present,3,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 3 + 유사분열 2 = 8
 VH-T0213,patient.ecog,present,0,synthetic,④,Y-01,,2025-01-24,,
 VH-T0213,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0213,recurrence.metastatic_sites,present,"[""bone""]",real,,M-01,nte_sites,,,
@@ -146,7 +146,7 @@ VH-T0214,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0214,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0214,diagnosis.diagnosis_date,present,"""2022-04-22""",derived,⑤,D-01,,,,
 VH-T0214,proliferation.ki67_percent,present,"{""percent"": 30}",synthetic,③,Y-04,,2022-05-13,primary,
-VH-T0214,diagnosis.grade,present,1,synthetic,④,Y-05,,,,
+VH-T0214,diagnosis.grade,present,2,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 2 + 유사분열 1 = 6
 VH-T0214,patient.ecog,present,0,synthetic,④,Y-01,,2022-06-10,,
 VH-T0214,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0214,recurrence.metastatic_sites,present,"[""bone""]",real,,M-01,nte_sites,,,
@@ -176,7 +176,7 @@ VH-T0514,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0514,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0514,diagnosis.diagnosis_date,present,"""2024-06-23""",derived,⑤,D-01,,,,
 VH-T0514,proliferation.ki67_percent,present,"{""percent"": 30}",synthetic,③,Y-04,,2024-07-14,primary,
-VH-T0514,diagnosis.grade,present,3,synthetic,④,Y-05,,,,
+VH-T0514,diagnosis.grade,present,2,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 2 + 핵 다형성 2 + 유사분열 3 = 7
 VH-T0514,patient.ecog,present,0,synthetic,④,Y-01,,2024-08-11,,
 VH-T0514,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0514,recurrence.metastatic_sites,present,"[""bone"", ""liver""]",real,,M-01,nte_sites,,,
@@ -207,7 +207,7 @@ VH-T0546,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0546,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0546,diagnosis.diagnosis_date,present,"""2024-05-10""",derived,⑤,D-01,,,,
 VH-T0546,proliferation.ki67_percent,present,"{""percent"": 10}",synthetic,③,Y-04,,2024-05-31,primary,
-VH-T0546,diagnosis.grade,present,2,synthetic,④,Y-05,,,,
+VH-T0546,diagnosis.grade,present,2,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 2 + 유사분열 1 = 6
 VH-T0546,patient.ecog,present,0,synthetic,④,Y-01,,2024-06-28,,
 VH-T0546,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0546,recurrence.metastatic_sites,present,"[""liver""]",real,,M-01,nte_sites,,,
@@ -238,7 +238,7 @@ VH-T0561,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0561,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0561,diagnosis.diagnosis_date,present,"""2022-12-21""",derived,⑤,D-01,,,,
 VH-T0561,proliferation.ki67_percent,present,"{""percent"": 60}",synthetic,④,Y-04,,2023-01-11,primary,
-VH-T0561,diagnosis.grade,present,3,synthetic,④,Y-05,,,,
+VH-T0561,diagnosis.grade,present,3,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 3 + 유사분열 2 = 8
 VH-T0561,patient.ecog,present,0,synthetic,④,Y-01,,2023-02-08,,
 VH-T0561,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0561,recurrence.metastatic_sites,present,"[""lung""]",real,,M-01,nte_sites,,,
@@ -268,7 +268,7 @@ VH-T0578,molecular.mutations.BRCA2,present,"{""result"": ""not_detected"", ""var
 VH-T0578,molecular.mutations.PALB2,present,"{""result"": ""not_detected"", ""variants"": []}",real,,M-01,mini convert,,primary,
 VH-T0578,diagnosis.diagnosis_date,present,"""2024-01-26""",derived,⑤,D-01,,,,
 VH-T0578,proliferation.ki67_percent,present,"{""percent"": 10}",synthetic,④,Y-04,,2024-02-16,primary,
-VH-T0578,diagnosis.grade,present,3,synthetic,④,Y-05,,,,
+VH-T0578,diagnosis.grade,present,3,real,,M-05,"Thennavan 2021 Data S2: tubule, pleomorphism, mitosis",,,관 형성 3 + 핵 다형성 3 + 유사분열 3 = 9
 VH-T0578,patient.ecog,present,0,synthetic,④,Y-01,,2024-03-15,,
 VH-T0578,recurrence.status,present,"""distant""",real,,M-01,recurrence_status,,,
 VH-T0578,recurrence.metastatic_sites,present,"[""bone"", ""liver""]",real,,M-01,nte_sites,,,

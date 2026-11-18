@@ -20,6 +20,7 @@ P) 고식 1차 치료 결정
 진단
   조직형: 침윤성 유관암 (invasive ductal carcinoma, NST)
   조직학적 등급: III (Nottingham grade 3)
+    관 형성 3, 핵 다형성 3, 유사분열 2 (합 8)
   림프절: 전이 27개 / 검사 28개
   pTNM: pT2 N3a M0, stage IIIC (AJCC 6th)
 

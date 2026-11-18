@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT4b N3 M0, stage IIIB (AJCC 5th)",
-          "char_start": 463,
-          "char_end": 496
+          "char_start": 499,
+          "char_end": 532
         }
       ]
     },
@@ -81,8 +81,8 @@
         {
           "doc_id": "D2",
           "quote": "pT4b N3 M0, stage IIIB (AJCC 5th)",
-          "char_start": 463,
-          "char_end": 496
+          "char_start": 499,
+          "char_end": 532
         }
       ]
     },
@@ -106,8 +106,8 @@
         {
           "doc_id": "D2",
           "quote": "pT4b N3 M0, stage IIIB (AJCC 5th)",
-          "char_start": 463,
-          "char_end": 496
+          "char_start": 499,
+          "char_end": 532
         }
       ]
     },
@@ -128,8 +128,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIB",
-          "char_start": 475,
-          "char_end": 485
+          "char_start": 511,
+          "char_end": 521
         }
       ]
     },
@@ -142,9 +142,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 1,
+      "system": 3,
       "system_source": "patient_state",
-      "confirmed": 1,
+      "confirmed": 3,
       "status": "confirmed"
     },
     "high_risk_early": {
@@ -159,7 +159,7 @@
         "esmo": "unknown"
       },
       "status": "confirmed",
-      "note": "림프절 ?개, T4b, 1등급, Ki-67 60%"
+      "note": "림프절 ?개, T4b, 3등급, Ki-67 60%"
     },
     "recurrence_day": {
       "scope": "current",

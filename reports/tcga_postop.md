@@ -1,6 +1,6 @@
 # TCGA ① (수술 후) 가상환자 세트 — 생성 보고
 
-mini 커밋: `e7465bf` · 실행: `python -m vh.build`
+mini 커밋: `ef4ba7f` · 실행: `python -m vh.build`
 
 ## 인원
 
@@ -32,10 +32,11 @@ mini 커밋: `e7465bf` · 실행: `python -m vh.build`
 | derived | D-11 | 1 |
 | real | D-09 | 124 |
 | real | M-01 | 10812 |
+| real | M-05 | 650 |
 | synthetic | Y-01 | 671 |
 | synthetic | Y-02 | 44 |
 | synthetic | Y-04 | 671 |
-| synthetic | Y-05 | 671 |
+| synthetic | Y-05 | 21 |
 | synthetic | Y-06 | 938 |
 | synthetic | Y-07 | 268 |
 
@@ -50,6 +51,7 @@ mini 커밋: `e7465bf` · 실행: `python -m vh.build`
   "ER 판정": 671,
   "PR 판정": 671,
   "pT": 671,
+  "grade (Nottingham)": 650,
   "pM": 442,
   "병기군": 671,
   "HER2 IHC 점수": 420
@@ -105,9 +107,9 @@ mini 커밋: `e7465bf` · 실행: `python -m vh.build`
   "?": 0.36
  },
  "grade 3 비율 (아형별)": {
-  "HER2+": 0.56,
-  "HR+/HER2-": 0.22,
-  "TNBC": 0.7
+  "HER2+": 0.41,
+  "HR+/HER2-": 0.24,
+  "TNBC": 0.83
  },
  "기대": "LumA < LumB, HR+/HER2- < TNBC"
 }

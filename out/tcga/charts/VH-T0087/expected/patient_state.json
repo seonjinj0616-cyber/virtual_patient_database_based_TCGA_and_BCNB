@@ -68,8 +68,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0, stage IIA (AJCC 7th)",
-          "char_start": 533,
-          "char_end": 564
+          "char_start": 567,
+          "char_end": 598
         }
       },
       "group": {
@@ -79,8 +79,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 544,
-          "char_end": 553
+          "char_start": 578,
+          "char_end": 587
         }
       },
       "positive_ln_count": {
@@ -93,8 +93,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 3개",
-          "char_start": 511,
-          "char_end": 524
+          "char_start": 545,
+          "char_end": 558
         }
       },
       "disease_extent": {
@@ -104,8 +104,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 544,
-          "char_end": 553
+          "char_start": 578,
+          "char_end": 587
         }
       },
       "metastatic_sites": {
@@ -115,8 +115,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N0 M0",
-          "char_start": 533,
-          "char_end": 542
+          "char_start": 567,
+          "char_end": 576
         }
       },
       "operable": {
@@ -148,8 +148,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 약양성 (Allred 3, 2+1)",
-          "char_start": 575,
-          "char_end": 597
+          "char_start": 609,
+          "char_end": 631
         }
       },
       "pr_percent": {
@@ -168,8 +168,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 약양성 (Allred 4, 2+2)",
-          "char_start": 600,
-          "char_end": 622
+          "char_start": 634,
+          "char_end": 656
         }
       },
       "her2_ihc": {
@@ -183,8 +183,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 625,
-          "char_end": 639
+          "char_start": 659,
+          "char_end": 673
         }
       },
       "her2_ish": {
@@ -193,8 +193,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 ISH: 시행하지 않음",
-          "char_start": 642,
-          "char_end": 659
+          "char_start": 676,
+          "char_end": 693
         }
       },
       "pdl1": {
@@ -213,8 +213,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 10%",
-          "char_start": 662,
-          "char_end": 672
+          "char_start": 696,
+          "char_end": 706
         }
       }
     },

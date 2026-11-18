@@ -41,13 +41,13 @@
       },
       "grade": {
         "status": "present",
-        "value": 3,
-        "raw": "III (Nottingham grade 3)",
+        "value": 2,
+        "raw": "II (Nottingham grade 2)",
         "source": {
           "doc_id": "D2",
-          "quote": "III (Nottingham grade 3)",
+          "quote": "II (Nottingham grade 2)",
           "char_start": 476,
-          "char_end": 500
+          "char_end": 499
         }
       }
     },
@@ -68,8 +68,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N0 M0, stage I (AJCC 7th)",
-          "char_start": 530,
-          "char_end": 560
+          "char_start": 563,
+          "char_end": 593
         }
       },
       "group": {
@@ -79,8 +79,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage I",
-          "char_start": 542,
-          "char_end": 549
+          "char_start": 575,
+          "char_end": 582
         }
       },
       "positive_ln_count": {
@@ -93,8 +93,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 1개",
-          "char_start": 508,
-          "char_end": 521
+          "char_start": 541,
+          "char_end": 554
         }
       },
       "disease_extent": {
@@ -104,8 +104,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage I",
-          "char_start": 542,
-          "char_end": 549
+          "char_start": 575,
+          "char_end": 582
         }
       },
       "metastatic_sites": {
@@ -115,8 +115,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N0 M0",
-          "char_start": 530,
-          "char_end": 540
+          "char_start": 563,
+          "char_end": 573
         }
       },
       "operable": {
@@ -148,8 +148,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 571,
-          "char_end": 593
+          "char_start": 604,
+          "char_end": 626
         }
       },
       "pr_percent": {
@@ -168,8 +168,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 8, 5+3)",
-          "char_start": 596,
-          "char_end": 618
+          "char_start": 629,
+          "char_end": 651
         }
       },
       "her2_ihc": {
@@ -183,8 +183,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 621,
-          "char_end": 635
+          "char_start": 654,
+          "char_end": 668
         }
       },
       "her2_ish": {
@@ -199,8 +199,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 638,
-          "char_end": 662
+          "char_start": 671,
+          "char_end": 695
         }
       },
       "pdl1": {
@@ -219,8 +219,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 665,
-          "char_end": 674
+          "char_start": 698,
+          "char_end": 707
         }
       }
     },

@@ -38,8 +38,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 486,
-          "char_end": 520
+          "char_start": 518,
+          "char_end": 552
         }
       ]
     },
@@ -63,8 +63,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 486,
-          "char_end": 520
+          "char_start": 518,
+          "char_end": 552
         }
       ]
     },
@@ -88,8 +88,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 486,
-          "char_end": 520
+          "char_start": 518,
+          "char_end": 552
         }
       ]
     },
@@ -103,8 +103,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 19개 / 검사 21개",
-          "char_start": 462,
-          "char_end": 477
+          "char_start": 494,
+          "char_end": 509
         }
       ]
     },
@@ -118,8 +118,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 499,
-          "char_end": 509
+          "char_start": 531,
+          "char_end": 541
         }
       ]
     },
@@ -132,9 +132,9 @@
     },
     "grade": {
       "scope": "diagnosis",
-      "system": 3,
+      "system": 1,
       "system_source": "patient_state",
-      "confirmed": 3,
+      "confirmed": 1,
       "status": "confirmed"
     },
     "recurrence_day": {

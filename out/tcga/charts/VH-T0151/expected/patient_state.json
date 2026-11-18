@@ -68,8 +68,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N1 M0, stage IIA (AJCC 6th)",
-          "char_start": 540,
-          "char_end": 572
+          "char_start": 574,
+          "char_end": 606
         }
       },
       "group": {
@@ -79,8 +79,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 552,
-          "char_end": 561
+          "char_start": 586,
+          "char_end": 595
         }
       },
       "positive_ln_count": {
@@ -93,8 +93,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 2개 / 검사 8개",
-          "char_start": 518,
-          "char_end": 531
+          "char_start": 552,
+          "char_end": 565
         }
       },
       "disease_extent": {
@@ -104,8 +104,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 552,
-          "char_end": 561
+          "char_start": 586,
+          "char_end": 595
         }
       },
       "metastatic_sites": {
@@ -115,8 +115,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1c N1 M0",
-          "char_start": 540,
-          "char_end": 550
+          "char_start": 574,
+          "char_end": 584
         }
       },
       "operable": {
@@ -148,8 +148,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 583,
-          "char_end": 605
+          "char_start": 617,
+          "char_end": 639
         }
       },
       "pr_percent": {
@@ -168,8 +168,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 8, 5+3)",
-          "char_start": 608,
-          "char_end": 630
+          "char_start": 642,
+          "char_end": 664
         }
       },
       "her2_ihc": {
@@ -187,8 +187,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: amplified",
-          "char_start": 633,
-          "char_end": 653
+          "char_start": 667,
+          "char_end": 687
         }
       },
       "pdl1": {
@@ -207,8 +207,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 40%",
-          "char_start": 656,
-          "char_end": 666
+          "char_start": 690,
+          "char_end": 700
         }
       }
     },
