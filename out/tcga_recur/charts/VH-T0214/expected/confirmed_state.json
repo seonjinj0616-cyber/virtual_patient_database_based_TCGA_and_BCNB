@@ -4,7 +4,7 @@
   "version": 1,
   "visit_type": "initial",
   "decision_context": "metastatic",
-  "index_day": 166,
+  "index_day": 292,
   "confirmed_at": "2026-11-09T00:00:00+09:00",
   "confirmed_by": "virtual-hospital",
   "based_on": {
@@ -26,6 +26,14 @@
       "system_source": "biomarker_record",
       "confirmed": "HR+/HER2-",
       "status": "confirmed"
+    },
+    "molecular_subtype": {
+      "scope": "current",
+      "system": "Luminal B(HER2 negative)",
+      "system_source": "biomarker_record",
+      "confirmed": "Luminal B(HER2 negative)",
+      "status": "confirmed",
+      "note": "Ki-67로 정함 (저증식 Luminal A, 고증식·중간 Luminal B). Ki-67을 모르면 비움"
     },
     "setting.line_endocrine": {
       "scope": "current",
@@ -54,8 +62,8 @@
         {
           "doc_id": "D1",
           "quote": "폐경 전",
-          "char_start": 157,
-          "char_end": 161
+          "char_start": 163,
+          "char_end": 167
         }
       ]
     },
@@ -79,8 +87,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 527,
-          "char_end": 548
+          "char_start": 532,
+          "char_end": 553
         }
       ]
     },
@@ -104,8 +112,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 527,
-          "char_end": 548
+          "char_start": 532,
+          "char_end": 553
         }
       ]
     },
@@ -119,8 +127,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 11개 / 검사 11개",
-          "char_start": 503,
-          "char_end": 518
+          "char_start": 508,
+          "char_end": 523
         }
       ]
     },
@@ -134,8 +142,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 538,
-          "char_end": 548
+          "char_start": 543,
+          "char_end": 553
         }
       ]
     },
@@ -188,8 +196,8 @@
         {
           "doc_id": "D1",
           "quote": "2022.9.12 골 전이",
-          "char_start": 237,
-          "char_end": 251
+          "char_start": 243,
+          "char_end": 257
         }
       ]
     },
@@ -210,8 +218,8 @@
         {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 247,
-          "char_end": 251
+          "char_start": 253,
+          "char_end": 257
         }
       ]
     },
@@ -228,18 +236,95 @@
     },
     "prior_regimens": {
       "scope": "current",
-      "system": [],
+      "system": [
+        {
+          "drugs": [
+            "leuprolide",
+            "zoledronic acid"
+          ],
+          "subclasses": [
+            "LHRH_agonist",
+            "Bone-modifying Agent"
+          ],
+          "setting": "palliative",
+          "start_day": 166,
+          "end_day": null,
+          "line_endocrine": 1,
+          "line_chemo": null,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        },
+        {
+          "drugs": [
+            "tamoxifen"
+          ],
+          "subclasses": [
+            "SERM"
+          ],
+          "setting": "palliative",
+          "start_day": 166,
+          "end_day": 242,
+          "line_endocrine": 1,
+          "line_chemo": null,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        }
+      ],
       "system_source": "patient_state",
-      "confirmed": [],
+      "confirmed": [
+        {
+          "drugs": [
+            "leuprolide",
+            "zoledronic acid"
+          ],
+          "subclasses": [
+            "LHRH_agonist",
+            "Bone-modifying Agent"
+          ],
+          "setting": "palliative",
+          "start_day": 166,
+          "end_day": null,
+          "line_endocrine": 1,
+          "line_chemo": null,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        },
+        {
+          "drugs": [
+            "tamoxifen"
+          ],
+          "subclasses": [
+            "SERM"
+          ],
+          "setting": "palliative",
+          "start_day": 166,
+          "end_day": 242,
+          "line_endocrine": 1,
+          "line_chemo": null,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        }
+      ],
       "status": "confirmed"
     },
-    "recent_therapy_28d": {
+    "anthracycline_cumulative": {
       "scope": "current",
-      "system": "no",
+      "system": {},
       "system_source": "patient_state",
-      "confirmed": "no",
-      "status": "confirmed",
-      "note": "기준일 이전 항암제·호르몬제 투약 없음"
+      "confirmed": {},
+      "status": "confirmed"
     },
     "contraindicated_classes": {
       "scope": "current",

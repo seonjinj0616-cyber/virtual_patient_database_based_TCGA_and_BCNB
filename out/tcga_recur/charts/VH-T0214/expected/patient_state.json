@@ -2,12 +2,12 @@
   "schema_version": "0.1-draft6",
   "patient_ref": "VH-T0214",
   "created_at": "2026-11-09T00:00:00+09:00",
-  "index_day": 166,
+  "index_day": 292,
   "documents": [
     {
       "doc_id": "D1",
       "doc_type": "progress_note",
-      "doc_date": "2022-10-05"
+      "doc_date": "2023-02-08"
     },
     {
       "doc_id": "D2",
@@ -18,6 +18,11 @@
       "doc_id": "D3",
       "doc_type": "molecular",
       "doc_date": "2022-06-02"
+    },
+    {
+      "doc_id": "D4",
+      "doc_type": "medication",
+      "doc_date": null
     }
   ],
   "fields": {
@@ -29,8 +34,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2022.4.22 core bx로 진단",
-          "char_start": 198,
-          "char_end": 219
+          "char_start": 204,
+          "char_end": 225
         }
       },
       "histology": {
@@ -40,8 +45,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "침윤성 유관암 (invasive ductal carcinoma, NST)",
-          "char_start": 386,
-          "char_end": 426
+          "char_start": 391,
+          "char_end": 431
         }
       },
       "grade": {
@@ -51,8 +56,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "II (Nottingham grade 2)",
-          "char_start": 438,
-          "char_end": 461
+          "char_start": 443,
+          "char_end": 466
         }
       }
     },
@@ -73,8 +78,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 527,
-          "char_end": 548
+          "char_start": 532,
+          "char_end": 553
         }
       },
       "group": {
@@ -84,8 +89,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 538,
-          "char_end": 548
+          "char_start": 543,
+          "char_end": 553
         }
       },
       "positive_ln_count": {
@@ -98,8 +103,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "전이 11개 / 검사 11개",
-          "char_start": 503,
-          "char_end": 518
+          "char_start": 508,
+          "char_end": 523
         }
       },
       "disease_extent": {
@@ -109,8 +114,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 538,
-          "char_end": 548
+          "char_start": 543,
+          "char_end": 553
         }
       },
       "metastatic_sites": {
@@ -120,8 +125,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT2 N3 M0",
-          "char_start": 527,
-          "char_end": 536
+          "char_start": 532,
+          "char_end": 541
         }
       },
       "operable": {
@@ -131,8 +136,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "우측 유방 절제술 + 액와 림프절 수술",
-          "char_start": 353,
-          "char_end": 374
+          "char_start": 358,
+          "char_end": 379
         }
       }
     },
@@ -153,8 +158,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 양성 (Allred 7, 5+2)",
-          "char_start": 559,
-          "char_end": 580
+          "char_start": 564,
+          "char_end": 585
         }
       },
       "pr_percent": {
@@ -173,8 +178,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 약양성 (Allred 3, 2+1)",
-          "char_start": 583,
-          "char_end": 605
+          "char_start": 588,
+          "char_end": 610
         }
       },
       "her2_ihc": {
@@ -188,8 +193,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 1+",
-          "char_start": 608,
-          "char_end": 622
+          "char_start": 613,
+          "char_end": 627
         }
       },
       "her2_ish": {
@@ -198,8 +203,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 ISH: 시행하지 않음",
-          "char_start": 625,
-          "char_end": 642
+          "char_start": 630,
+          "char_end": 647
         }
       },
       "pdl1": {
@@ -218,8 +223,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 30%",
-          "char_start": 645,
-          "char_end": 655
+          "char_start": 650,
+          "char_end": 660
         }
       }
     },
@@ -231,8 +236,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/36",
-          "char_start": 312,
-          "char_end": 316
+          "char_start": 317,
+          "char_end": 321
         }
       },
       "age": {
@@ -242,8 +247,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/36",
-          "char_start": 312,
-          "char_end": 316
+          "char_start": 317,
+          "char_end": 321
         }
       },
       "menopausal_status": {
@@ -253,8 +258,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 전",
-          "char_start": 157,
-          "char_end": 161
+          "char_start": 163,
+          "char_end": 167
         }
       },
       "menopausal_basis": {
@@ -264,18 +269,68 @@
         "status": "present",
         "value": 0,
         "raw": "ECOG PS 0",
-        "observed_date": "2022-10-05",
+        "observed_date": "2023-02-08",
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
-          "char_start": 165,
-          "char_end": 174
+          "char_start": 171,
+          "char_end": 180
         }
       }
     },
-    "treatment_history": [],
+    "treatment_history": [
+      {
+        "drugs": [
+          "leuprolide",
+          "zoledronic acid"
+        ],
+        "setting": "palliative",
+        "start_date": "2022-10-05",
+        "end_date": null,
+        "start_day": 166,
+        "end_day": null,
+        "duration_days": null,
+        "cycles": null,
+        "progression_day": null,
+        "stop_reason": null,
+        "best_response": null,
+        "source": {
+          "doc_id": "D4",
+          "quote": "leuprolide + zoledronic acid   2022.10.5   -   -   -   -",
+          "char_start": 1175,
+          "char_end": 1231
+        },
+        "line": 1,
+        "endocrine_line": 1,
+        "chemo_line": null
+      },
+      {
+        "drugs": [
+          "tamoxifen"
+        ],
+        "setting": "palliative",
+        "start_date": "2022-10-05",
+        "end_date": "2022-12-20",
+        "start_day": 166,
+        "end_day": 242,
+        "duration_days": 76,
+        "cycles": null,
+        "progression_day": null,
+        "stop_reason": null,
+        "best_response": null,
+        "source": {
+          "doc_id": "D4",
+          "quote": "tamoxifen   2022.10.5   2022.12.20   -   -   -",
+          "char_start": 1238,
+          "char_end": 1284
+        },
+        "line": 1,
+        "endocrine_line": 1,
+        "chemo_line": null
+      }
+    ],
     "anthracycline_drug_dose": {
-      "administered": "No value",
+      "administered": "negative",
       "drugs": []
     },
     "neoadjuvant_response": {
@@ -294,8 +349,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2022.9.12 골 전이",
-          "char_start": 237,
-          "char_end": 251
+          "char_start": 243,
+          "char_end": 257
         }
       },
       "adjuvant_endocrine_end_date": {
@@ -308,8 +363,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 247,
-          "char_end": 251
+          "char_start": 253,
+          "char_end": 257
         }
       },
       "metastatic_sites": {
@@ -321,8 +376,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 247,
-          "char_end": 251
+          "char_start": 253,
+          "char_end": 257
         }
       },
       "metastasis_day": {
@@ -332,8 +387,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2022.9.12 골 전이",
-          "char_start": 237,
-          "char_end": 251
+          "char_start": 243,
+          "char_end": 257
         }
       },
       "recurrence_day": {
@@ -343,8 +398,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2022.9.12 골 전이",
-          "char_start": 237,
-          "char_end": 251
+          "char_start": 243,
+          "char_end": 257
         }
       },
       "surgery": {
@@ -364,8 +419,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 936,
-            "char_end": 967
+            "char_start": 941,
+            "char_end": 972
           }
         },
         "PIK3CA": {
@@ -383,8 +438,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PIK3CA   c.1624G>A (p.E542K)   VAF 32.9%",
-            "char_start": 830,
-            "char_end": 870
+            "char_start": 835,
+            "char_end": 875
           }
         },
         "AKT1": {
@@ -395,8 +450,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 936,
-            "char_end": 967
+            "char_start": 941,
+            "char_end": 972
           }
         },
         "PTEN": {
@@ -414,8 +469,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PTEN   c.264T>A (p.Y88*)   VAF 52.5%",
-            "char_start": 873,
-            "char_end": 909
+            "char_start": 878,
+            "char_end": 914
           }
         },
         "BRCA1": {
@@ -426,8 +481,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 936,
-            "char_end": 967
+            "char_start": 941,
+            "char_end": 972
           }
         },
         "BRCA2": {
@@ -438,8 +493,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 936,
-            "char_end": 967
+            "char_start": 941,
+            "char_end": 972
           }
         },
         "PALB2": {
@@ -450,8 +505,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, BRCA1, BRCA2, PALB2",
-            "char_start": 936,
-            "char_end": 967
+            "char_start": 941,
+            "char_end": 972
           }
         }
       }
@@ -505,9 +560,11 @@
     "at_index": {
       "age": 36,
       "recent_therapy_28d": {
-        "status": "no",
-        "basis": "기준일 이전 항암제·호르몬제 투약 없음",
-        "regimen_refs": [],
+        "status": "unknown",
+        "basis": "종료일 없는 투약이 있어 기준일에 투여 중인지 알 수 없음",
+        "regimen_refs": [
+          0
+        ],
         "gap_days": null
       }
     }

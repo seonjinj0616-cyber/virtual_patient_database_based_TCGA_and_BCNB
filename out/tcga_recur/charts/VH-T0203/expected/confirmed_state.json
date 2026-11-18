@@ -4,7 +4,7 @@
   "version": 1,
   "visit_type": "initial",
   "decision_context": "metastatic",
-  "index_day": 2853,
+  "index_day": 2422,
   "confirmed_at": "2026-11-09T00:00:00+09:00",
   "confirmed_by": "virtual-hospital",
   "based_on": {
@@ -26,6 +26,14 @@
       "system_source": "biomarker_record",
       "confirmed": "HR+/HER2-",
       "status": "confirmed"
+    },
+    "molecular_subtype": {
+      "scope": "current",
+      "system": "Luminal A",
+      "system_source": "biomarker_record",
+      "confirmed": "Luminal A",
+      "status": "confirmed",
+      "note": "Ki-67로 정함 (저증식 Luminal A, 고증식·중간 Luminal B). Ki-67을 모르면 비움"
     },
     "setting.line_endocrine": {
       "scope": "current",
@@ -54,16 +62,16 @@
         {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 163,
-          "char_end": 167
+          "char_start": 164,
+          "char_end": 168
         }
       ]
     },
     "age_at_index": {
       "scope": "current",
-      "system": 61,
+      "system": 60,
       "system_source": "patient_state",
-      "confirmed": 61,
+      "confirmed": 60,
       "status": "confirmed"
     },
     "stage.t": {
@@ -188,8 +196,8 @@
         {
           "doc_id": "D1",
           "quote": "2028.10.12 간 전이",
-          "char_start": 242,
-          "char_end": 257
+          "char_start": 243,
+          "char_end": 258
         }
       ]
     },
@@ -210,8 +218,8 @@
         {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 253,
-          "char_end": 257
+          "char_start": 254,
+          "char_end": 258
         }
       ]
     },
@@ -271,45 +279,6 @@
           "progression_day": null,
           "cycles": null,
           "ongoing": null
-        },
-        {
-          "drugs": [
-            "capecitabine"
-          ],
-          "subclasses": [
-            "Chemotherapy"
-          ],
-          "setting": "palliative",
-          "start_day": 2422,
-          "end_day": 2839,
-          "line_endocrine": null,
-          "line_chemo": 1,
-          "response": "unknown",
-          "stop_reason": null,
-          "progression_day": null,
-          "cycles": null,
-          "ongoing": null
-        },
-        {
-          "drugs": [
-            "bevacizumab"
-          ],
-          "subclasses": [
-            "Other Targeted Therapy"
-          ],
-          "setting": "palliative",
-          "start_day": 2451,
-          "end_day": 2822,
-          "line_endocrine": null,
-          "line_chemo": 1,
-          "response": "unknown",
-          "stop_reason": null,
-          "progression_day": null,
-          "cycles": {
-            "value": 27,
-            "interval_days": 14
-          },
-          "ongoing": null
         }
       ],
       "system_source": "patient_state",
@@ -349,45 +318,6 @@
           "progression_day": null,
           "cycles": null,
           "ongoing": null
-        },
-        {
-          "drugs": [
-            "capecitabine"
-          ],
-          "subclasses": [
-            "Chemotherapy"
-          ],
-          "setting": "palliative",
-          "start_day": 2422,
-          "end_day": 2839,
-          "line_endocrine": null,
-          "line_chemo": 1,
-          "response": "unknown",
-          "stop_reason": null,
-          "progression_day": null,
-          "cycles": null,
-          "ongoing": null
-        },
-        {
-          "drugs": [
-            "bevacizumab"
-          ],
-          "subclasses": [
-            "Other Targeted Therapy"
-          ],
-          "setting": "palliative",
-          "start_day": 2451,
-          "end_day": 2822,
-          "line_endocrine": null,
-          "line_chemo": 1,
-          "response": "unknown",
-          "stop_reason": null,
-          "progression_day": null,
-          "cycles": {
-            "value": 27,
-            "interval_days": 14
-          },
-          "ongoing": null
         }
       ],
       "status": "confirmed"
@@ -405,7 +335,7 @@
       "system_source": "patient_state",
       "confirmed": "yes",
       "status": "confirmed",
-      "note": "capecitabine 기준일 14일 전 종료"
+      "note": "exemestane 기준일 0일 전 종료"
     },
     "contraindicated_classes": {
       "scope": "current",

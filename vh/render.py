@@ -136,8 +136,7 @@ def chart(p: Patient) -> tuple[str, dict, list[str]]:
     d.t("병원: 가상대학교병원 종양내과   담당의: 이가상\n\n")
     kind = {"endocrine": "내분비", "chemo": "항암"}.get(p.scene_kind, "")
     if recur:                                      # R-05: 장면 = 주 차수 종류와 차수 (D-R1)
-        d.t("S) 재발 확인 후 외래.\n   폐경: " if p.scene_line == 1 else
-            f"S) 고식 {kind} {p.scene_line - 1}차 치료 후 외래.\n   폐경: ")
+        d.t(f"S) 고식 {p.scene_prev} 치료 후 외래.\n   폐경: " if p.scene_prev else "S) 재발 확인 후 외래.\n   폐경: ")
     else:
         d.t("S) 수술 후 외래, 회복 양호.\n   폐경: ")
     meno = R["patient.menopausal_status"].value

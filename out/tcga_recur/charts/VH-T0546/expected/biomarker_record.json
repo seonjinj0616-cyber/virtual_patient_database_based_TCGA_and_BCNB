@@ -177,6 +177,7 @@
     }
   ],
   "subtype": "HR+/HER2-",
+  "molecular_subtype": "Luminal A",
   "setting": {
     "disease": "metastatic",
     "line": "2L",
@@ -186,7 +187,7 @@
       "Chemotherapy",
       "Hormone Therapy"
     ],
-    "reason": "진단 시 early, 이후 원격 전이 재발 / 전이성 HR+/HER2-: 내분비 차수 2L를 주 차수로 / 심평원 차수 간주 규칙 충족: DEEM-ANTHRA-TAXANE, DEEM-SG-1Y, DEEM-ENDO-ADJ-1Y (급여 판정에서 차수 +1, 전달 문서 6.3a절) / 고식적 내분비 1차(letrozole)에서 진행 -> 내분비 2차 / 고식적 항암요법 이력 없음 -> 항암 1차"
+    "reason": "진단 시 early, 이후 원격 전이 재발 / 마지막 고식적 요법 1차(letrozole, 내분비 1차)에서 진행 -> 2차 대상 / 심평원 차수 간주 규칙 충족: DEEM-ANTHRA-TAXANE, DEEM-SG-1Y, DEEM-ENDO-ADJ-1Y (급여 판정에서 차수 +1, 전달 문서 6.3a절) / 고식적 내분비 1차(letrozole)에서 진행 -> 내분비 2차 / 고식적 항암요법 이력 없음 -> 항암 1차"
   },
   "tests_needed": [
     {

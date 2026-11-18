@@ -1,7 +1,7 @@
 """TCGA ② 재발 갈래: 실제 원격 재발이 있는 환자를 고식 차수를 정하는 외래 시점 차트로 만든다 (투약 기록 포함).
 
 - 진단 시 값(병리·수용체·변이·합성 칸)은 TCGA ① 생성(tcga.build_all)을 그대로 쓴다
-- 장면 (D-R1): 주 차수 (HR+/HER2-는 내분비, 그 밖은 항암, mini B·C와 같음)의 2차가 실제로 있으면 2차 결정, 없으면 1차 결정.
+- 장면 (D-R1): 실제로 다음 치료를 정한 시점. 두 번째 고식 요법이 있으면 그 시작일, 없으면 첫 고식 요법 시작일.
   판정 기준일 = 그 차수 약의 실제 시작일. 그 전에 시작한 투약만 차트에 쓰고, 그날부터의 투약은
   truth.csv의 실제 처방 기록(참고용, 정답 아님)으로
 - 기준일에 아직 투약 중인 줄은 "현재 투약 중"으로 쓰고 반응은 쓰지 않는다 (반응 판정이 기준일 뒤일 수 있음)
@@ -148,20 +148,31 @@ def main() -> int:
         if problems:
             dropped.append({"vp_id": p.vp_id, "reason": "; ".join(problems)})
             continue
-        # D-R1: 주 차수 (mini B line_of·C decision_lines와 같은 규칙) = HR+/HER2-는 내분비 차수, 그 밖은 항암 차수.
-        # 그 종류의 2차가 실제로 있으면 2차 결정, 없으면 1차 결정. 기준일 = 그 차수 약의 실제 시작일
-        # 그 종류의 실제 고식 투약이 없으면 다른 종류 (HR+/HER2-인데 항암만 받은 환자 등)
-        first = "endocrine" if p.truth["subtype_rule"] == "HR+/HER2-" else "chemo"
-        hist = [t for t in ps0["fields"]["treatment_history"] if t.get("start_day") is not None]
-        kind = first if any(t.get(SCENE_KEY[first]) for t in hist) else ({"endocrine", "chemo"} - {first}).pop()
-        key = SCENE_KEY[kind]
-        lines = [t for t in hist if t.get(key)]
-        k = 2 if any(t[key] == 2 for t in lines) else 1 if lines else None
-        if k is None:
-            dropped.append({"vp_id": p.vp_id, "reason": f"D-R1 고식 {KIND_KO[kind]} 투약 기록 없음: 결정 장면을 만들 수 없음"})
+        # D-R1: 실제로 다음 치료를 정한 시점 (2026-11-18 사용자 결정 A). mini A가 붙인 (내분비 차수, 항암 차수) 번호 조합이
+        # 바뀌는 곳이 요법 경계다. 두 번째 고식 요법이 있으면 그 시작일, 없으면 첫 고식 요법 시작일이 기준일.
+        # 장면 종류·차수 = 그 요법에서 새로 올라간 종류와 그 차수 (예: 내분비 1차 뒤 capecitabine → 고식 항암 1차 결정)
+        hist = sorted((t for t in ps0["fields"]["treatment_history"] if t.get("start_day") is not None
+                       and (t.get("endocrine_line") or t.get("chemo_line"))), key=lambda t: t["start_day"])
+        groups: list[tuple] = []
+        for t in hist:
+            tag = (t.get("endocrine_line"), t.get("chemo_line"))
+            if tag not in [g[0] for g in groups]:
+                groups.append((tag, t["start_day"]))
+        if not groups:
+            dropped.append({"vp_id": p.vp_id, "reason": "D-R1 고식 투약 기록 없음: 결정 장면을 만들 수 없음"})
             continue
+        # 두 번째 요법 장면을 만들 수 없으면 (그 전 투약에 차트로 쓸 수 없는 줄) 첫 요법 장면으로 물러난다
+        options = ([(groups[1], groups[0][0])] if len(groups) > 1 else []) + [(groups[0], (None, None))]
+        for (tag, start), prev in options:
+            tried = treatments(ps0, start, mday, cls)
+            if not tried[2]:
+                break
+        kind = "endocrine" if tag[0] and tag[0] != prev[0] else "chemo"
+        key = SCENE_KEY[kind]
+        k = tag[0] if kind == "endocrine" else tag[1]
         p.branch, p.scene_line, p.scene_kind = "TCGA_recur", k, kind
-        p.index_day = min(t["start_day"] for t in lines if t[key] == k)
+        p.scene_prev = "·".join(f"{KIND_KO[x]} {n}차" for x, n in zip(SCENE_KEY, prev) if n) or None
+        p.index_day = start
         p.recs.pop("recurrence.status", None)
         p.add(Rec("recurrence.status", "present", "distant", "real", rule_id="M-01", source_column="recurrence_status"))
         p.add(Rec("recurrence.metastatic_sites", "present", sites, "real", rule_id="M-01", source_column="nte_sites"))
@@ -169,7 +180,7 @@ def main() -> int:
         p.add(Rec("recurrence.recurrence_day", "present", mday, "real", rule_id="M-01", source_column="metastasis_dx_days"))
         p.add(Rec("recurrence.recurrence_date", "present", render.Chart(p.vp_id, p.dx_date, 0).on(mday), "derived", "①",
                   "D-01", note="가짜 진단일 + 실제 전이 일수"))
-        p.treatments, later, tproblems = treatments(ps0, p.index_day, mday, cls)
+        p.treatments, later, tproblems = tried
         ends = [t for t in p.treatments if t["adjuvant_endocrine"] and t["end_day"] is not None and not t["ongoing"]]
         if ends:
             e = max(t["end_day"] for t in ends)
@@ -222,7 +233,7 @@ def main() -> int:
                                       for p, _ in kept for k, v in p.truth.items()])
     write_csv(REPORTS / "tcga_recur_excluded.csv", dropped, ["vp_id", "reason"])
     lines = collections.Counter((ps["fields"].get("at_index") or {}).get("line") for _, ps in kept)
-    summary = {"세트": len(kept), "장면": dict(collections.Counter(f"고식 {p.scene_line}차 결정" for p, _ in kept)),
+    summary = {"세트": len(kept), "장면": dict(collections.Counter(f"고식 {KIND_KO[p.scene_kind]} {p.scene_line}차 결정" for p, _ in kept)),
                "뺀 환자": len(dropped), "요법 줄": len(rows_t),
                "중단 사유": dict(collections.Counter(r["stop_reason"] or "(비움)" for r in rows_t)),
                "중단 사유 근거": dict(collections.Counter(r["stop_basis"].split(" (")[0].split(" ")[0] for r in rows_t)),

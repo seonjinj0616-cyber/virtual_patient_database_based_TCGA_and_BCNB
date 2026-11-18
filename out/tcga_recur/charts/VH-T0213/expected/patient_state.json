@@ -320,6 +320,7 @@
             "basis": "estimated"
           }
         ],
+        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -348,6 +349,7 @@
           "char_start": 1238,
           "char_end": 1285
         },
+        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -376,6 +378,7 @@
           "char_start": 1292,
           "char_end": 1338
         },
+        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -399,6 +402,7 @@
           "char_start": 1345,
           "char_end": 1391
         },
+        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -427,6 +431,7 @@
           "char_start": 1398,
           "char_end": 1443
         },
+        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -450,6 +455,7 @@
           "char_start": 1450,
           "char_end": 1497
         },
+        "line": 1,
         "endocrine_line": 1,
         "chemo_line": null
       }

@@ -36,8 +36,8 @@ VH-T0203,pfs_months,63.18834862
 VH-T0203,pfs_status,1:PROGRESSION
 VH-T0203,dfs_months,
 VH-T0203,dfs_status,
-VH-T0203,scene,고식 내분비 2차 결정
-VH-T0203,actual_prescriptions_from_index_reference,fulvestrant d2853 (mini 내분비 2차)
+VH-T0203,scene,고식 항암 1차 결정
+VH-T0203,actual_prescriptions_from_index_reference,capecitabine d2422 (mini 항암 1차) | bevacizumab d2451 (mini 항암 1차) | fulvestrant d2853 (mini 내분비 2차)
 VH-T0213,subtype_rule,HR+/HER2-
 VH-T0213,pam50,BRCA_LumA
 VH-T0213,recurrence_status,distant
@@ -62,8 +62,8 @@ VH-T0214,pfs_months,4.701318342
 VH-T0214,pfs_status,1:PROGRESSION
 VH-T0214,dfs_months,4.701318342
 VH-T0214,dfs_status,1:Recurred/Progressed
-VH-T0214,scene,고식 내분비 1차 결정
-VH-T0214,actual_prescriptions_from_index_reference,leuprolide+zoledronic acid d166 (mini 내분비 1차) | tamoxifen d166 (mini 내분비 1차) | paclitaxel d292 (mini 항암 1차)
+VH-T0214,scene,고식 항암 1차 결정
+VH-T0214,actual_prescriptions_from_index_reference,paclitaxel d292 (mini 항암 1차)
 VH-T0514,subtype_rule,HR+/HER2-
 VH-T0514,pam50,BRCA_LumA
 VH-T0514,recurrence_status,distant

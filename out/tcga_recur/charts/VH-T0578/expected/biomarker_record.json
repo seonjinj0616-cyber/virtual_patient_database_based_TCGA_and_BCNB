@@ -177,6 +177,7 @@
     }
   ],
   "subtype": "HR+/HER2+",
+  "molecular_subtype": "Luminal B(HER2 positive)",
   "setting": {
     "disease": "metastatic",
     "line": "1L",
@@ -185,7 +186,7 @@
     "prior_drug_classes": [
       "Hormone Therapy"
     ],
-    "reason": "진단 시 early, 이후 원격 전이 재발 / 전이성 HR+/HER2+: 항암 차수 1L를 주 차수로 / 심평원 차수 간주 규칙 충족: DEEM-SG-1Y, DEEM-ENDO-ADJ-1Y (급여 판정에서 차수 +1, 전달 문서 6.3a절) / 고식적 내분비요법 이력 없음 -> 내분비 1차 / 고식적 항암요법 이력 없음 -> 항암 1차"
+    "reason": "진단 시 early, 이후 원격 전이 재발 / 전이 후 고식적 투약 없음 -> 이번에 결정할 차수 1차 / 심평원 차수 간주 규칙 충족: DEEM-SG-1Y, DEEM-ENDO-ADJ-1Y (급여 판정에서 차수 +1, 전달 문서 6.3a절) / 고식적 내분비요법 이력 없음 -> 내분비 1차 / 고식적 항암요법 이력 없음 -> 항암 1차"
   },
   "tests_needed": []
 }
