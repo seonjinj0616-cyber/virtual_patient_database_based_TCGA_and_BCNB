@@ -1,6 +1,6 @@
 # TCGA ① (수술 후) 가상환자 세트 — 생성 보고
 
-mini 커밋: `ef4ba7f` · 실행: `python -m vh.build`
+mini 커밋: `025fe79` · 실행: `python -m vh.build`
 
 ## 인원
 

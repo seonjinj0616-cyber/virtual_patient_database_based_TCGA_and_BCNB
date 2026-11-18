@@ -1,7 +1,7 @@
 """TCGA ② 재발 갈래: 실제 원격 재발이 있는 환자를 고식 차수를 정하는 외래 시점 차트로 만든다 (투약 기록 포함).
 
 - 진단 시 값(병리·수용체·변이·합성 칸)은 TCGA ① 생성(tcga.build_all)을 그대로 쓴다
-- 장면 (D-R1): mini가 실제 전체 투약으로 센 고식 2차가 있으면 2차 결정, 없으면 1차 결정.
+- 장면 (D-R1): 주 차수 (HR+/HER2-는 내분비, 그 밖은 항암, mini B·C와 같음)의 2차가 실제로 있으면 2차 결정, 없으면 1차 결정.
   판정 기준일 = 그 차수 약의 실제 시작일. 그 전에 시작한 투약만 차트에 쓰고, 그날부터의 투약은
   truth.csv의 실제 처방 기록(참고용, 정답 아님)으로
 - 기준일에 아직 투약 중인 줄은 "현재 투약 중"으로 쓰고 반응은 쓰지 않는다 (반응 판정이 기준일 뒤일 수 있음)
@@ -27,6 +27,8 @@ SWITCH_GAP = 28                                # D-R2: AC 끝나고 28일 안에
 RECUR_GAP = 31                                 # D-R2: 전이일 31일 전 이후에 끝났거나 계속 중이면 재발로 중단 (진행)
 STANDARD_INTERVALS = (7, 14, 21, 28)           # 차트 주기 표기 (weekly·q2w·q3w·q4w)
 OUT_DIR = OUT / "tcga_recur"
+SCENE_KEY = {"endocrine": "endocrine_line", "chemo": "chemo_line"}   # D-R1: mini treatment_history 칸
+KIND_KO = {"endocrine": "내분비", "chemo": "항암"}
 
 
 def classes() -> dict[str, tuple[str, str]]:
@@ -146,13 +148,20 @@ def main() -> int:
         if problems:
             dropped.append({"vp_id": p.vp_id, "reason": "; ".join(problems)})
             continue
-        lines = [t for t in ps0["fields"]["treatment_history"] if t.get("line") and t.get("start_day") is not None]
-        k = 2 if any(t["line"] == 2 for t in lines) else 1 if lines else None
+        # D-R1: 주 차수 (mini B line_of·C decision_lines와 같은 규칙) = HR+/HER2-는 내분비 차수, 그 밖은 항암 차수.
+        # 그 종류의 2차가 실제로 있으면 2차 결정, 없으면 1차 결정. 기준일 = 그 차수 약의 실제 시작일
+        # 그 종류의 실제 고식 투약이 없으면 다른 종류 (HR+/HER2-인데 항암만 받은 환자 등)
+        first = "endocrine" if p.truth["subtype_rule"] == "HR+/HER2-" else "chemo"
+        hist = [t for t in ps0["fields"]["treatment_history"] if t.get("start_day") is not None]
+        kind = first if any(t.get(SCENE_KEY[first]) for t in hist) else ({"endocrine", "chemo"} - {first}).pop()
+        key = SCENE_KEY[kind]
+        lines = [t for t in hist if t.get(key)]
+        k = 2 if any(t[key] == 2 for t in lines) else 1 if lines else None
         if k is None:
-            dropped.append({"vp_id": p.vp_id, "reason": "D-R1 고식 투약 기록 없음: 결정 장면을 만들 수 없음"})
+            dropped.append({"vp_id": p.vp_id, "reason": f"D-R1 고식 {KIND_KO[kind]} 투약 기록 없음: 결정 장면을 만들 수 없음"})
             continue
-        p.branch, p.scene_line = "TCGA_recur", k
-        p.index_day = min(t["start_day"] for t in lines if t["line"] == k)
+        p.branch, p.scene_line, p.scene_kind = "TCGA_recur", k, kind
+        p.index_day = min(t["start_day"] for t in lines if t[key] == k)
         p.recs.pop("recurrence.status", None)
         p.add(Rec("recurrence.status", "present", "distant", "real", rule_id="M-01", source_column="recurrence_status"))
         p.add(Rec("recurrence.metastatic_sites", "present", sites, "real", rule_id="M-01", source_column="nte_sites"))
@@ -175,10 +184,10 @@ def main() -> int:
             dropped.append({"vp_id": p.vp_id, "reason": f"G2 표기 없음: {ex}"})
             continue
         res = gates.run(p, ps, errs, env, text)
-        seen = [t.get("line") for t in ps["fields"]["treatment_history"] if t.get("line")]
-        if (max(seen) if seen else 0) + 1 != k:                       # 차트만 읽은 mini 차수 + 1 = 장면 차수
+        seen = [t.get(key) for t in ps["fields"]["treatment_history"] if t.get(key)]
+        if (max(seen) if seen else 0) + 1 != k:                       # 차트만 읽은 mini 그 종류 차수 + 1 = 장면 차수
             res["failed"] = res["failed"] + ["D-R1"]
-            res["D-R1"] = [f"차트로 센 마지막 고식 차수 {max(seen) if seen else 0} + 1 != 장면 {k}차"]
+            res["D-R1"] = [f"차트로 센 마지막 고식 {KIND_KO[kind]} 차수 {max(seen) if seen else 0} + 1 != 장면 {k}차"]
         if res["failed"]:
             dropped.append({"vp_id": p.vp_id, "reason": "; ".join(f"{k}: {res[k][0]}" for k in res["failed"])})
             continue
@@ -195,14 +204,16 @@ def main() -> int:
             rows_t.append({"vp_id": p.vp_id, "drugs": "+".join(t["drugs"]), "setting": t["setting"],
                            "start_day": t["start_day"], "end_day": t["end_day"], "stop_reason": t["stop_reason"] or "",
                            "stop_basis": t["stop_basis"], "best_response": t["best_response"] or "",
-                           "line (mini 계산)": g.get("line"), "rule_id": "M-01, D-R2"})
-        p.truth["scene_line"] = k
+                           "endocrine_line (mini)": g.get("endocrine_line"), "chemo_line (mini)": g.get("chemo_line"),
+                           "rule_id": "M-01, D-R2"})
+        p.truth["scene"] = f"고식 {KIND_KO[kind]} {k}차 결정"
         p.truth["actual_prescriptions_from_index_reference"] = " | ".join(
-            f"{'+'.join(t['drugs'])} d{t['start_day']}" + (f" (mini {t['line']}차)" if t.get("line") else "") for t in later)
+            f"{'+'.join(t['drugs'])} d{t['start_day']}" + "".join(
+                f" (mini {KIND_KO[x]} {t[SCENE_KEY[x]]}차)" for x in SCENE_KEY if t.get(SCENE_KEY[x])) for t in later)
         kept.append((p, ps))
 
     write_csv(OUT_DIR / "patients.csv", [{"vp_id": p.vp_id, "branch": p.branch, "dx_date": p.dx_date,
-                                          "index_day": p.index_day, "scene_line": p.scene_line,
+                                          "index_day": p.index_day, "scene_kind": p.scene_kind, "scene_line": p.scene_line,
                                           "metastasis_day": p.recs["recurrence.metastasis_day"].value,
                                           "sex": "F", "age": p.recs["patient.age"].value} for p, _ in kept])
     write_csv(OUT_DIR / "fields.csv", [r.row(p.vp_id) for p, _ in kept for r in p.recs.values()])

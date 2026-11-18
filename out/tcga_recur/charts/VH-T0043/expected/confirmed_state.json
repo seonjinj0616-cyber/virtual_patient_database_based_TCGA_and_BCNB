@@ -54,8 +54,8 @@
         {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 160,
-          "char_end": 164
+          "char_start": 164,
+          "char_end": 168
         }
       ]
     },
@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 489,
-          "char_end": 523
+          "char_start": 497,
+          "char_end": 531
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 489,
-          "char_end": 523
+          "char_start": 497,
+          "char_end": 531
         }
       ]
     },
@@ -126,8 +126,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 502,
-          "char_end": 512
+          "char_start": 510,
+          "char_end": 520
         }
       ]
     },
@@ -180,8 +180,8 @@
         {
           "doc_id": "D1",
           "quote": "2027.12.7 골 전이",
-          "char_start": 240,
-          "char_end": 254
+          "char_start": 244,
+          "char_end": 258
         }
       ]
     },
@@ -202,8 +202,8 @@
         {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 250,
-          "char_end": 254
+          "char_start": 254,
+          "char_end": 258
         }
       ]
     },

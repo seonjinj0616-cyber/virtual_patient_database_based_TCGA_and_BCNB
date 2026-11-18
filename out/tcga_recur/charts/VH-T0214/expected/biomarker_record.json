@@ -192,10 +192,8 @@
     "line": "1L",
     "line_endocrine": "1L",
     "line_chemo": "1L",
-    "prior_drug_classes": [
-      "Hormone Therapy"
-    ],
-    "reason": "진단 시 locally_advanced, 이후 원격 전이 재발 / 전이성 HR+/HER2-: 내분비 차수 1L를 주 차수로 / 고식적 내분비 1차(leuprolide + tamoxifen + zoledronic acid), 진행 기록 없음 / 고식적 항암요법 이력 없음 -> 항암 1차"
+    "prior_drug_classes": [],
+    "reason": "진단 시 locally_advanced, 이후 원격 전이 재발 / 전이성 HR+/HER2-: 내분비 차수 1L를 주 차수로 / 고식적 내분비요법 이력 없음 -> 내분비 1차 / 고식적 항암요법 이력 없음 -> 항암 1차"
   },
   "tests_needed": []
 }

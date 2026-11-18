@@ -104,7 +104,8 @@ class Patient:
     problems: list[str] = field(default_factory=list)              # 차트로 쓸 수 없는 실제 값 (넘길 목록)
     treatments: list[dict] = field(default_factory=list)           # 재발 갈래: 판정 기준일 전의 실제 투약 (중단 사유 포함)
     grade_scores: tuple[int, int, int] | None = None                # M-05: 관 형성·핵 다형성·유사분열 실제 판독 점수
-    scene_line: int | None = None                                  # 재발 갈래: 이 차트에서 정할 고식 차수 (D-R1)
+    scene_kind: str | None = None                                   # 재발 갈래: endocrine / chemo (D-R1 주 차수 종류)
+    scene_line: int | None = None                                 # 재발 갈래: 이 차트에서 정할 고식 차수 (D-R1)
 
     def add(self, rec: Rec) -> None:
         self.recs[rec.field] = rec

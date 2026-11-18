@@ -4,7 +4,7 @@
   "version": 1,
   "visit_type": "initial",
   "decision_context": "metastatic",
-  "index_day": 2422,
+  "index_day": 2853,
   "confirmed_at": "2026-11-09T00:00:00+09:00",
   "confirmed_by": "virtual-hospital",
   "based_on": {
@@ -54,16 +54,16 @@
         {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 160,
-          "char_end": 164
+          "char_start": 163,
+          "char_end": 167
         }
       ]
     },
     "age_at_index": {
       "scope": "current",
-      "system": 60,
+      "system": 61,
       "system_source": "patient_state",
-      "confirmed": 60,
+      "confirmed": 61,
       "status": "confirmed"
     },
     "stage.t": {
@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 6th)",
-          "char_start": 554,
-          "char_end": 585
+          "char_start": 561,
+          "char_end": 592
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 6th)",
-          "char_start": 554,
-          "char_end": 585
+          "char_start": 561,
+          "char_end": 592
         }
       ]
     },
@@ -119,8 +119,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 26개",
-          "char_start": 531,
-          "char_end": 545
+          "char_start": 538,
+          "char_end": 552
         }
       ]
     },
@@ -134,8 +134,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 565,
-          "char_end": 574
+          "char_start": 572,
+          "char_end": 581
         }
       ]
     },
@@ -188,8 +188,8 @@
         {
           "doc_id": "D1",
           "quote": "2028.10.12 간 전이",
-          "char_start": 239,
-          "char_end": 254
+          "char_start": 242,
+          "char_end": 257
         }
       ]
     },
@@ -210,8 +210,8 @@
         {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 250,
-          "char_end": 254
+          "char_start": 253,
+          "char_end": 257
         }
       ]
     },
@@ -271,6 +271,45 @@
           "progression_day": null,
           "cycles": null,
           "ongoing": null
+        },
+        {
+          "drugs": [
+            "capecitabine"
+          ],
+          "subclasses": [
+            "Chemotherapy"
+          ],
+          "setting": "palliative",
+          "start_day": 2422,
+          "end_day": 2839,
+          "line_endocrine": null,
+          "line_chemo": 1,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        },
+        {
+          "drugs": [
+            "bevacizumab"
+          ],
+          "subclasses": [
+            "Other Targeted Therapy"
+          ],
+          "setting": "palliative",
+          "start_day": 2451,
+          "end_day": 2822,
+          "line_endocrine": null,
+          "line_chemo": 1,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": {
+            "value": 27,
+            "interval_days": 14
+          },
+          "ongoing": null
         }
       ],
       "system_source": "patient_state",
@@ -310,6 +349,45 @@
           "progression_day": null,
           "cycles": null,
           "ongoing": null
+        },
+        {
+          "drugs": [
+            "capecitabine"
+          ],
+          "subclasses": [
+            "Chemotherapy"
+          ],
+          "setting": "palliative",
+          "start_day": 2422,
+          "end_day": 2839,
+          "line_endocrine": null,
+          "line_chemo": 1,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": null,
+          "ongoing": null
+        },
+        {
+          "drugs": [
+            "bevacizumab"
+          ],
+          "subclasses": [
+            "Other Targeted Therapy"
+          ],
+          "setting": "palliative",
+          "start_day": 2451,
+          "end_day": 2822,
+          "line_endocrine": null,
+          "line_chemo": 1,
+          "response": "unknown",
+          "stop_reason": null,
+          "progression_day": null,
+          "cycles": {
+            "value": 27,
+            "interval_days": 14
+          },
+          "ongoing": null
         }
       ],
       "status": "confirmed"
@@ -327,7 +405,7 @@
       "system_source": "patient_state",
       "confirmed": "yes",
       "status": "confirmed",
-      "note": "exemestane 기준일 0일 전 종료"
+      "note": "capecitabine 기준일 14일 전 종료"
     },
     "contraindicated_classes": {
       "scope": "current",

@@ -54,8 +54,8 @@
         {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 160,
-          "char_end": 164
+          "char_start": 164,
+          "char_end": 168
         }
       ]
     },
@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 549,
-          "char_end": 570
+          "char_start": 557,
+          "char_end": 578
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N3 M0, stage IIIC",
-          "char_start": 549,
-          "char_end": 570
+          "char_start": 557,
+          "char_end": 578
         }
       ]
     },
@@ -119,8 +119,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 15개 / 검사 32개",
-          "char_start": 525,
-          "char_end": 540
+          "char_start": 533,
+          "char_end": 548
         }
       ]
     },
@@ -134,8 +134,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 560,
-          "char_end": 570
+          "char_start": 568,
+          "char_end": 578
         }
       ]
     },
@@ -188,8 +188,8 @@
         {
           "doc_id": "D1",
           "quote": "2027.11.7 골 전이",
-          "char_start": 241,
-          "char_end": 255
+          "char_start": 245,
+          "char_end": 259
         }
       ]
     },
@@ -210,8 +210,8 @@
         {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 251,
-          "char_end": 255
+          "char_start": 255,
+          "char_end": 259
         }
       ]
     },

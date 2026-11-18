@@ -10,8 +10,8 @@ VH-T0043,pfs_months,44.48170431
 VH-T0043,pfs_status,1:PROGRESSION
 VH-T0043,dfs_months,
 VH-T0043,dfs_status,
-VH-T0043,scene_line,2
-VH-T0043,actual_prescriptions_from_index_reference,tamoxifen d1618 (mini 2차) | liposomal doxorubicin d1696 (mini 3차)
+VH-T0043,scene,고식 내분비 2차 결정
+VH-T0043,actual_prescriptions_from_index_reference,tamoxifen d1618 (mini 내분비 2차) | liposomal doxorubicin d1696 (mini 항암 1차)
 VH-T0107,subtype_rule,HER2+
 VH-T0107,pam50,BRCA_LumA
 VH-T0107,recurrence_status,distant
@@ -23,8 +23,8 @@ VH-T0107,pfs_months,9.567018444
 VH-T0107,pfs_status,1:PROGRESSION
 VH-T0107,dfs_months,9.567018444
 VH-T0107,dfs_status,1:Recurred/Progressed
-VH-T0107,scene_line,1
-VH-T0107,actual_prescriptions_from_index_reference,paclitaxel d311 (mini 1차)
+VH-T0107,scene,고식 항암 1차 결정
+VH-T0107,actual_prescriptions_from_index_reference,paclitaxel d311 (mini 항암 1차)
 VH-T0203,subtype_rule,HR+/HER2-
 VH-T0203,pam50,BRCA_LumB
 VH-T0203,recurrence_status,distant
@@ -36,8 +36,8 @@ VH-T0203,pfs_months,63.18834862
 VH-T0203,pfs_status,1:PROGRESSION
 VH-T0203,dfs_months,
 VH-T0203,dfs_status,
-VH-T0203,scene_line,2
-VH-T0203,actual_prescriptions_from_index_reference,capecitabine d2422 (mini 2차) | bevacizumab d2451 (mini 2차) | fulvestrant d2853 (mini 2차)
+VH-T0203,scene,고식 내분비 2차 결정
+VH-T0203,actual_prescriptions_from_index_reference,fulvestrant d2853 (mini 내분비 2차)
 VH-T0213,subtype_rule,HR+/HER2-
 VH-T0213,pam50,BRCA_LumA
 VH-T0213,recurrence_status,distant
@@ -49,8 +49,8 @@ VH-T0213,pfs_months,35.04619128
 VH-T0213,pfs_status,1:PROGRESSION
 VH-T0213,dfs_months,35.04619128
 VH-T0213,dfs_status,1:Recurred/Progressed
-VH-T0213,scene_line,2
-VH-T0213,actual_prescriptions_from_index_reference,tamoxifen d1207 (mini 2차)
+VH-T0213,scene,고식 내분비 2차 결정
+VH-T0213,actual_prescriptions_from_index_reference,tamoxifen d1207 (mini 내분비 2차)
 VH-T0214,subtype_rule,HR+/HER2-
 VH-T0214,pam50,BRCA_LumA
 VH-T0214,recurrence_status,distant
@@ -62,8 +62,8 @@ VH-T0214,pfs_months,4.701318342
 VH-T0214,pfs_status,1:PROGRESSION
 VH-T0214,dfs_months,4.701318342
 VH-T0214,dfs_status,1:Recurred/Progressed
-VH-T0214,scene_line,2
-VH-T0214,actual_prescriptions_from_index_reference,paclitaxel d292 (mini 2차)
+VH-T0214,scene,고식 내분비 1차 결정
+VH-T0214,actual_prescriptions_from_index_reference,leuprolide+zoledronic acid d166 (mini 내분비 1차) | tamoxifen d166 (mini 내분비 1차) | paclitaxel d292 (mini 항암 1차)
 VH-T0514,subtype_rule,HR+/HER2-
 VH-T0514,pam50,BRCA_LumA
 VH-T0514,recurrence_status,distant
@@ -75,8 +75,8 @@ VH-T0514,pfs_months,6.180754184
 VH-T0514,pfs_status,1:PROGRESSION
 VH-T0514,dfs_months,6.180754184
 VH-T0514,dfs_status,1:Recurred/Progressed
-VH-T0514,scene_line,1
-VH-T0514,actual_prescriptions_from_index_reference,carboplatin+paclitaxel d196 (mini 1차)
+VH-T0514,scene,고식 항암 1차 결정
+VH-T0514,actual_prescriptions_from_index_reference,carboplatin+paclitaxel d196 (mini 항암 1차)
 VH-T0546,subtype_rule,HR+/HER2-
 VH-T0546,pam50,BRCA_LumA
 VH-T0546,recurrence_status,distant
@@ -88,8 +88,8 @@ VH-T0546,pfs_months,59.50619719
 VH-T0546,pfs_status,1:PROGRESSION
 VH-T0546,dfs_months,59.50619719
 VH-T0546,dfs_status,1:Recurred/Progressed
-VH-T0546,scene_line,2
-VH-T0546,actual_prescriptions_from_index_reference,fulvestrant d1928 (mini 2차) | exemestane+everolimus d2187 (mini 3차)
+VH-T0546,scene,고식 내분비 2차 결정
+VH-T0546,actual_prescriptions_from_index_reference,fulvestrant d1928 (mini 내분비 2차) | exemestane+everolimus d2187 (mini 내분비 3차)
 VH-T0561,subtype_rule,HER2+
 VH-T0561,pam50,
 VH-T0561,recurrence_status,distant
@@ -101,8 +101,8 @@ VH-T0561,pfs_months,11.86836309
 VH-T0561,pfs_status,1:PROGRESSION
 VH-T0561,dfs_months,11.86836309
 VH-T0561,dfs_status,1:Recurred/Progressed
-VH-T0561,scene_line,1
-VH-T0561,actual_prescriptions_from_index_reference,gemcitabine d468 (mini 1차)
+VH-T0561,scene,고식 항암 1차 결정
+VH-T0561,actual_prescriptions_from_index_reference,gemcitabine d468 (mini 항암 1차)
 VH-T0578,subtype_rule,HER2+
 VH-T0578,pam50,
 VH-T0578,recurrence_status,distant
@@ -114,5 +114,5 @@ VH-T0578,pfs_months,14.56422395
 VH-T0578,pfs_status,1:PROGRESSION
 VH-T0578,dfs_months,14.56422395
 VH-T0578,dfs_status,1:Recurred/Progressed
-VH-T0578,scene_line,1
-VH-T0578,actual_prescriptions_from_index_reference,doxorubicin+cyclophosphamide d447 (mini 1차) | letrozole d575 (mini 1차)
+VH-T0578,scene,고식 항암 1차 결정
+VH-T0578,actual_prescriptions_from_index_reference,doxorubicin+cyclophosphamide d447 (mini 항암 1차) | letrozole d575 (mini 내분비 1차)

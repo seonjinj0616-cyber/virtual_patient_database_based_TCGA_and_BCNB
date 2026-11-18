@@ -17,7 +17,7 @@ import collections
 import json
 from pathlib import Path
 
-from vh.common import CREATED_AT, LOCAL, OUT, REPORTS, mini_on_path, write_csv
+from vh.common import CREATED_AT, LOCAL, OUT, REPORTS, mini_on_path, read_csv, write_csv
 
 CONFIRMED_BY = "virtual-hospital"
 SETS = {"TCGA ①": (OUT / "tcga" / "charts", REPORTS), "TCGA ②": (OUT / "tcga_recur" / "charts", REPORTS),
@@ -77,6 +77,19 @@ def main() -> int:
             lines.append(f"- {msg}")
         else:
             lines.append(f"- BCNB: 결과는 `local/`에만 (약관). 씀 {made}, 못 씀 {len(skipped)}")
+    # TCGA ② 장면 차수(A 입력 모듈이 실제 전체 투약으로 센 차수)와 B 확정값(이번 결정 차수)이 다른 환자.
+    # A는 끝난 이유를 모르면 다음 차수, B는 진행 기록이 있을 때만 다음 차수로 본다 (mini 규칙 차이, 이 폴더에서 고치지 않음)
+    diff = []
+    for r in read_csv(OUT / "tcga_recur" / "patients.csv"):
+        path = OUT / "tcga_recur" / "charts" / r["vp_id"] / "expected" / "confirmed_state.json"
+        if not path.exists():
+            continue
+        it = json.loads(path.read_text(encoding="utf-8"))["items"]
+        key = "setting.line_endocrine" if r["scene_kind"] == "endocrine" else "setting.line_chemo"
+        got = (it.get(key) or {}).get("confirmed")
+        if got != f"{r['scene_line']}L":
+            diff.append(f"  - {r['vp_id']}: 장면 {r['scene_kind']} {r['scene_line']}차, B 확정값 {key} = {got}")
+    lines += ["", f"TCGA ② 장면 차수와 B 확정값이 다른 환자 {len(diff)}명 (A: 이유 모르면 다음 차수, B: 진행 기록 있을 때만)"] + diff
     (REPORTS / "confirmed.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return 0
 

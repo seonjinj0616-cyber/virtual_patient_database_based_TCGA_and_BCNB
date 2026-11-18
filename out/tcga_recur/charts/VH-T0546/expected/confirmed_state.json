@@ -54,8 +54,8 @@
         {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 160,
-          "char_end": 164
+          "char_start": 164,
+          "char_end": 168
         }
       ]
     },
@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 6th)",
-          "char_start": 552,
-          "char_end": 583
+          "char_start": 560,
+          "char_end": 591
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT2 N1 M0, stage IIB (AJCC 6th)",
-          "char_start": 552,
-          "char_end": 583
+          "char_start": 560,
+          "char_end": 591
         }
       ]
     },
@@ -119,8 +119,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 1개 / 검사 3개",
-          "char_start": 530,
-          "char_end": 543
+          "char_start": 538,
+          "char_end": 551
         }
       ]
     },
@@ -134,8 +134,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIB",
-          "char_start": 563,
-          "char_end": 572
+          "char_start": 571,
+          "char_end": 580
         }
       ]
     },
@@ -188,8 +188,8 @@
         {
           "doc_id": "D1",
           "quote": "2029.4.24 간 전이",
-          "char_start": 240,
-          "char_end": 254
+          "char_start": 244,
+          "char_end": 258
         }
       ]
     },
@@ -210,8 +210,8 @@
         {
           "doc_id": "D1",
           "quote": "간 전이",
-          "char_start": 250,
-          "char_end": 254
+          "char_start": 254,
+          "char_end": 258
         }
       ]
     },

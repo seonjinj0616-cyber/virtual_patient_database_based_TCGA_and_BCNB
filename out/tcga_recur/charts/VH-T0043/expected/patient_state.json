@@ -34,8 +34,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2024.3.24 core bx로 진단",
-          "char_start": 201,
-          "char_end": 222
+          "char_start": 205,
+          "char_end": 226
         }
       },
       "histology": {
@@ -45,8 +45,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Infiltrating Lobular Carcinoma",
-          "char_start": 416,
-          "char_end": 446
+          "char_start": 424,
+          "char_end": 454
         }
       },
       "grade": {
@@ -56,8 +56,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "I (Nottingham grade 1)",
-          "char_start": 458,
-          "char_end": 480
+          "char_start": 466,
+          "char_end": 488
         }
       }
     },
@@ -78,8 +78,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1b N3a M0, stage IIIC (AJCC 6th)",
-          "char_start": 489,
-          "char_end": 523
+          "char_start": 497,
+          "char_end": 531
         }
       },
       "group": {
@@ -89,8 +89,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 502,
-          "char_end": 512
+          "char_start": 510,
+          "char_end": 520
         }
       },
       "positive_ln_count": {
@@ -103,8 +103,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "stage IIIC",
-          "char_start": 502,
-          "char_end": 512
+          "char_start": 510,
+          "char_end": 520
         }
       },
       "metastatic_sites": {
@@ -114,8 +114,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "pT1b N3a M0",
-          "char_start": 489,
-          "char_end": 500
+          "char_start": 497,
+          "char_end": 508
         }
       },
       "operable": {
@@ -125,8 +125,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "우측 유방 절제술 + 액와 림프절 수술",
-          "char_start": 383,
-          "char_end": 404
+          "char_start": 391,
+          "char_end": 412
         }
       }
     },
@@ -147,8 +147,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "ER 강양성 (Allred 8, 5+3)",
-          "char_start": 534,
-          "char_end": 556
+          "char_start": 542,
+          "char_end": 564
         }
       },
       "pr_percent": {
@@ -167,8 +167,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "PR 강양성 (Allred 6, 3+3)",
-          "char_start": 559,
-          "char_end": 581
+          "char_start": 567,
+          "char_end": 589
         }
       },
       "her2_ihc": {
@@ -182,8 +182,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 (4B5): 0",
-          "char_start": 584,
-          "char_end": 597
+          "char_start": 592,
+          "char_end": 605
         }
       },
       "her2_ish": {
@@ -198,8 +198,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "HER2 FISH: not amplified",
-          "char_start": 600,
-          "char_end": 624
+          "char_start": 608,
+          "char_end": 632
         }
       },
       "pdl1": {
@@ -218,8 +218,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "Ki-67: 5%",
-          "char_start": 627,
-          "char_end": 636
+          "char_start": 635,
+          "char_end": 644
         }
       }
     },
@@ -231,8 +231,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/53",
-          "char_start": 342,
-          "char_end": 346
+          "char_start": 350,
+          "char_end": 354
         }
       },
       "age": {
@@ -242,8 +242,8 @@
         "source": {
           "doc_id": "D2",
           "quote": "F/53",
-          "char_start": 342,
-          "char_end": 346
+          "char_start": 350,
+          "char_end": 354
         }
       },
       "menopausal_status": {
@@ -253,8 +253,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "폐경 후",
-          "char_start": 160,
-          "char_end": 164
+          "char_start": 164,
+          "char_end": 168
         }
       },
       "menopausal_basis": {
@@ -268,8 +268,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "ECOG PS 0",
-          "char_start": 168,
-          "char_end": 177
+          "char_start": 172,
+          "char_end": 181
         }
       }
     },
@@ -297,8 +297,8 @@
         "source": {
           "doc_id": "D4",
           "quote": "doxorubicin 63mg/m2 + cyclophosphamide   2024.6.17   2024.7.29   q2w #4   -   계획된 변경",
-          "char_start": 1118,
-          "char_end": 1202
+          "char_start": 1126,
+          "char_end": 1210
         },
         "doses": [
           {
@@ -314,7 +314,6 @@
             "basis": "estimated"
           }
         ],
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -340,10 +339,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "paclitaxel   2024.8.12   2024.9.24   q2w #4   -   -",
-          "char_start": 1209,
-          "char_end": 1260
+          "char_start": 1217,
+          "char_end": 1268
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -364,10 +362,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "anastrozole   2024.10.31   2026.6.14   -   -   -",
-          "char_start": 1267,
-          "char_end": 1315
+          "char_start": 1275,
+          "char_end": 1323
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -388,10 +385,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "letrozole   2026.6.15   2026.9.13   -   CR   -",
-          "char_start": 1322,
-          "char_end": 1368
+          "char_start": 1330,
+          "char_end": 1376
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -412,10 +408,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "anastrozole   2026.9.14   2026.12.20   -   CR   -",
-          "char_start": 1375,
-          "char_end": 1424
+          "char_start": 1383,
+          "char_end": 1432
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -436,10 +431,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "exemestane   2026.12.21   2027.12.19   -   PD   진행",
-          "char_start": 1431,
-          "char_end": 1481
+          "char_start": 1439,
+          "char_end": 1489
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -460,10 +454,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "zoledronic acid   2027.5.26   2028.2.14   -   PD   진행",
-          "char_start": 1488,
-          "char_end": 1541
+          "char_start": 1496,
+          "char_end": 1549
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       },
@@ -484,10 +477,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "fulvestrant   2027.12.20   2028.7.3   -   PD   진행",
-          "char_start": 1548,
-          "char_end": 1597
+          "char_start": 1556,
+          "char_end": 1605
         },
-        "line": 1,
         "endocrine_line": 1,
         "chemo_line": null
       },
@@ -509,10 +501,9 @@
         "source": {
           "doc_id": "D4",
           "quote": "denosumab   2028.2.17   현재 투약 중   -   -   -",
-          "char_start": 1604,
-          "char_end": 1647
+          "char_start": 1612,
+          "char_end": 1655
         },
-        "line": null,
         "endocrine_line": null,
         "chemo_line": null
       }
@@ -544,8 +535,8 @@
           "source": {
             "doc_id": "D4",
             "quote": "doxorubicin 63mg/m2 + cyclophosphamide   2024.6.17   2024.7.29   q2w #4   -   계획된 변경",
-            "char_start": 1118,
-            "char_end": 1202
+            "char_start": 1126,
+            "char_end": 1210
           }
         }
       ]
@@ -566,8 +557,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2027.12.7 골 전이",
-          "char_start": 240,
-          "char_end": 254
+          "char_start": 244,
+          "char_end": 258
         }
       },
       "adjuvant_endocrine_end_date": {
@@ -577,8 +568,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2027.12.19 종료",
-          "char_start": 272,
-          "char_end": 285
+          "char_start": 276,
+          "char_end": 289
         }
       },
       "status": {
@@ -588,8 +579,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 250,
-          "char_end": 254
+          "char_start": 254,
+          "char_end": 258
         }
       },
       "metastatic_sites": {
@@ -601,8 +592,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "골 전이",
-          "char_start": 250,
-          "char_end": 254
+          "char_start": 254,
+          "char_end": 258
         }
       },
       "metastasis_day": {
@@ -612,8 +603,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2027.12.7 골 전이",
-          "char_start": 240,
-          "char_end": 254
+          "char_start": 244,
+          "char_end": 258
         }
       },
       "recurrence_day": {
@@ -623,8 +614,8 @@
         "source": {
           "doc_id": "D1",
           "quote": "2027.12.7 골 전이",
-          "char_start": 240,
-          "char_end": 254
+          "char_start": 244,
+          "char_end": 258
         }
       },
       "surgery": {
@@ -644,8 +635,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         },
         "PIK3CA": {
@@ -663,8 +654,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "PIK3CA   c.1637A>G (p.Q546R)   VAF 22.6%",
-            "char_start": 811,
-            "char_end": 851
+            "char_start": 819,
+            "char_end": 859
           }
         },
         "AKT1": {
@@ -675,8 +666,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         },
         "PTEN": {
@@ -687,8 +678,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         },
         "BRCA1": {
@@ -699,8 +690,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         },
         "BRCA2": {
@@ -711,8 +702,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         },
         "PALB2": {
@@ -723,8 +714,8 @@
           "source": {
             "doc_id": "D3",
             "quote": "ESR1, AKT1, PTEN, BRCA1, BRCA2, PALB2",
-            "char_start": 878,
-            "char_end": 915
+            "char_start": 886,
+            "char_end": 923
           }
         }
       }

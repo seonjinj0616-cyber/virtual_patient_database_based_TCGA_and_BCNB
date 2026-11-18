@@ -79,8 +79,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1 N1a M0, stage IIA (AJCC 7th)",
-          "char_start": 553,
-          "char_end": 585
+          "char_start": 556,
+          "char_end": 588
         }
       ]
     },
@@ -104,8 +104,8 @@
         {
           "doc_id": "D2",
           "quote": "pT1 N1a M0, stage IIA (AJCC 7th)",
-          "char_start": 553,
-          "char_end": 585
+          "char_start": 556,
+          "char_end": 588
         }
       ]
     },
@@ -119,8 +119,8 @@
         {
           "doc_id": "D2",
           "quote": "전이 0개 / 검사 5개",
-          "char_start": 531,
-          "char_end": 544
+          "char_start": 534,
+          "char_end": 547
         }
       ]
     },
@@ -134,8 +134,8 @@
         {
           "doc_id": "D2",
           "quote": "stage IIA",
-          "char_start": 565,
-          "char_end": 574
+          "char_start": 568,
+          "char_end": 577
         }
       ]
     },
