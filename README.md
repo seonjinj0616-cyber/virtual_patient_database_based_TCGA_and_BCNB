@@ -14,7 +14,7 @@
 
 - 검증 V1~V4·V6과 관문 G1~G7(mini 입력 모듈 재현 포함) 통과, 테스트 9개 통과
 - 확정 상태(confirmed_state) 초안: 모든 차트에 `expected/confirmed_state.json` (TCGA ① 671, ② 9, BCNB 971). mini 가상 차트 정답과 같은 방법 (정답 patient_state + biomarker_record → `build_draft` 기본값 확정), 처방 모듈 뒷단(지침 검색·추천·급여)의 입력
-- 순서대로 정리한 진행 기록: [notes/progress.md](notes/progress.md) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria_2026-11-12.md](notes/synthetic_criteria_2026-11-12.md)
+- 순서대로 정리한 진행 기록: [notes/progress.md](notes/progress.md) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria.md](notes/synthetic_criteria.md)
 
 ## 폴더
 
@@ -588,10 +588,10 @@ virtual_hospital/
 | 2·3 | 끝 | TCGA ① 후보 741명 (S-02~S-04 뒤) → 관문 통과 **675명**. V1·V2 100%. 2026-11-10 사용자 결정: MX + I~III기 → M0 (D-06, 118명), NX 제외 (S-08, 7명), HER2 원자료 모순 제외 (S-07, 25명), 점수·FISH 없는 HER2 판정은 같은 판정의 실제 조합으로 합성 (Y-07, 198명), ER·PR은 Allred 형식 (D-07 비율 점수 + Y-06 강도 점수, R-04 표기). 남은 넘길 목록 34명: c. 없는 변이 33, ER indeterminate 1 |
 | 4 | 끝 (문헌 값은 후보) | Y-01~05, N-01~05. V3 최대 차이 0.5~2.1%p (기준 5%p), V4 통과 (합성 Ki-67 높음 비율 PAM50 LumA 0.25 < LumB 0.80). `references.csv` 값은 검색으로 찾은 후보이고 원문 확인 전 |
 | 5 | 끝 | chart.txt 132건 + 정답 `patient_state`·`biomarker_record`. G1~G7 모두 통과 (G7에 mini 입력 모듈 재현 검사 포함) |
-| 6 | 끝 (2026-11-10) | BCNB 1,058명 → 관문 통과 **971명**. 뺀 87명: 모듈 3 정제 11 (S-B1), 조직형 Other type 76 (S-B2). V1·V2·V3(초음파 cN 민감도 0.65 / 특이도 0.85)·V6 통과. 산출물은 모두 `local/bcnb/`, 보고 `local/reports/bcnb_preop.md`. 자료 점검: `notes/bcnb_check_2026-11-10.md`. 실행: `python -m vh.bcnb` |
+| 6 | 끝 (2026-11-10) | BCNB 1,058명 → 관문 통과 **971명**. 뺀 87명: 모듈 3 정제 11 (S-B1), 조직형 Other type 76 (S-B2). V1·V2·V3(초음파 cN 민감도 0.65 / 특이도 0.85)·V6 통과. 산출물은 모두 `local/bcnb/`, 보고 `local/reports/bcnb_preop.md`. 자료 점검: `notes/bcnb_check.md`. 실행: `python -m vh.bcnb` |
 | 7 | 끝 (2026-11-17) | TCGA ② 재발 갈래 **9명** (원격 재발 13명 중): 고식 2차 결정 5, 1차 결정 4. 차수는 mini가 실제 전체 투약으로 센 값, 판정 기준일 = 그 차수 약의 실제 시작일 (D-R1). `[투약 기록]`은 실제 투약 그대로 (병용 약은 한 줄, D-R4), 중단 사유는 실제 값으로만 (D-R2: PD·재발 직전까지 투약 → 진행, 보조 내분비 ≥1,640일 → 완료, AC 뒤 28일 안 탁산 → 계획된 변경, 그 밖 비움), 기준일에 투약 중인 줄은 반응을 쓰지 않음. 뺀 4명: 전이 부위 'other'. G1~G7 통과. 국소 재발은 다루지 않음. 같은 날 TCGA ①은 판정 기준일을 실제 첫 보조 투약일로 앞당기고 (D-10, 81명), 첫 투약이 가짜 병리 보고일 전인 36명을 뺌 (S-10) → **671명** |
 | 8 | 일부 | TCGA 슬라이드 등록 (`out/tcga/images/slides.csv` 공개용, `local/slide_map.csv` 원본 대응) + V6 통과. 원본 svs가 로컬에 없어 mpp는 비어 있음. BCNB 주석은 6단계와 같이 멈춤 |
-| 9 | 틀만 (2026-11-16) | 모듈 결과를 받을 표·폴더 틀을 만듦 (`rules/image_tables.csv`). 등록·히트맵 코드는 모듈 결과가 나오면. 결과 형식 제안: `notes/module_result_format_proposal_2026-11-09.md` |
+| 9 | 틀만 (2026-11-16) | 모듈 결과를 받을 표·폴더 틀을 만듦 (`rules/image_tables.csv`). 등록·히트맵 코드는 모듈 결과가 나오면. 결과 형식 제안: `notes/module_result_format_proposal.md` |
 
 실행 (virtual_hospital 폴더, mini의 `team_project` 환경):
 

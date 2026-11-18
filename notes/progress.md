@@ -1,6 +1,6 @@
 # 진행 기록 (2026-11-09 ~ 11-18)
 
-작성: A (Claude와 작업) · 설계: [../README.md](../README.md) · 가상 데이터 기준: [synthetic_criteria_2026-11-12.md](synthetic_criteria_2026-11-12.md) · 규칙: [../rules/rules.csv](../rules/rules.csv)
+작성: A (Claude와 작업) · 설계: [../README.md](../README.md) · 가상 데이터 기준: [synthetic_criteria.md](synthetic_criteria.md) · 규칙: [../rules/rules.csv](../rules/rules.csv)
 
 11-09, 11-16, 11-17 기록을 합쳤다 (2026-11-18). 나중에 바뀐 결정은 지우지 않고 "→ 바뀜"으로 적었다.
 
@@ -27,7 +27,7 @@
 | 가능성 검토: Synthea 단독은 안 됨 (이미지 없음, 처방 칸 대부분 없음, 한국 형식 아님) → 실제 슬라이드·라벨을 뼈대로 빈칸만 합성 | 방향 결정 |
 | 두 갈래: BCNB = 수술 전, TCGA = 수술 후. 독립 폴더 `virtual_hospital/` | README |
 | 설계: 실제 값 범위, 합성 근거 순위 ①~⑤, 결측, 검증 V1~V5, CSV 구조, chart.txt 규칙, 관문 G1~G7, 이미지 DB (슬라이드는 경로, 위치는 좌표, 히트맵은 캐시) | README §4~§11 |
-| 모듈 1·2·3·4-B 결과 형식 제안 글 | [module_result_format_proposal_2026-11-09.md](module_result_format_proposal_2026-11-09.md) |
+| 모듈 1·2·3·4-B 결과 형식 제안 글 | [module_result_format_proposal.md](module_result_format_proposal.md) |
 | 규칙 표 29개 + `vh/` 코드, TCGA 첫 세트 (테스트 분할만) | 132명 |
 | 검사로 잡은 문제: V3가 한 번만 가려 흔들림 → 묶음을 돌려 모두 한 번씩 가림 (기준 5%p 그대로). V1이 MX 표기 버그를 잡음. G7(입력 모듈 재현)이 mini가 못 읽는 표기 3종을 잡음 → 변이 c. 표기를 GDC에서 받음 (M-03) | |
 | 슬라이드 등록: 공개 표에는 가상 번호만, 원본 대응은 `local/slide_map.csv` | V6 통과 |
@@ -38,12 +38,12 @@
 |---|---|---|
 | 11-10 | 학습·시험 분할은 거르지 않고 표시만 → 이어서 분할 자체를 없앰 (차트 만들기가 목적) | 432명 |
 | 11-10 | 사용자 결정: MX + I~III기 → M0 (D-06), NX 제외 (S-08), HER2 원자료 모순 25명 제외 (S-07). G6은 조합 전체가 아니라 조각별로 | 487명 |
-| 11-10 | BCNB 자료 점검 (주석 좌표 밖 5명, Other type 76명) → BCNB 갈래 완성 | 971명, [bcnb_check_2026-11-10.md](bcnb_check_2026-11-10.md) |
+| 11-10 | BCNB 자료 점검 (주석 좌표 밖 5명, Other type 76명) → BCNB 갈래 완성 | 971명, [bcnb_check.md](bcnb_check.md) |
 | 11-10 | 점수 없는 HER2 198명 → 같은 판정의 실제 점수·FISH 조합으로 합성 (Y-07) | 675명 |
 | 11-10 | ER·PR을 Allred 형식으로 ("ER 강양성 (Allred 8, 5+3)"), TCGA·BCNB 둘 다 | |
-| 11-10 | mini 점검 (읽기만): 입력 모듈 H1~H6, 화면 1 초안 C1·C2, 바이오마커 관찰 B1~B5 | [mini_findings_2026-11-10.md](mini_findings_2026-11-10.md) |
+| 11-10 | mini 점검 (읽기만): 입력 모듈 H1~H6, 화면 1 초안 C1·C2, 바이오마커 관찰 B1~B5 | [mini_findings.md](mini_findings.md) |
 | 11-11 | BCNB 초진 기록에 "수술 가능" (실제로 전원 수술) | 화면 1 확인 권장 971 → 0건 |
-| 11-12 | 문헌 값 원문 확인 후 한국 자료로 교체: Ki-67·grade(KBCR, Won 2022), 초음파(Mun 2025). HER2+ Ki-67(일본)·ECOG(미국)는 한국 자료 없음 | [synthetic_criteria_2026-11-12.md](synthetic_criteria_2026-11-12.md) |
+| 11-12 | 문헌 값 원문 확인 후 한국 자료로 교체: Ki-67·grade(KBCR, Won 2022), 초음파(Mun 2025). HER2+ Ki-67(일본)·ECOG(미국)는 한국 자료 없음 | [synthetic_criteria.md](synthetic_criteria.md) |
 | 11-12 | Allred 강도 점수를 TCGA 실제 열로 (D-08, Y-06), 실제 총점 사용 (D-09, 8점 만점 확인) | 674명 |
 
 ### 11-16 변이 표기, 원자료 모순, BCNB 주석

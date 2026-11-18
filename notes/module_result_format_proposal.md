@@ -1,6 +1,6 @@
 # 제안: 이미지 모듈 결과 형식 맞추기 (모듈 1 · 2 · 3 · 4-B)
 
-작성: 2026-11-09 (A) · 상태: **제안** (팀 합의 전) · 관련: [../README.md](../README.md) §10
+작성: 2026-11-09 (A) · 상태: **제안** (2026-11-18까지 팀 합의 전) · 관련: [../README.md](../README.md) §10, 받을 표의 틀 [../rules/image_tables.csv](../rules/image_tables.csv) (2026-11-16)
 
 ## 1. 왜 맞추나
 
@@ -52,7 +52,7 @@
 | `module` | `"1"` / `"2"` / `"3"` / `"4B"` |
 | `slide_id` | 데이터셋 원래 슬라이드 이름 (TCGA는 `…-DX1`까지, BCNB는 `Patient ID`). 가상환자 번호는 가상 병원 DB가 붙인다 |
 | `specimen` | `biopsy` / `resection` |
-| `split` | `train` / `val` / `test`. 가상 병원에는 `test`만 들어간다 |
+| `split` | `train` / `val` / `test`. 모델 학습에 쓴 슬라이드인지 표시 (가상 병원은 분할로 거르지 않지만, 학습에 쓴 슬라이드의 예측은 평가에서 따로 본다) |
 | `inputs` | 모델에 넣은 것. 슬라이드만이면 `["slide"]`, 임상변수를 같이 넣었으면 그 이름 (예: `"age"`, `"tumour_size"`). **수술 뒤 정보(림프절 결과 등)를 넣지 않았는지 확인하는 데 쓴다** |
 | `predictions[]` | 대상마다 한 개. `target`은 모듈 1 `risk`, 모듈 2 `N+`·`N_group`, 모듈 3 `ER`·`PR`·`HER2`·`HER2_IHC`·`Ki67` (제안). 숫자는 `prob` 또는 `value` |
 | `score_kind` | 타일 점수의 뜻: `attention` (MIL 가중치) / `tile_prediction` (타일마다의 예측값, 예: 모듈 1 타일별 유전자 예측) |
@@ -80,7 +80,7 @@
 
 ## 3. 가상 병원 쪽이 하는 것
 
-- 위 파일을 등록하고 (`module_runs.csv`, `tile_grids.csv`, `attention.csv`), 썸네일 위에 히트맵을 그린다.
+- 위 파일을 등록하고 (`module_runs.csv`, `tile_grids.csv`, `attention.csv`, 틀은 `rules/image_tables.csv`), 썸네일 위에 히트맵을 그린다. 등록 코드는 모듈 결과가 나오면 만든다.
 - 좌표가 슬라이드 크기 안인지(V6), 다시 그린 그림이 같은지(V7) 검사한다.
 - BCNB 슬라이드 결과는 약관대로 `local/`에만 둔다. **BCNB 결과 파일은 GitHub에 올리지 않는다** (각 모듈도 같음).
 
