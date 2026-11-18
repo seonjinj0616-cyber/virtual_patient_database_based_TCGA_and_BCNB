@@ -14,6 +14,7 @@
 
 - 검증 V1~V4·V6과 관문 G1~G7(mini 입력 모듈 재현 포함) 통과, 테스트 9개 통과
 - 확정 상태(confirmed_state) 초안: 모든 차트에 `expected/confirmed_state.json` (TCGA ① 671, ② 9, BCNB 971). mini 가상 차트 정답과 같은 방법 (정답 patient_state + biomarker_record → `build_draft` 기본값 확정), 처방 모듈 뒷단(지침 검색·추천·급여)의 입력
+- 규칙 문서와 코드 안내 (처방 모듈에 넘기는 파일 포함): [notes/build_guide.md](notes/build_guide.md)
 - 순서대로 정리한 진행 기록: [notes/progress.md](notes/progress.md) · 가상 데이터를 넣은 기준: [notes/synthetic_criteria.md](notes/synthetic_criteria.md)
 
 ## 폴더
@@ -39,6 +40,7 @@ python -m vh.fetch_thennavan  # 조직학적 등급 판독 점수 받기 (Europe
 python -m vh.build         # TCGA 갈래 → out/tcga/, reports/
 python -m vh.tcga_recur    # TCGA 재발 갈래 → out/tcga_recur/, reports/tcga_recur*
 python -m vh.confirmed     # 확정 상태 초안 → <차트>/expected/confirmed_state.json
+python -m vh.export_mini   # 처방 모듈용 사본 → team_project_mini/data/virtual_hospital/ (BCNB 제외)
 python -m vh.bcnb          # BCNB 갈래 → local/bcnb/ (git 제외)
 python -m pytest tests
 ```
