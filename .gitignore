@@ -1,4 +1,4 @@
-# BCNB 값·원본 ID 대응표는 공개하지 않는다 (README §12)
+# BCNB 값·원본 ID 대응표는 공개하지 않는다 (notes/design.md §12)
 local/
 __pycache__/
 .pytest_cache/

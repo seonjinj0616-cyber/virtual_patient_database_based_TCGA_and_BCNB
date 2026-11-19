@@ -32,7 +32,8 @@ TCGA-BRCA와 BCNB의 실제 값을 뼈대로, 빈칸만 근거 있는 규칙으�
 | [bcnb_check.md](bcnb_check.md) | BCNB 원자료 점검 |
 | [mini_findings.md](mini_findings.md) | mini 처방 모듈 점검 (읽기만) |
 | [module_result_format_proposal.md](module_result_format_proposal.md) | 이미지 모듈 결과 형식 제안 (팀 합의 전) |
-| [../README.md](../README.md) | 설계 전체 (§4 규칙 체계, §5 시점, §6 칸별 규칙, §9 CSV·chart.txt, §10 이미지, §11 검증·관문) |
+| [design.md](design.md) | 설계 전체 (§4 규칙 체계, §5 시점, §6 칸별 규칙, §9 CSV·chart.txt, §10 이미지, §11 검증·관문) |
+| [../README.md](../README.md) | 마지막 상태, 폴더 구조, 만드는 순서, 옮긴 곳, 데이터 출처와 인용 |
 | `../out/tcga/NOTICE.md` | 조직학적 등급 판독 자료(Thennavan 2021)의 출처·라이선스·합성 표시 |
 
 ### 규칙 묶음
